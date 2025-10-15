@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 8</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin-top: 50px;
+}
+dialog {
+border: none;
+border-radius: 10px;
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+padding: 20px;
+
+width: 350px;
+}
+summary {
+cursor: pointer;
+font-weight: bold;
+}
+button {
+margin-top: 15px;
+padding: 8px 16px;
+border: none;
+border-radius: 8px;
+background-color: #4CAF50;
+color: white;
+cursor: pointer;
+}
+button:hover {
+background-color: #45a049;
+}
+</style>
+</head>
+<body>
+    <h1>Bienvenido</h1>
+    <p>Si tienes dudas, abre el centro de ayuda</p>
+    <button onclick="document.getElementById('dialogoAyuda').showModal()">Centro de ayuda</button>
+    <dialog id="dialogoAyuda">
+        <h3>Centro de ayuda</h3>
+        <details>
+            <summary>¿Que es este sitio?</summary>
+            <p>Este sitio es una pagina de ejercicios creada por Ismael González Tempa</p>
+        </details>
+        <details>
+            <summary>¿Como cierro este cuadro?</summary>
+            <p>El cuadro se cierra dandole al boton de cerrar</p>
+        </details>
+        <details>
+            <summary>¿Qué tecnologías usa este sitio?</summary>
+            <p>HTML5, CSS3 y JavaScript para la interactividad</p>
+        </details>
+        <button onclick="document.getElementById('dialogoAyuda').close()">Cerrar</button>
+    </dialog>
+</body>
+</html>

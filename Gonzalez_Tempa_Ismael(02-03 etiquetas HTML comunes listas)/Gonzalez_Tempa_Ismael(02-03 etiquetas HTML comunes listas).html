@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        /* --- Estilos Generales --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* --- Tipografía --- */
+        h1, h2 {
+            color: #1c2e4a;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: none;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd;
+            margin: 40px 0;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        /* --- Secciones de Ejercicios --- */
+        section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #fdfdfd;
+            border: 1px solid #e7e7e7;
+            border-radius: 8px;
+        }
+
+        /* --- Listas --- */
+        ul, ol {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        dl dt {
+            font-weight: bold;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        dl dd {
+            margin-left: 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        /* --- Elementos Interactivos --- */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        details {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            color: #0056b3;
+        }
+
+        /* --- Diálogos (Modales) --- */
+        dialog {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            width: 90%;
+            max-width: 450px;
+        }
+
+        dialog::backdrop {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(3px);
+        }
+
+        dialog h3 {
+            margin-top: 0;
+            color: #1c2e4a;
+        }
+
+        dialog button {
+            background-color: #28a745;
+        }
+
+        dialog button:last-child {
+            background-color: #dc3545;
+        }
+
+        dialog button:hover {
+            opacity: 0.9;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ismael González Tempa</h1>
+      
+        <section>
+            <h2>Ejercicio 1: Listas no ordenadas</h2>
+            <p>Con circulos</p>
+            <ul>
+                <li>Almería</li>
+                <li>Asturias</li>
+                <li>Ávila</li>
+                <li>Badajoz</li>
+                <li>Barcelona</li>
+            </ul>
+            <p>Con cuadrados</p>
+            <ul type="square">
+                <li>Castellón</li>
+                <li>Ciudad Real</li>
+                <li>Córdoba</li>
+                <li>La Coruña</li>
+                <li>Cuenca</li>
+                <li>Girona</li>
+            </ul>
+            <p>Con discos</p>
+            <ul type="circle">
+                <li>Guadalajara</li>
+                <li>Granada</li>
+                <li>Burgos</li>
+                <li>Cáceres</li>
+                <li>Cádiz</li>
+                <li>Cantabria</li>
+            </ul>
+            <p>Mezclados</p>
+            <ul>
+                <li type="square">Torremolinos</li>
+                <li type="circle">Churriana</li>
+                <li>Guadalmar</li>
+                <li type="circle">Granada</li>
+                <li type="square">Torrox</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ejercicio 2: Listas ordenadas</h2>
+            <p>Por letras empezando por la h</p>
+            <ol type="a" start="8">
+                <li>Madrid</li>
+                <li>Málaga</li>
+                <li>Murcia</li>
+                <li>Navarra</li>
+            </ol>
+            <p>Por numeros empezando por el 3</p>
+            <ol type="1" start="3">
+                <li>Las Palmas</li>
+                <li>Pontevedra</li>
+                <li>La Rioja</li>
+                <li>Salamanca</li>
+            </ol>
+            <p>Por numeros romanos empezando por el 1102</p>
+            <ol type="i" start="1102">
+                <li>Segovia</li>
+                <li>Sevilla</li>
+                <li>Soria</li>
+                <li>Tarragona</li>
+                <li>Santa Cruz</li>
+                <li>Teruel</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2>Ejercicio 3: Listas de definición</h2>
+            <dl>
+                <dt>Álava</dt>
+                <dd>Vitoria</dd>
+                <dt>Asturias</dt>
+                <dd>Oviedo</dd>
+                <dt>Gipuzkoa</dt>
+                <dd>San Sebastian</dd>
+                <dt>Islas Baleares</dt>
+                <dd>Palma de Mallorca</dd>
+                <dt>Navarra</dt>
+                <dd>Pamplona</dd>
+                <dt>Las Palmas</dt>
+                <dd>Las Palmas de Gran Canaria</dd>
+                <dt>La Rioja</dt>
+                <dd>Logroño</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h2>Ejercicio 4: Listas anidadas</h2>
+            <ul>
+                <li>Málaga
+                    <ol type="a" start="4">
+                        <li>Estepona</li>
+                        <li>San Pedro de Alcantara</li>
+                        <li>Marbella</li>
+                        <li>Alhaurín de la Torre</li>
+                        <li>Alhaurín el Grande</li>
+                    </ol>
+                </li>
+                <li>Sevilla
+                    <ol type="i">
+                        <li>Ecija</li>
+                        <li>Dos Hermanas</li>
+                        <li>San Juan de Aznalfarache</li>
+                    </ol>
+                </li>
+                <li>Cordoba
+                    <ol type="i" start="9">
+                        <li>Lucena</li>
+                        <li>PozoBlanco</li>
+                        <li>Rute</li>
+                    </ol>
+                </li>
+                <li>Granada
+                    <ul>
+                        <li>Arbolote</li>
+                        <li>Almuñecar</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ejercicio 5: Elemento Details</h2>
+            <details>
+                <summary>Ver detalles de las imágenes de paisajes</summary>
+                <div>
+                    <h4>Imágenes y descripciones</h4>
+                    <div>
+                        <img src="https://img.freepik.com/fotos-premium/montanas-cielo-azul-fondo-nubes_115509-911.jpg" alt="Un paisaje de montaña con un cielo azul." width="350" height="200" style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <p><strong>Montaña:</strong> Un imponente pico nevado bajo un cielo despejado.</p>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1672841828459-bc913fdcd995?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8" alt="Una playa tropical con palmeras." width="350" height="200" style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <p><strong>Playa:</strong> Arena blanca y aguas cristalinas en una tranquila playa tropical.</p>
+                    </div>
+                    <div>
+                        <img src="https://static.vecteezy.com/system/resources/previews/049/464/998/non_2x/serene-autumn-landscape-dense-woods-orange-and-red-leaves-photo.jpg" alt="Un denso bosque en otoño." width="350" height="200" style="max-width: 100%; height: auto; border-radius: 8px;">
+                        <p><strong>Bosque:</strong> Un camino cubierto de hojas entre árboles con colores otoñales.</p>
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section>
+            <h2>Ejercicio 6: Diálogos Modales</h2>
+            <p>Pulsa los botones para abrir las ventanas modales:</p>
+
+            <!-- Pregunta 1 -->
+            <button onclick="document.getElementById('dialogoPregunta1').showModal()">Confirmación</button>
+            <dialog id="dialogoPregunta1">
+                <h3>Confirmación</h3>
+                <p>¿Estás seguro de que quieres continuar con la operación?</p>
+                <button onclick="document.getElementById('dialogoPregunta1').close()">Sí, continuar</button>
+                <button onclick="document.getElementById('dialogoPregunta1').close()">Cancelar</button>
+            </dialog>
+
+            <!-- Pregunta 2 -->
+            <button onclick="document.getElementById('dialogoPregunta2').showModal()">Sesión expirada</button>
+            <dialog id="dialogoPregunta2">
+                <h3>Aviso</h3>
+                <p>Tu sesión está a punto de expirar.</p>
+                <button onclick="document.getElementById('dialogoPregunta2').close()">Entendido</button>
+            </dialog>
+
+            <!-- Pregunta 3 -->
+            <button onclick="document.getElementById('dialogoPregunta3').showModal()">Información</button>
+            <dialog id="dialogoPregunta3">
+                <h3>Información</h3>
+                <p>Esto es una pagina de ejercicios creada por Ismael González Tempa</p>
+                <button onclick="document.getElementById('dialogoPregunta3').close()">Cerrar</button>
+            </dialog>
+        </section>
+
+        <section>
+            <h2>Ejercicio 7: Centro de Ayuda</h2>
+            <p>Este ejercicio abre una página externa con un centro de ayuda implementado con un diálogo.</p>
+            <p><a href="./Ejercicio8.html">Ir al Ejercicio 8</a></p>
+        </section>
+
+        <section>
+            <h2>Ejercicio 8: Galería de Imágenes</h2>
+            <p>Este ejercicio abre una página externa con una galería de imágenes interactiva.</p>
+            <p><a href="./Ejercicio9.html">Ir al Ejercicio 9</a></p>
+        </section>
+    </div>
+</body>
+</html>

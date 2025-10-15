@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+    <style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+background-color: #f0f0f0;
+}
+h1 {
+margin-top: 20px;
+}
+.galeria {
+display: flex;
+justify-content: center;
+gap: 20px;
+margin-top: 40px;
+}
+.galeria img {
+width: 120px;
+height: 80px;
+border-radius: 8px;
+cursor: pointer;
+transition: transform 0.3s ease;
+}
+.galeria img:hover {
+transform: scale(1.1);
+}
+dialog {
+border: none;
+border-radius: 10px;
+box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+width: 400px;
+text-align: center;
+padding: 20px;
+background-color: white;
+}
+dialog img {
+width: 100%;
+border-radius: 8px;
+}
+summary {
+cursor: pointer;
+font-weight: bold;
+margin-top: 10px;
+}
+.cerrar {
+margin-top: 15px;
+border: none;
+background-color: #d9534f;
+color: white;
+padding: 8px 16px;
+border-radius: 6px;
+cursor: pointer;
+}
+.cerrar:hover {
+background-color: #c9302c;
+}
+
+</style>
+</head>
+<body>
+    <h1>Galería de Imágenes</h1>
+    <p>Haz click en una imagen para ver mas detalles</p>
+    <div class="galeria">
+        <img onclick="document.getElementById('dialogoImagen1').showModal()" src="https://i.blogs.es/50a1c5/t4yxpvu/840_560.jpeg" alt="Imagen 1">
+        <img onclick="document.getElementById('dialogoImagen2').showModal()" src="https://img.asmedia.epimg.net/resizer/v2/XUK5LKJW7RE7ZFG7DQ5NJ5VRZY.jpg?auth=f3a40ffd18bebb8bdb0f25ada28b0a223efcaf004300a8933269fd9934d72027&width=360&height=203&smart=true" alt="Imagen 2">
+        <img onclick="document.getElementById('dialogoImagen3').showModal()" src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/01/19/imagen-de-naruto.jpeg" alt="Imagen 3">
+        <img onclick="document.getElementById('dialogoImagen4').showModal()" src="https://elcomercio.pe/resizer/v2/6FAR7QTRW5DQ5CMMC3HFHEOC6Y.jpg?auth=cfd3bd3907b4bd00d76dc1207ce4dafce5fbd60ebbf7381e0d5bb406e7d940aa&width=1200&height=800&quality=75&smart=true" alt="Imagen 4">
+        <img onclick="document.getElementById('dialogoImagen5').showModal()" src="https://sm.ign.com/t/ign_latam/screenshot/default/chechi_ewwz.1280.jpg" alt="Imagen 5">
+    </div>
+
+    <!--Imagen 1 dialogo-->
+    <dialog id="dialogoImagen1">
+        <img src="https://i.blogs.es/50a1c5/t4yxpvu/840_560.jpeg" alt="Imagen 1">
+        <details>
+            <summary>Descripcion</summary>
+            <p>Luffy es el protagonista del anime One Piece</p>
+        </details>
+        <button class="cerrar"  onclick="document.getElementById('dialogoImagen1').close()">Cerrar</button>
+    </dialog>
+
+    <!--Imagen 2 dialogo-->
+    <dialog id="dialogoImagen2">
+        <img src="https://img.asmedia.epimg.net/resizer/v2/XUK5LKJW7RE7ZFG7DQ5NJ5VRZY.jpg?auth=f3a40ffd18bebb8bdb0f25ada28b0a223efcaf004300a8933269fd9934d72027&width=360&height=203&smart=true" alt="Imagen 2">
+        <details>
+            <summary>Descripcion</summary>
+            <p>Goku es el protagonista del anime Dragon Ball</p>
+        </details>
+        <button class="cerrar"  onclick="document.getElementById('dialogoImagen2').close()">Cerrar</button>
+    </dialog>
+
+    <!--Imagen 3 dialogo-->
+    <dialog id="dialogoImagen3">
+        <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/01/19/imagen-de-naruto.jpeg" alt="Imagen 3">
+        <details>
+            <summary>Descripcion</summary>
+            <p>Naruto es el protagonista del anime Naruto</p>
+        </details>
+        <button class="cerrar"  onclick="document.getElementById('dialogoImagen3').close()">Cerrar</button>
+    </dialog>
+
+    <!--Imagen 4 dialogo-->
+    <dialog id="dialogoImagen4">
+        <img src="https://elcomercio.pe/resizer/v2/6FAR7QTRW5DQ5CMMC3HFHEOC6Y.jpg?auth=cfd3bd3907b4bd00d76dc1207ce4dafce5fbd60ebbf7381e0d5bb406e7d940aa&width=1200&height=800&quality=75&smart=true" alt="Imagen 4">
+        <details>
+            <summary>Descripcion</summary>
+            <p>Tanjiro es el protagonista del anime Kimetsu no Yaiba</p>
+        </details>
+        <button class="cerrar"  onclick="document.getElementById('dialogoImagen4').close()">Cerrar</button>
+    </dialog>
+
+    <!--Imagen 5 dialogo-->
+    <dialog id="dialogoImagen5">
+        <img src="https://sm.ign.com/t/ign_latam/screenshot/default/chechi_ewwz.1280.jpg" alt="Imagen 5">
+        <details>
+            <summary>Descripcion</summary>
+            <p>Saitama es el protagonista del anime One Punch Man</p>
+        </details>
+        <button class="cerrar"  onclick="document.getElementById('dialogoImagen5').close()">Cerrar</button>
+    </dialog>
+</body>
+</html>
