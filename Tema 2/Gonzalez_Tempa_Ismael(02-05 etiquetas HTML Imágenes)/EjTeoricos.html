@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ejercicios Teoricos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h2 {
+      color: #0056b3;
+      margin-top: 20px;
+    }
+    p, ul {
+      background-color: #ffffff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgb(0, 0, 0);
+    }
+    ul {
+      margin-left: 20px;
+    }
+    em {
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h2>1. ¿Cuál es la diferencia principal entre los formatos de imagen rasterizados y los vectoriales?</h2>
+  <p>Las imágenes <strong>rasterizadas</strong> (por ejemplo, JPEG, PNG, GIF) están formadas por una cuadrícula de píxeles. Su calidad depende de la resolución; si escalas una imagen raster más allá de su tamaño, aparece pixelada. Las imágenes <strong>vectoriales</strong> (por ejemplo, SVG) describen formas, líneas y colores mediante fórmulas matemáticas; son escalables sin pérdida de calidad y suelen tener archivos ligeros para gráficos simples.</p>
+
+  <h2>2. ¿Por qué el formato JPEG es el más utilizado para fotografías digitales, y cuáles son las consecuencias de su compresión con pérdida?</h2>
+  <p>JPEG utiliza compresión con pérdida basada en transformadas (DCT), que reduce mucho el tamaño manteniendo una apariencia visual aceptable para fotografías con muchos detalles y degradados. Es popular porque ofrece buena relación calidad/tamaño y amplia compatibilidad.</p>
+  <p>Consecuencias: la compresión con pérdida introduce artefactos (bloqueado, halo, pérdida de detalle fino), degradación acumulativa si se guarda repetidamente, y menos fidelidad en áreas con alto contraste o texturas finas.</p>
+
+  <h2>3. ¿En qué situaciones sería más conveniente usar una imagen PNG en lugar de una JPEG?</h2>
+  <p>Elije PNG cuando necesites:</p>
+  <ul>
+    <li>Transparencia (canal alpha) para superponer imágenes sobre fondos.</li>
+    <li>Imágenes con áreas de color sólido, texto o gráficos con bordes nítidos (capturas de pantalla, iconos, logos simples) donde la compresión sin pérdida mantiene la nitidez.</li>
+    <li>Evitar artefactos de compresión que dañen líneas y texto.</li>
+  </ul>
+
+  <h2>4. El formato GIF tiene limitaciones en su paleta de colores. ¿Cómo afecta esto a la calidad visual y qué ventajas mantiene?</h2>
+  <p>GIF usa una paleta limitada a 256 colores; eso significa pérdida de fidelidad en fotografías o gradientes, provocando posterización y banding. Sin embargo, GIF mantiene ventajas:</p>
+  <ul>
+    <li>Soporte de animación simple ampliamente compatible en navegadores y aplicaciones antiguas.</li>
+    <li>Suficiente para gráficos animados con pocos colores (memes animados, iconos simples).</li>
+    <li>Transparencia binaria (sí/no) para imágenes simples.</li>
+  </ul>
+
+  <h2>5. ¿Qué características hacen del formato SVG una buena opción para logotipos y gráficos escalables en la web?</h2>
+  <p>SVG es vectorial, por lo que:</p>
+  <ul>
+    <li>Escala sin pérdida a cualquier tamaño (pantallas de distintos DPI, impresión, iconos).</li>
+    <li>Se puede editar con código: cambiar colores, aplicar animaciones CSS/JS, manipular elementos DOM.</li>
+    <li>Generalmente ocupa poco espacio para gráficos con formas simples y es accesible (se puede añadir &lt;title&gt; y &lt;desc&gt; para accesibilidad).</li>
+  </ul>
+
+  <h2>6. Compara el formato WEBP con PNG y JPEG. ¿Qué ventajas ofrece en términos de compresión, transparencia y animación?</h2>
+  <p>WEBP (desarrollado por Google) ofrece tanto compresión con pérdida como sin pérdida. Ventajas:</p>
+  <ul>
+    <li>Mejor compresión que JPEG para fotografías (mismo nivel de calidad con menor tamaño) y que PNG para imágenes sin pérdida en muchos casos.</li>
+    <li>Soporta transparencia (canal alpha) en modo sin pérdida y con pérdida.</li>
+    <li>Soporta animación —puede reemplazar GIF con mejor calidad y menor tamaño.</li>
+  </ul>
+  <p>Limitación histórica: compatibilidad variada en navegadores más antiguos, aunque hoy en día la mayoría lo soporta.</p>
+
+  <h2>7. ¿Por qué el formato BMP no se utiliza comúnmente en entornos web, y en qué casos aún puede ser útil?</h2>
+  <p>BMP es un formato de mapa de bits sin compresión (o con compresión limitada), lo que genera archivos muy grandes. No está optimizado para la web por su tamaño y falta de características modernas (transparencia, animación). Aún puede ser útil:</p>
+  <ul>
+    <li>En entornos legacy donde se requiere compatibilidad con software antiguo.</li>
+    <li>En procesamiento de imágenes o pruebas donde se desea un archivo sin compresión para evitar cualquier pérdida en etapas intermedias.</li>
+  </ul>
+
+  <h2>8. Explica las ventajas del formato PSD en el proceso de edición de imágenes profesionales. ¿Qué lo diferencia de los demás formatos?</h2>
+  <p>PSD (Photoshop) guarda la imagen con capas, máscaras, ajustes, modos de fusión, texto editable y metadatos. Ventajas:</p>
+  <ul>
+    <li>Permite edición no destructiva: se conservan las capas y efectos para futuros ajustes.</li>
+    <li>Soporta perfiles de color (ICC), alta profundidad de bits y elementos complejos de diseño.</li>
+    <li>Es un formato de trabajo —no pensado para distribución web final, sino para colaboración y edición.</li>
+  </ul>
+
+  <h2>9. Si un diseñador necesita una imagen con transparencia, buena calidad y tamaño de archivo razonable para una página web moderna, ¿qué formato debería elegir y por qué?</h2>
+  <p>La mejor opción hoy suele ser WEBP (si la compatibilidad del público lo permite): ofrece transparencia (alpha), buena compresión y tamaños menores que PNG manteniendo calidad. Si se requiere compatibilidad máxima, PNG es la alternativa segura por su soporte universal y transparencia sin pérdida.</p>
+
+  <h2>10. Describe las diferencias entre la compresión con pérdida y sin pérdida, indicando qué formatos utilizan cada tipo y en qué casos es preferible uno sobre el otro.</h2>
+  <p>Compresión sin pérdida: reduce tamaño sin eliminar información; al descomprimir se recupera exactamente el archivo original. Usada por PNG, GIF (limitado por paleta), WEBP (modo sin pérdida), ZIP, etc. Preferible para gráficos con texto, iconos, capturas y cuando la fidelidad es crucial.</p>
+  <p>Compresión con pérdida: elimina información considerada menos perceptible para reducir significativamente el tamaño. Usada por JPEG, WEBP (modo con pérdida), ciertos perfiles de HEIF/HEIC. Preferible para fotografías y cuando se necesita ahorrar ancho de banda a costa de alguna pérdida de detalle.</p>
+
+  <p><em>Nota:</em> la elección de formato depende del tipo de imagen, compatibilidad objetivo y prioridades (calidad, transparencia, tamaño o animación).</p>
+</body>
+</html>
