@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas anidadas</title>
+    <style>
+         h2 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+            color: cornflowerblue;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        table table {
+            background-color: gray; 
+            float: left; 
+            width: 50%; 
+            border: 2;
+        }
+        table td {
+            border: 1px solid black;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 3</h2>
+    <table>
+        <tr>
+            <td colspan="2">Climas de América del Sur</td>
+        </tr>
+        <tr>
+            <td>Parte de arriba de América del Sur. Paises como:
+                <table >
+                    <tr>
+                        <td>Venezuela</td>
+                    </tr>
+                    <tr>
+                        <td>Colombia</td>
+                    </tr>
+                    <tr>
+                        <td>Ecuador</td>
+                    </tr>
+                    <tr>
+                        <td>Perú</td>
+                    </tr>
+                </table>
+            </td>
+            <td>Parte de abajo de América del Sur. Países como:
+                <table>
+                    <tr>
+                        <td>Argentina</td>
+                    </tr>
+                    <tr>
+                        <td>Chile</td>
+                    </tr>
+                    <tr>
+                        <td>Uruguay</td>
+                    </tr>
+                    <tr>
+                        <td>Paraguay</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul>
+                    <li>Bosque Tropical</li>
+                    <li>Clima de Sabana</li>
+                    <li>Clima marítimo, con inviernos secos</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Clima marítimo con veranos secos</li>
+                    <li>Climas frios</li>
+                    <li>Climas de Estepa</li>
+                    <li>Clima desértico</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

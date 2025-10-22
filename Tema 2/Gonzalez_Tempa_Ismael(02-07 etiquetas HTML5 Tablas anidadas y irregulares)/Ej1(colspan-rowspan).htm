@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion de celdas colspan y rowspan</title>
+    <style>
+        h2 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+            color: cornflowerblue;
+        }
+        h4 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+            color: black;
+        }
+        .tabla1 {
+            margin-left: auto;
+            margin-right: auto;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+        .tabla1 td {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 1</h2>
+    <h4>Apartado a.</h4>
+    <table class="tabla1">
+        <tr>
+            <td colspan="2">Esta celda tiene un colspan="2"</td>
+        </tr>
+        <tr>
+            <td style="width: 30%;">Celda normal</td>
+            <td style="width: 70%;">Otra celda</td>
+        </tr>
+    </table>
+
+    <h4>Apartado b.</h4>
+    <table class="tabla1">
+        <tr>
+            <td rowspan="2">Esta celda tiene un rowspan="2"</td>
+            <td>Celda normal</td>
+        </tr>
+        <tr>
+            <td>Otra celda normal</td>
+        </tr>
+    </table>
+
+    <h4>Apartado c.</h4>
+    <table class="tabla1" style="background-color: rgb(165, 221, 223); width: 50%;">
+        <tr>
+            <td colspan="2">Linea 1Linea 2</td>
+        </tr>
+        <tr>
+            <td>Linea 3</td>
+            <td>Linea 4</td>
+        </tr>
+        <tr>
+            <td>Linea 5</td>
+            <td rowspan="2">Linea 6Linea 8</td>
+        </tr>
+        <tr>
+            <td>Linea 7</td>
+        </tr>
+    </table>
+
+    <h4>Apartado d.</h4>
+    <table class="tabla1" style="width: 50%;">
+        <tr>
+            <td style="background-color: rgb(152, 221, 235);">Linea 1</td>
+            <td style="background-color: yellow;">Linea 2</td>
+        </tr>
+        <tr>
+            <td style="background-color: greenyellow;">Linea 3</td>
+            <td rowspan="2" style="background-color: rgb(143, 181, 86);">Linea 4
+            Linea 6</td>
+        </tr>
+        <tr>
+            <td rowspan="2" style="background-color: rgb(177, 130, 238);">Linea 5<br>
+            Linea 7</td>
+        </tr>
+        <tr>
+            <td style="background-color: blanchedalmond;">Linea 8</td>
+        </tr>
+    </table>
+
+    <h4>Apartado e1.</h4>
+    <table class="tabla1" style="width: 150px; height: 150px;">
+        <tr>
+            <td>A</td>
+            <td>B</td>
+            <td rowspan="3">C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td rowspan="2">E</td>
+            <td>F</td>
+            <td>H</td>
+        </tr>
+        <tr>
+            <td>J</td>
+            <td>L</td>
+        </tr>
+    </table>
+
+    <h4>Apartado e2.</h4>
+    <table class="tabla1" style="width: 150px; height: 150px;">
+        <tr>
+            <td colspan="2">A</td>
+            <td>C</td>
+            <td>D</td>
+        </tr>
+        <tr>
+            <td colspan="3">E</td>
+            <td>H</td>
+        </tr>
+        <tr>
+            <td>I</td>
+            <td>J</td>
+            <td>K</td>
+            <td>L</td>
+        </tr>
+    </table>
+</body>
+</html>

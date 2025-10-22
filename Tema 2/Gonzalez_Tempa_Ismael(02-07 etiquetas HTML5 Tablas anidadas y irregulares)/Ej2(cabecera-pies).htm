@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla cabecera, pies, cuerpo</title>
+    <style>
+        h2 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+            color: cornflowerblue;
+        }
+        table {
+            width: 100%;
+            height: 100%;
+            border-collapse: collapse;
+        }
+        table thead {
+            background-color: aqua;
+            text-align: center;
+        }
+        table tbody {
+            background-color: rgb(176, 222, 222);
+        }
+        table tfoot {
+            background-color: brown;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>Ejercicio 2</h2>
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2">Cabecera</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2" style="width: 100px;">
+                    Ejercicio 1<br>
+                    Ejercicio 2<br>
+                    Ejercicio 3<br>
+                    Ejercicio 4<br>
+                    Ejercicio 5<br>
+                    Ejercicio 6<br>
+                    Ejercicio 7<br>
+                    Ejercicio 8
+                </td>
+                <td style="width: 300px;"><b>Contenido</b></td>
+            </tr>
+            <tr>
+                <td style="width: 80%;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae semper orci. Integer euismod, lorem nec tristique convallis, ligula nunc finibus velit, ac finibus sapien nulla at orci. Nullam eget nisl eu augue luctus fermentum. Duis nec ipsum nec justo tristique consequat. Etiam a magna id nisl fermentum tincidunt. Fusce finibus magna nec erat bibendum, ac feugiat sapien dignissim. Nullam convallis mauris a metus commodo, in tempor risus viverra. Etiam fermentum orci vel tortor volutpat gravida. Integer eget diam euismod, ullamcorper lorem sed, facilisis sapien.
+
+                <p>Donec tempor eros vitae tellus faucibus, non blandit velit sodales. Nunc sagittis justo vitae dolor viverra, a porta arcu varius. Vestibulum eu tincidunt velit. Aliquam erat volutpat. Sed ut fringilla mi. Vivamus ultrices convallis magna in lacinia. Curabitur nec lacus id mi suscipit tincidunt. Morbi laoreet fermentum erat, sed pretium justo iaculis sit amet. Mauris nec libero justo. Aenean nec enim vitae magna rhoncus porta. Nulla non efficitur eros, vel facilisis lacus. Duis vitae sem sit amet leo porta iaculis.</p>
+
+                <p>Sed lobortis orci non arcu rhoncus pretium. Sed non fermentum justo, sed iaculis neque. Maecenas vulputate lorem quis arcu porta, id viverra purus vestibulum. In id ex vel ligula suscipit hendrerit. Aenean sagittis mi at justo fermentum, sit amet scelerisque lorem bibendum. Sed congue pulvinar nibh, non porta nisi fermentum vel. Suspendisse potenti. Pellentesque eleifend tempor tortor, et congue est tempus non. Sed malesuada, risus nec aliquam sagittis, arcu ante malesuada urna, nec eleifend massa erat id augue. Curabitur non feugiat sem. Nam porttitor tincidunt est, et luctus augue.</p>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th colspan="2">Pies</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
