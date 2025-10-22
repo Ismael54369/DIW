@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Ejercicio1</title>
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1" />
+    <style>
+        img[usemap] {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Image map </h1>
+    </header>
+
+    <img src="./imgs/imagemap_cuadrado.jpg" usemap="#cuadrado" />
+    <map name="cuadrado">
+        <area shape="rect" coords="19,30,330,120" alt="Hardware" href="#hardware" title="Hardware">
+        <area shape="rect" coords="368, 12, 685, 133" href="#super" alt="Super Mini">
+        <area shape="rect" coords="366, 164, 686, 285" href="#dig" alt="Digg this">
+        <area shape="rect" coords="368, 316, 684, 436" href="#comments" alt="Comments">
+        <area shape="rect" coords="11, 162, 331, 284" href="#dirty" alt="I´m very dirty">
+        <area shape="rect" coords="12, 315, 332, 436" href="#text" alt="Text only">
+    </map>
+
+    <br>
+    <img src="./imgs/imagemap_circulo.jpg" usemap="#circulo" />
+    <map name="circulo">
+        <area shape="circle" coords="145, 109, 26" alt="Rojo" href="#hardware" title="Rojo">
+        <area shape="circle" coords="229, 107, 26" href="#super" alt="Azul">
+        <area shape="circle" coords="312, 108, 26" href="#dig" alt="Verde">
+        <area shape="circle" coords="398, 107, 26" href="#comments" alt="Amarillo">
+    </map>
+    
+    <br>
+    <img src="./imgs/imagemap_poly.jpg" usemap="#poly" />
+    <map name="poly">
+        <area shape="poly" coords="263,151,273,124,252,104,275,79,361,127,368,149" alt="axarquia" href="#hardware" title="axarquia">
+        <area shape="poly" coords="251,104,201,107,211,133,214,153,199,174,231,167,261,152,269,124" href="#super" alt="Malaga">
+        <area shape="poly" coords="124,161,146,141,153,122,179,102,201,107,206,129,212,151,206,161,200,172,177,182" href="#dig" alt="Guadalhorce">
+        <area shape="poly" coords="232,167,221,184,187,204,128,214,76,246,60,221,81,199,90,204,129,165,172,182" href="#dirty" alt="Occidental">
+        <area shape="poly" coords="59,215,45,192,13,200,13,188,44,172,65,159,74,136,67,120,80,108,90,120,104,120,116,105,121,110,128,110,138,111,144,113,148,121,145,135,123,163,116,175,93,200" href="#text" alt="Ronda">
+        <area shape="poly" coords="115,101,105,80,112,76,125,71,135,68,147,60,150,51,145,42,154,43,163,38,172,45,183,38,186,29,185,23,203,25,211,29,216,34,231,31,242,19,253,22,258,32,262,41,268,56,269,70,273,79,260,93,253,102,236,106,201,107,179,99,160,118" href="#comments" alt="Antequera">
+    </map>
+
+    <br>
+    <img src="./imgs/imagemap_europa.jpg" usemap="#image-map">
+
+    <map name="image-map">
+        <area target="_blank" alt="rusia" title="rusia" href="https://es.wikipedia.org/wiki/Rusia" coords="176,20,176,32,177,40,184,56,180,74,178,91,188,99,197,118,208,124,221,126,227,129,229,139,226,150,224,155,240,160,265,160,272,160,265,135,251,124,251,114,257,113,262,101,273,100,284,90,289,90,290,1,227,0,224,11,213,26,205,19,207,30,202,36,198,43,193,48,183,35,191,32,194,36,200,29,192,23" shape="poly">
+        <area target="_blank" alt="españa" title="españa" href="https://es.wikipedia.org/wiki/Espa%C3%B1a" coords="37,158,42,152,52,156,62,160,85,174,76,180,68,185,63,194,54,198,44,199,36,191,36,183,41,173,46,167" shape="poly">
+        <area target="_blank" alt="francia" title="francia" href="https://es.wikipedia.org/wiki/Francia" coords="68,161,74,150,70,139,65,132,73,132,80,131,92,125,105,136,109,139,104,150,103,158,106,168,101,172,89,168,86,173" shape="poly">
+        <area target="_blank" alt="portugal" title="portugal" href="https://es.wikipedia.org/wiki/Portugal" coords="36,160,29,173,26,185,31,188,36,182,40,171,43,165" shape="poly">
+        <area target="_blank" alt="italia" title="italia" href="https://es.wikipedia.org/wiki/Italia" coords="106,167,105,158,110,156,118,155,124,154,128,155,128,161,125,168,129,173,136,183,144,186,149,193,141,191,142,197,139,203,134,192,123,184,118,177,116,167" shape="poly">
+        <area target="_blank" alt="alemania" title="alemania" href="https://es.wikipedia.org/wiki/Alemania" coords="115,111,112,117,108,122,111,134,109,142,113,144,118,147,129,145,132,139,131,131,137,129,138,115,133,110,123,108" shape="poly">
+        <area target="_blank" alt="gran bretaña" title="gran bretaña" href="https://es.wikipedia.org/wiki/Reino_Unido" coords="81,75,78,84,69,94,75,97,79,101,72,107,69,114,64,119,74,119,87,119,93,111,88,85,87,77" shape="poly">
+        <area target="_blank" alt="noruega" title="noruega" href="https://es.wikipedia.org/wiki/Noruega" coords="136,62,131,83,120,88,112,82,115,64,130,53,138,42,146,28,159,16,175,17,156,29,147,34,143,46,140,54" shape="poly">
+        <area target="_blank" alt="suecia" title="suecia" href="https://es.wikipedia.org/wiki/Suecia" coords="135,80,132,87,132,100,139,100,144,95,147,85,151,78,148,64,155,57,160,45,164,41,160,30,150,33,147,42,141,52,134,62,132,71" shape="poly">
+        <area target="_blank" alt="finlandia" title="finlandia" href="https://es.wikipedia.org/wiki/Finlandia" coords="160,57,159,73,164,77,174,73,180,68,183,56,178,30,174,23,165,28,162,36,166,42,166,48" shape="poly">
+        <area target="_blank" alt="polonia" title="polonia" href="https://es.wikipedia.org/wiki/Polonia" coords="139,113,138,124,139,130,145,133,151,137,160,138,165,142,169,134,169,124,171,116,163,110,151,109" shape="poly">
+        <area target="_blank" alt="ucrania" title="ucrania" href="https://es.wikipedia.org/wiki/Ucrania" coords="170,126,170,135,167,144,177,145,183,144,190,144,194,153,188,158,192,160,201,151,208,153,218,147,225,138,227,131,218,127,209,125,201,121,192,125,180,125" shape="poly">
+    </map>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1> <a name="hardware"> hardware / Rojo / Axarquia</a></h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1><a name="super"> super / Cyan / Malaga </a></h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1> <a name="dig"> Digg / Verde / Valle del Guadalhorce</a></h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1><a name="comments"> Comments / Amarillo / Antequera</a></h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1> <a name="dirty"> Dirty / Costa Occidental</a></h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <h1><a name="text"> Text / Ronda</a></h1>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rwdImageMaps/1.6/jquery.rwdImageMaps.min.js"></script>
+    <script src="./imgs/imageMapResizer.min.js"></script>
+</body>
+</html>
