@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Formularios</h1>
+    <h2>¿En qué consiste el funcionamiento de los formularios?</h2>
+    <p>
+        Un formulario en HTML es, en esencia, un conjunto de elementos que permiten a un usuario introducir datos y enviarlos a un servidor para que sean procesados. Piensa en ellos como la versión digital de un formulario de papel que rellenas en una oficina.
+    </p>
+    <p>El proceso completo se puede resumir en los siguientes pasos:</p>
+    <ol>
+        <li>
+            <strong>Recopilación de Datos en el Cliente (Navegador):</strong>
+            El usuario ve una serie de campos en la página web, como cuadros de texto (para el nombre), campos de contraseña, botones de opción (para seleccionar una de varias opciones), casillas de verificación (para marcar una o más opciones), menús desplegables, etc. Estos elementos se definen con etiquetas como <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code> o <code>&lt;select&gt;</code>, todas contenidas dentro de una etiqueta principal <code>&lt;form&gt;</code>.
+        </li>
+        <li>
+            <strong>Envío de Datos:</strong>
+            Una vez que el usuario ha rellenado la información, hace clic en un botón de envío (normalmente un <code>&lt;input type="submit"&gt;</code>). Esta acción le indica al navegador que debe recoger todos los datos de los campos del formulario.
+        </li>
+        <li>
+            <strong>Empaquetado y Transmisión:</strong>
+            El navegador agrupa los datos en pares de "nombre" y "valor". Cada campo del formulario tiene un atributo <code>name</code> que actúa como identificador, y el "valor" es lo que el usuario ha escrito o seleccionado. Por ejemplo: <code>nombreUsuario=Ismael</code>. Luego, envía este paquete de datos a la URL especificada en el atributo <code>action</code> de la etiqueta <code>&lt;form&gt;</code>.
+        </li>
+        <li>
+            <strong>Método de Envío (GET o POST):</strong>
+            La forma en que se envían los datos la define el atributo <code>method</code>:
+            <ul>
+                <li><strong>GET:</strong> Los datos se adjuntan a la URL (ej: <code>www.servidor.com/procesar?nombreUsuario=Ismael</code>). Es visible, menos seguro y tiene un límite de caracteres. Se usa principalmente para búsquedas.</li>
+                <li><strong>POST:</strong> Los datos se envían en el cuerpo de la solicitud HTTP, de forma oculta. Es más seguro y no tiene límite de tamaño, por lo que es ideal para contraseñas, datos personales o grandes cantidades de información.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Procesamiento en el Servidor:</strong>
+            Un script en el servidor (escrito en un lenguaje como PHP, Python, Java, etc.) recibe los datos, los valida y realiza una acción con ellos: guardarlos en una base de datos, autenticar a un usuario, enviar un correo electrónico, etc. Finalmente, el servidor suele devolver una nueva página HTML al usuario como respuesta (por ejemplo, una página de confirmación o su perfil de usuario).
+        </li>
+    </ol>
+</body>
+</html>

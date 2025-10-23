@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="#" method="get">
+        <label for="nombre">Nombre:</label>
+        <input type="text" pattern="[A-Za-z]*" name="nombre" id="nombre" required autofocus>
+        <br>
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" pattern="[A-Za-z ]*" name="apellidos" id="apellidos" required>
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="number" pattern="[0-9]*" name="edad" id="edad" required>
+        <br>
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" pattern="[A-Za-z0-9]{5}" name="contraseña" id="contraseña">
+        <br>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpiar">
+    </form>
+</body>
+</html>

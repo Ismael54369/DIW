@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <h1>Formulario</h1>
+    <form action="#" method="get">
+        <label for="datos">Nombre y apellidos:</label>
+        <input type="text" pattern="[A-Za-z ]*" name="nombre" id="datos" required><br>
+        
+        <label for="personas">Numero de personas:</label>
+        <input type="number" min="1" name="personas" id="personas" required><br>
+        
+        <label for="telefono">Numero de contacto:</label>
+        <input type="tel" name="telefono" id="telefono"><br>
+        
+        <label for="email">Email de contacto:</label>
+        <input type="email" name="email" id="email"><br>
+
+        <label for="fecha">Fecha de la reserva</label>
+        <input type="date" name="fecha" id="fecha"><br>
+
+        <label for="hora">Hora de la reserva</label>
+        <input type="time" name="hora" id="hora"><br>
+
+        <input type="submit" name="Enviar" value="Enviar">
+    </form>
+</body>
+</html>

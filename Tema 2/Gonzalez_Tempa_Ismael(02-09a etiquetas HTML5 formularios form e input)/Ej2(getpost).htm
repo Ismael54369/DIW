@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <h1>Ejercicio 2</h1>
+    <h2>Paso de datos mediante GET y POST</h2>
+    <p>
+        Cuando un usuario rellena un formulario y pulsa el botón de enviar, los datos se transmiten a un servidor. Los métodos <strong>GET</strong> y <strong>POST</strong> son las dos formas principales de realizar este envío. La elección entre uno y otro depende del tipo de información y de la acción que se quiera realizar.
+    </p>
+
+    <h3>Método GET</h3>
+    <p>
+        El método GET envía los datos del formulario añadiéndolos directamente a la URL. Es como si enviaras una postal: el mensaje está a la vista de todos.
+    </p>
+    <p>La URL resultante se ve así: <code>pagina.php?nombre=Ismael&ciudad=Madrid</code></p>
+    <ul>
+        <li><strong>Ventajas:</strong>
+            <ul>
+                <li>Permite que la URL sea guardada en marcadores o compartida, ya que contiene todos los datos necesarios para "recrear" la página.</li>
+                <li>Es ideal para operaciones que no modifican datos, como búsquedas o filtros.</li>
+            </ul>
+        </li>
+        <li><strong>Desventajas:</strong>
+            <ul>
+                <li><strong>Inseguro:</strong> Toda la información es visible en la barra de direcciones y en el historial del navegador. Nunca debe usarse para contraseñas o datos personales.</li>
+                <li><strong>Limitado:</strong> Las URLs tienen una longitud máxima, por lo que no se puede enviar una gran cantidad de datos.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>Método POST</h3>
+    <p>
+        El método POST envía los datos de forma "oculta" en el cuerpo de la solicitud HTTP. Es como enviar una carta dentro de un sobre cerrado: el contenido es privado.
+    </p>
+    <p>La URL se mantiene limpia, sin mostrar los datos enviados: <code>pagina.php</code></p>
+    <ul>
+        <li><strong>Ventajas:</strong>
+            <ul>
+                <li><strong>Seguro:</strong> Es la forma correcta de enviar información sensible (contraseñas, datos bancarios, etc.), ya que los datos no son visibles.</li>
+                <li><strong>Sin límite de tamaño:</strong> Permite enviar grandes volúmenes de información, incluyendo la subida de archivos.</li>
+            </ul>
+        </li>
+        <li><strong>Desventajas:</strong>
+            <ul>
+                <li>La página resultante no se puede guardar en marcadores.</li>
+                <li>Si el usuario recarga la página, el navegador mostrará una advertencia para confirmar el reenvío de los datos, lo que puede ser confuso.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <hr>
+    <h3>Ejemplo con GET (Búsqueda)</h3>
+    <p>Fíjate en la barra de direcciones después de pulsar "Buscar".</p>
+    <form action="" method="get">
+        <label for="search_get">Buscar:</label>
+        <input type="text" id="search_get" name="termino_busqueda">
+        <input type="submit" value="Buscar con GET">
+    </form>
+
+    <h3>Ejemplo con POST (Inicio de Sesión)</h3>
+    <p>
+        Originalmente, este formulario usaría <code>method="post"</code> para ocultar la contraseña. 
+        Sin embargo, al probarlo en un archivo local (sin un servidor que procese los datos), esto da un error.
+        Para evitarlo en este ejemplo, lo he cambiado a <code>method="get"</code>. La contraseña es <strong>visible</strong> en la URL, demostrando por qué POST es crucial para la seguridad.
+    </p>
+    <form action="" method="get">
+        <label for="user_post">Usuario:</label>
+        <input type="text" id="user_post" name="usuario"><br>
+        <label for="pass_post">Contraseña:</label>
+        <input type="password" id="pass_post" name="contrasena"><br>
+        <input type="submit" value="Enviar (simulando POST con GET)">
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <h1>Atributos</h1>
+    <p>
+        
+        Además de los atributos <code>action</code> y <code>method</code>, la etiqueta <code>&lt;form&gt;</code> tiene otros atributos importantes que controlan su comportamiento. A continuación se explican algunos de los más comunes:
+    </p>
+    
+    <h3><code>accept-charset</code></h3>
+    <p>
+        Especifica el conjunto o conjuntos de caracteres que el servidor puede aceptar para el procesamiento del formulario. Por ejemplo, <code>accept-charset="UTF-8"</code> indica que los datos se enviarán codificados en UTF-8. Si no se especifica, hereda el del documento.
+    </p>
+
+    <h3><code>autocomplete</code></h3>
+    <p>
+        Indica si el navegador debe autocompletar los campos del formulario basándose en datos que el usuario ha introducido previamente. Puede tener los valores <code>"on"</code> (activado, por defecto) o <code>"off"</code> (desactivado). Es útil desactivarlo en campos con información sensible.
+    </p>
+
+    <h3><code>enctype</code></h3>
+    <p>
+        Define cómo se deben codificar los datos del formulario antes de enviarlos al servidor, pero solo se aplica cuando <code>method="post"</code>. Los valores más comunes son <code>application/x-www-form-urlencoded</code> (valor por defecto), <code>multipart/form-data</code> (necesario si el formulario permite subir archivos) y <code>text/plain</code>.
+    </p>
+
+    <h3><code>novalidate</code></h3>
+    <p>
+        Es un atributo booleano. Si está presente, le indica al navegador que no debe validar los campos del formulario antes de enviarlo. Esto anula las validaciones nativas de HTML5 como <code>required</code> o <code>type="email"</code>.
+    </p>
+
+    <h3><code>target</code></h3>
+    <p>
+        Especifica dónde se mostrará la respuesta recibida después de enviar el formulario. Funciona igual que el atributo <code>target</code> de los enlaces (<code>&lt;a&gt;</code>). Los valores comunes son <code>_self</code> (en la misma ventana, por defecto), <code>_blank</code> (en una nueva pestaña o ventana), <code>_parent</code> o <code>_top</code>.
+    </p>
+</body>
+</html>
