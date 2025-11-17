@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- METAS (Ejercicio 1: al menos 6 metas) -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Simulacro práctico resuelto de DIW (2º DAW). Ejercicios completos solo con HTML.">
+  <meta name="author" content="Alumno DAW2 - Simulacro Resuelto">
+  <meta name="keywords" content="DIW, DAW, HTML5, examen, simulacro, práctica">
+  <meta name="grupo" content="DAW2-A">
+  <title>Simulacro DIW - Resuelto</title>
+</head>
+<body>
+  <!-- HEADER / Estructura básica (Ejercicio1) -->
+  <header>
+    <h1>Examen DIW - Simulacro resuelto</h1>
+    <p>Documento con todas las soluciones prácticas (solo HTML).</p>
+  </header>
+
+  <!-- NAV (usado en examen_final) -->
+  <nav>
+    <a href="#listas">Listas</a> |
+    <a href="#tablas">Tablas</a> |
+    <a href="#formulario">Formulario</a> |
+    <a href="#mapa-img">Mapa de imagen</a>
+  </nav>
+
+  <main>
+
+    <!-- EJERCICIO 2: Bloque vs Línea con combinaciones irregulares -->
+    <section>
+      <h2>Ejercicio 2 - Bloque vs Línea (combinaciones)</h2>
+      <!-- Un div (bloque) que contiene inline y bloques mezclados -->
+      <div>
+        <p>Parrafo inicio. Contiene un <span>span en línea</span> seguido de un <strong>strong</strong>.</p>
+        <!-- Inserto un elemento en línea envuelto en bloque de forma 'incorrecta' -> <p> contiene un <span> con <div> dentro (válido en HTML5 pero raro) -->
+        <p>Segundo párrafo con inline: <span>texto inline <div>DIV dentro de span (raro)</div></span></p>
+        <!-- Comentario explicativo: el resultado se verá raro porque los elementos de bloque (div) dentro de inline rompen el flujo normal y los navegadores ajustan colocación -->
+        <!-- Nota: HTML5 permite algunos anidamientos, pero semánticamente es confuso y puede romper formato. -->
+      </div>
+    </section>
+
+    <!-- EJERCICIO 3: Listas avanzadas -->
+    <section id="listas">
+      <h2>Ejercicio 3 - Listas avanzadas</h2>
+
+      <!-- Lista ordenada con sublista que empieza en 5 -->
+      <ol>
+        <li>Primer paso</li>
+        <li>Segundo paso</li>
+        <li>Subpasos:
+          <ol start="5">
+            <li>Quinto</li>
+            <li>Sexto</li>
+          </ol>
+        </li>
+      </ol>
+
+      <!-- Lista de definiciones con dd que contiene dos párrafos -->
+      <dl>
+        <dt>HTML</dt>
+        <dd>
+          <p>Lenguaje de marcado para estructurar páginas web.</p>
+          <p>Se utiliza con etiquetas como &lt;div&gt;, &lt;p&gt;, &lt;a&gt;...</p>
+        </dd>
+        <dt>CSS</dt>
+        <dd>Hojas de estilo en cascada para presentar contenido HTML.</dd>
+      </dl>
+
+      <!-- Lista mixta intencionalmente irregular -->
+      <ul>
+        <li>Elemento UL 1</li>
+        <li>Elemento UL 2
+          <ol>
+            <li>Elemento OL dentro de UL (mezcla intencional)</li>
+            <li>Elemento OL 2</li>
+          </ol>
+        </li>
+      </ul>
+    </section>
+
+    <!-- EJERCICIO 4: Enlaces complejos -->
+    <section>
+      <h2>Ejercicio 4 - Enlaces</h2>
+      <!-- 1. Enlace a archivo descargable ficticio -->
+      <p><a href="/files/informe-final.pdf" download>Descargar informe final (ficticio)</a></p>
+
+      <!-- 2. Enlace a ID dentro de la misma página -->
+      <p><a href="#formulario">Ir al formulario</a></p>
+
+      <!-- 3. Enlace mailto con asunto y cuerpo -->
+      <p><a href="mailto:profesor@ejemplo.com?subject=Consulta%20Examen&body=Hola%20profesor,%0D%0AQuisiera%20consultar...">Enviar correo al profesor</a></p>
+
+      <!-- 4. Abrir Google pero sin usar target="_blank" (usamos rel="noopener" y un script comentado sugiere abrir en nueva ventana con JS; pero aquí solo HTML: usamos a.href con rel="noopener" - nota: abrir nueva ventana sin target no es estándar, se usa target, así que profesor puede proponerte usar target; dejaremos un enlace normal con rel) -->
+      <p><a href="https://www.google.com" rel="noopener">Ir a Google (rel noopener)</a></p>
+    </section>
+
+    <!-- EJERCICIO 5: Imágenes y comportamientos -->
+    <section>
+      <h2>Ejercicio 5 - Imágenes</h2>
+      <!-- 1. Imagen correcta -->
+      <p><img src="https://via.placeholder.com/400x200.png?text=Imagen+valida" alt="Imagen válida ejemplo" style="max-width:200px;height:auto;"></p>
+
+      <!-- 2. Imagen rota con alt describiendo -->
+      <p><img src="/imagenes/esto-no-existe.png" alt="Imagen rota: debería mostrar un diagrama del flujo del sistema"></p>
+
+      <!-- 3. Imagen con ancho al 20% (relativo al contenedor) -->
+      <p><img src="https://via.placeholder.com/800x400.png?text=20%+width" alt="Imagen al 20%" style="width:20%;height:auto;"></p>
+
+      <!-- 4. Imagen que al hacer clic lleva a otra parte de la página -->
+      <p><a href="#listas"><img src="https://via.placeholder.com/150.png?text=Ir+a+Listas" alt="Ir a Listas"></a></p>
+    </section>
+
+    <!-- EJERCICIO 6 & 7: Tablas complejas y mapa de imagen -->
+    <section id="tablas">
+      <h2>Ejercicio 6 - Tabla compleja (anidada)</h2>
+
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Enc1</th>
+            <th>Enc2</th>
+            <th>Enc3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>A1</td>
+            <td>A2</td>
+            <td>A3</td>
+          </tr>
+          <tr>
+            <!-- Segunda fila: primera celda rowspan=2 -->
+            <td rowspan="2">B1 (rowspan=2)</td>
+            <!-- segunda celda contiene otra tabla 2x2 -->
+            <td>
+              <table border="1">
+                <tr><td>Inner 1</td><td>Inner 2</td></tr>
+                <tr><td>Inner 3</td><td>Inner 4</td></tr>
+              </table>
+            </td>
+            <td>B3</td>
+          </tr>
+          <tr>
+            <!-- Tercera fila debido al rowspan de B1 -->
+            <td></td>
+            <td>C2</td>
+          </tr>
+          <tr>
+            <td colspan="3" style="text-align:center;">Fila con colspan=3</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>Ejercicio 7 - Mapa de imagen complejo</h2>
+      <p>
+        <img src="https://via.placeholder.com/600x200.png?text=Mapa+de+Imagen" alt="Mapa ejemplo" usemap="#ejemplo-map">
+        <map name="ejemplo-map" id="ejemplo-map">
+          <!-- Rectángulo: coords = left,top,right,bottom -->
+          <area shape="rect" coords="10,10,200,150" href="https://www.example.com/rect" alt="Rectangulo">
+          <!-- Círculo: center-x,center-y,radius -->
+          <area shape="circle" coords="300,100,50" href="https://www.example.com/circle" alt="Circulo">
+          <!-- Polígono: x1,y1,x2,y2,... -->
+          <area shape="poly" coords="400,10,500,10,550,100,450,180" href="https://www.example.com/poly" alt="Poligono">
+        </map>
+      </p>
+    </section>
+
+    <!-- EJERCICIO 8: Formulario nivel diabólico -->
+    <section id="formulario">
+      <h2>Ejercicio 8 - Formulario completo (todos los elementos)</h2>
+      <form action="/submit" method="post" enctype="multipart/form-data">
+        <!-- Fieldset 1: Datos personales -->
+        <fieldset>
+          <legend>Datos personales</legend>
+          <label for="nombre">Nombre:</label>
+          <input type="text" id="nombre" name="nombre">
+          <br>
+
+          <label for="email">Email (obligatorio):</label>
+          <input type="email" id="email" name="email" required>
+          <br>
+
+          <label for="telefono">Teléfono (9 dígitos):</label>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" placeholder="600123456" required>
+          <br>
+
+          <label for="nacimiento">Fecha de nacimiento:</label>
+          <input type="date" id="nacimiento" name="nacimiento">
+          <br>
+
+          <label for="colorfav">Color favorito:</label>
+          <input type="color" id="colorfav" name="colorfav" value="#ff0000">
+          <br>
+
+          <label for="avatar">Avatar (archivo):</label>
+          <input type="file" id="avatar" name="avatar" accept="image/*">
+        </fieldset>
+
+        <!-- Fieldset 2: Preferencias -->
+        <fieldset>
+          <legend>Preferencias</legend>
+
+          <p>Checkboxes:</p>
+          <input type="checkbox" id="chk1" name="interes" value="web"><label for="chk1">Web</label>
+          <input type="checkbox" id="chk2" name="interes" value="movil"><label for="chk2">Móvil</label>
+          <br>
+
+          <p>Radio (3 opciones):</p>
+          <input type="radio" id="r1" name="nivel" value="bajo"><label for="r1">Bajo</label>
+          <input type="radio" id="r2" name="nivel" value="medio" checked><label for="r2">Medio</label>
+          <input type="radio" id="r3" name="nivel" value="alto"><label for="r3">Alto</label>
+          <br>
+
+          <!-- Select con optgroup -->
+          <label for="curso">Curso preferido:</label>
+          <select id="curso" name="curso">
+            <optgroup label="Frontend">
+              <option value="html">HTML</option>
+              <option value="css">CSS</option>
+            </optgroup>
+            <optgroup label="Backend">
+              <option value="node">Node.js</option>
+              <option value="php">PHP</option>
+            </optgroup>
+          </select>
+          <br>
+
+          <!-- Datalist ligado a un input -->
+          <label for="ciudad">Ciudad (datalist):</label>
+          <input list="ciudades" id="ciudad" name="ciudad">
+          <datalist id="ciudades">
+            <option value="Madrid"></option>
+            <option value="Barcelona"></option>
+            <option value="Valencia"></option>
+            <option value="Sevilla"></option>
+          </datalist>
+          <br>
+
+          <!-- Número obligatorio -->
+          <label for="edad">Edad (obligatoria):</label>
+          <input type="number" id="edad" name="edad" required min="1" max="120">
+          <br>
+
+          <!-- Progress y Meter -->
+          <label for="progreso">Progreso de curso:</label>
+          <progress id="progreso" value="45" max="100">45%</progress>
+          <br>
+
+          <label for="nota">Nota estimada:</label>
+          <meter id="nota" value="6" min="0" max="10">6/10</meter>
+        </fieldset>
+
+        <!-- Botones -->
+        <button type="submit">Enviar</button>
+        <button type="reset">Reset</button>
+        <button type="button">Botón normal (sin acción)</button>
+      </form>
+    </section>
+
+    <!-- EJERCICIO 9: Google Maps estructura obligatoria -->
+    <section>
+      <h2>Ejercicio 9 - Google Maps (contenedor)</h2>
+      <!-- Contenedor para Google Maps -->
+      <div id="map" style="width:600px;height:400px;border:1px solid #ccc;">Mapa - contenedor</div>
+      <!-- Comentario sobre dónde iría el script:
+           - El script de la API de Google Maps se insertaría justo antes del cierre de </body> o después del div #map.
+           - Ejemplo (no añadido por ser solo HTML en este ejercicio):
+             <script async src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap"></script>
+           - Y se necesita una función initMap en JS que instancie el mapa: new google.maps.Map(document.getElementById('map'), {center:{lat:...,lng:...}, zoom: 12});
+      -->
+    </section>
+
+    <!-- EJERCICIO 10: Página final integradora -->
+    <section>
+      <h2>Ejercicio 10 - Página final (examen_final.html integrado aquí)</h2>
+
+      <!-- Header con logo clicable -->
+      <header>
+        <a href="#top"><img src="https://via.placeholder.com/100x50.png?text=Logo" alt="Logo clicable"></a>
+        <h3>Mi Página Final</h3>
+      </header>
+
+      <!-- Nav con 4 enlaces internos -->
+      <nav>
+        <a href="#inicio">Inicio</a> |
+        <a href="#servicios">Servicios</a> |
+        <a href="#contacto">Contacto</a> |
+        <a href="#formulario">Formulario</a>
+      </nav>
+
+      <!-- Sección con párrafo, lista, tabla, imagen con mapa -->
+      <section id="inicio">
+        <p>Bienvenido al examen final integrado. Este apartado contiene ejemplos combinados.</p>
+
+        <ul>
+          <li>Elemento 1</li>
+          <li>Elemento 2</li>
+          <li>Elemento 3</li>
+        </ul>
+
+        <table border="1">
+          <tr><th>Producto</th><th>Precio</th></tr>
+          <tr><td>App</td><td>20€</td></tr>
+        </table>
+
+        <!-- Imagen con mapa (reutilizo un mapa simple) -->
+        <img src="https://via.placeholder.com/300x100.png?text=Mapa+mini" alt="Mapa mini" usemap="#mini-map">
+        <map name="mini-map">
+          <area shape="rect" coords="0,0,100,50" href="#servicios" alt="servicios">
+          <area shape="rect" coords="100,0,200,50" href="#contacto" alt="contacto">
+        </map>
+      </section>
+
+      <!-- Aside y Article -->
+      <aside>
+        <p>Información adicional / enlaces rápidos.</p>
+      </aside>
+
+      <article>
+        <h3>Artículo de prueba</h3>
+        <p>Texto de ejemplo para el artículo principal.</p>
+      </article>
+
+      <!-- Footer con enlaces -->
+      <footer>
+        <p>
+          <a href="https://www.example.org">Enlace externo 1</a> |
+          <a href="https://www.example.com">Enlace externo 2</a> |
+          <a href="#inicio">Enlace interno</a>
+        </p>
+        <p>&copy; 2025 - Simulacro DIW</p>
+      </footer>
+
+    </section>
+
+  </main>
+
+  <!-- Footer general -->
+  <footer>
+    <small>Documento entregable - examen resuelto (solo HTML)</small>
+  </footer>
+
+</body>
+</html>
