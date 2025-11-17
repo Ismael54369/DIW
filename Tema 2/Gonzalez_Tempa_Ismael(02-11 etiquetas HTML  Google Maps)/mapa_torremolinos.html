@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Torremolinos con Coordenadas</title>
+    <!-- Enlace al CSS de Bootstrap 5 desde un CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Estilo para asegurar que el iframe se vea bien */
+        iframe {
+            border-radius: 0.375rem; /* Bordes redondeados como los de Bootstrap */
+            border: 1px solid #dee2e6; /* Borde sutil */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor principal de Bootstrap para centrar y dar márgenes -->
+    <div class="container mt-4">
+
+        <header class="p-3 mb-4 bg-light rounded-3">
+            <h1 class="display-5">Mapa de Torremolinos (con Coordenadas X/Y)</h1>
+            <p class="lead">A continuación se muestra un mapa de Torremolinos y una explicación de cómo se genera su URL.</p>
+        </header>
+
+        <!-- Fila de Bootstrap para organizar el contenido -->
+        <div class="row">
+            <!-- Columna para el mapa -->
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="h4 mb-0">Mapa Interactivo</h2>
+                    </div>
+                    <div class="card-body">
+                        <!-- El iframe que contiene el mapa de Google -->
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25611.99903328114!2d-4.517450820898438!3d36.62380540000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f96c91f63a6d%3A0x29c44f3af56a38a1!2sTorremolinos%2C%20M%C3%A1laga!5e0!3m2!1ses!2ses!4v1731352800000!5m2!1ses!2ses" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" d
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna para la explicación -->
+            <div class="col-12">
+                <div class="alert alert-info" role="alert">
+                    <h4 class="alert-heading">¿Cómo se genera la URL del mapa?</h4>
+                    <p>
+                        Los mapas en la web, como Google Maps, utilizan un sistema de coordenadas geográficas para ubicar cualquier punto en la Tierra. Este sistema es muy parecido a un plano cartesiano con ejes X e Y:
+                    </p>
+                    <ul>
+                        <li><strong>Coordenada Y (Latitud):</strong> Representa la posición Norte-Sur. Para Torremolinos, es aproximadamente <strong>36.6238</strong>.</li>
+                        <li><strong>Coordenada X (Longitud):</strong> Representa la posición Este-Oeste. Para Torremolinos, es aproximadamente <strong>-4.5174</strong>.</li>
+                    </ul>
+                    <hr>
+                    <p class="mb-0">
+                        Si te fijas en el atributo <code>src</code> del <code>&lt;iframe&gt;</code>, verás un parámetro largo llamado <code>pb</code>. Dentro de él, Google Maps codifica estos valores. Busca los siguientes fragmentos: <code>!2d-4.5174...</code> (dimensión 2, la longitud X) y <code>!3d36.6238...</code> (dimensión 3, la latitud Y). ¡Ahí es donde se esconden las coordenadas que le dicen al mapa qué lugar mostrar!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="text-center mt-4 mb-4">
+            <p class="text-muted">&copy; 2025 - Ejercicio de Mapa con Bootstrap</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
