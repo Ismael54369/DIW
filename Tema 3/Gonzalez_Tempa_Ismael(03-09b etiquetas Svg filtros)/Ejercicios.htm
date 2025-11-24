@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 03-09b</title>
+</head>
+<body>
+    <p><b>Ejercicio 1</b></p>
+    <svg
+width="230"
+height="120"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+
+<filter id="blurMe">
+<feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+</filter>
+<circle cx="60" cy="60" r="50" fill="green" />
+<circle cx="170" cy="60" r="50" fill="green" filter="url(#blurMe)" />
+</svg>
+
+<br>
+<svg width="120"
+height="120"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<filter id="dropShadow">
+<feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+<feOffset dx="2" dy="4" />
+<feMerge>
+<feMergeNode />
+<feMergeNode in="SourceGraphic" />
+</feMerge>
+</filter>
+<circle cx="60" cy="60" r="50" fill="green" filter="url(#dropShadow)" />
+</svg>
+
+<br>
+<svg
+viewBox="0 0 200 200"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+width="200"
+height="200">
+<defs>
+<filter id="image">
+<feImage href="playa.png" />
+</filter>
+</defs>
+<rect x="10%" y="10%" width="80%" height="80%" style="filter:url(#image);" >
+<animate attributeName="width" from="10%" to="80%" dur="1s" begin="0" end="1" > </animate>
+<animate attributeName="width" from="80%" to="10%" dur="1s" begin="1" end="2" > </animate>
+</rect>
+<text x="50" y="180" font-size="20"> Esto es un Svg</text>
+</svg>
+
+<br>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+width="200" height="200" >
+<filter id="feOffset" x="-40" y="-20" width="100" height="200">
+<feOffset in="SourceGraphic" dx="60" dy="60" />
+<feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur2" />
+<feMerge>
+<feMergeNode in="blur2" />
+<feMergeNode in="SourceGraphic" />
+</feMerge>
+</filter>
+<rect x="40" y="40" width="100" height="100" style="stroke: #000000; fill: green; filter: url(#feOffset);" />
+<rect x="40" y="40" width="100" height="100" style="stroke: #000000; fill: green;" />
+</svg>
+
+<br>
+<svg width="200" height="200" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+<filter id="displacementFilter">
+<feTurbulence
+type="turbulence" baseFrequency="0.05"
+numOctaves="2" result="turbulence" />
+<feDisplacementMap
+in2="turbulence" in="SourceGraphic"
+scale="50" xChannelSelector="R"
+yChannelSelector="G" />
+</filter>
+<circle cx="100" cy="100" r="100" style="filter: url(#displacementFilter)" />
+</svg>
+
+<br>
+<svg width="200" height="200" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<radialGradient id="star_grad">
+<stop offset="0%" style="stop-color: #dffda5;"/>
+<stop offset="50%" style="stop-color: orange;"/>
+<stop offset="100%" style="stop-color: #eddfa6;"/>
+</radialGradient>
+<filter id="star_filter" x="0" y="0" width="100%" height="100%">
+<feTurbulence id="color2" baseFrequency="0.03, 0.02" seed="2" numOctaves="4" type="fractalNoise"
+stitchTiles="noStitch" result="ripples" />
+<feComposite result="comp" id="feComposite_def" in = "SourceGraphic" in2 = "ripples" operator="out"/>
+</filter>
+</defs>
+<rect id="feConvolveMatrix_image" x="1" y="1" width="200" height="200" fill="white" />
+<circle cx="50%" cy="50%" r="35%" fill="url(#star_grad)" style="filter: url(#star_filter);" />
+</svg>
+
+<br>
+<svg viewBox="0 0 30 10" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<filter id="shadow"> <feDropShadow dx="0.2" dy="0.4" stdDeviation="0.2" /> </filter>
+<filter id="shadow2"> <feDropShadow dx="0" dy="0" stdDeviation="0.5" flood-color="green" /> </filter>
+<filter id="shadow3">
+<feDropShadow dx="-0.8" dy="-0.8" stdDeviation="0"
+flood-color="green" flood-opacity="0.5" />
+</filter>
+</defs>
+<circle cx="5" cy="50%" r="4" style="fill:green; filter:url(#shadow);" />
+<circle cx="15" cy="50%" r="4" style="fill:green; filter:url(#shadow2);" />
+<circle cx="25" cy="50%" r="4" style="fill:green; filter:url(#shadow3);" />
+</svg>
+
+<br>
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<filter id="spotlight">
+<feSpecularLighting result="spotlight" specularConstant="1.5"
+specularExponent="80" lighting-color="white">
+
+<fePointLight x="50" y="50" z="220" />
+</feSpecularLighting>
+<feComposite
+in="SourceGraphic" in2="spotlight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+</filter>
+
+</defs>
+<image href="playa.png" x="10%" y="10%" width="80%" height="80%"
+style="filter:url(#spotlight);" />
+</svg>
+
+<br>
+<svg
+width="200" height="200" xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<filter id="filtroverde">
+<feFlood
+result="floodFill" x="0" y="0"
+width="100%" height="100%"
+flood-color="blue"
+flood-opacity="1" />
+<feBlend in="SourceGraphic" in2="floodFill" mode="multiply" />
+
+</filter>
+</defs>
+<image href="playa.png" x="10%" y="10%" width="80%" height="80%"
+style="filter:url(#filtroverde);" />
+</svg>
+
+<p><b>Ejercicio 2</b></p>
+<svg width="230" height="150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blurRojo">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" />
+    </filter>
+  </defs>
+
+  <ellipse cx="115" cy="75" rx="80" ry="40" fill="red" filter="url(#blurRojo)" />
+</svg>
+
+<p><b>Ejercicio 3</b></p>
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="dropShadowRect">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+      <feOffset dx="4" dy="4" />
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect x="50" y="50" width="100" height="80" fill="red" filter="url(#dropShadowRect)" />
+</svg>
+
+<p><b>Ejercicio 4</b></p>
+<svg viewBox="0 0 400 200" width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="supermanFilter">
+      <feImage href="https://upload.wikimedia.org/wikipedia/en/3/35/Supermanflying.png" />
+    </filter>
+  </defs>
+  
+  <rect y="50" width="100" height="100" style="filter:url(#supermanFilter);">
+    <animate attributeName="x" from="-100" to="400" dur="3s" repeatCount="indefinite" />
+  </rect>
+</svg>
+
+<p><b>Ejercicio 5</b></p>
+<svg width="450" height="220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="turbulenciaSuave">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="1" result="turb" />
+      <feDisplacementMap in2="turb" in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+
+    <filter id="turbulenciaFuerte">
+      <feTurbulence type="turbulence" baseFrequency="0.1" numOctaves="5" result="turb" />
+      <feDisplacementMap in2="turb" in="SourceGraphic" scale="30" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </defs>
+
+  <circle cx="100" cy="110" r="80" fill="orange" filter="url(#turbulenciaSuave)" />
+  <circle cx="320" cy="110" r="80" fill="skyblue" filter="url(#turbulenciaFuerte)" />
+</svg>
+
+<p><b>Ejercicio 6</b></p>
+<svg width="250" height="250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="comboFilter">
+      <feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2" result="ruido" />
+      
+      <feDisplacementMap in2="ruido" in="SourceGraphic" scale="20" xChannelSelector="R" yChannelSelector="G" result="figuraDistorsionada"/>
+      
+      <feGaussianBlur in="figuraDistorsionada" stdDeviation="3" result="shadowBlur"/>
+      <feOffset in="shadowBlur" dx="5" dy="5" result="shadowOffset"/>
+      
+      <feMerge>
+        <feMergeNode in="shadowOffset" />        <feMergeNode in="figuraDistorsionada" /> </feMerge>
+    </filter>
+  </defs>
+
+  <rect x="50" y="50" width="150" height="150" fill="lightgreen" stroke="black" filter="url(#comboFilter)" />
+</svg>
+
+<p><b>Ejercicio 7</b></p>
+<svg width="400" height="150" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="sombraNegra">
+      <feDropShadow dx="-5" dy="5" stdDeviation="3" flood-color="black" flood-opacity="0.8" />
+    </filter>
+
+    <filter id="glowAmarillo">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="yellow" flood-opacity="1" />
+    </filter>
+
+    <filter id="glowRojo">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="red" flood-opacity="1" />
+    </filter>
+  </defs>
+
+  <circle cx="70" cy="75" r="50" fill="blue" filter="url(#sombraNegra)" />
+  
+  <circle cx="200" cy="75" r="50" fill="yellow" filter="url(#glowAmarillo)" />
+  
+  <circle cx="330" cy="75" r="50" fill="red" filter="url(#glowRojo)" />
+</svg>
+</body>
+</html>
