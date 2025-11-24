@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 03-09</title>
+</head>
+<body>
+
+    <p><b>Ejercicio 1</b></p>
+    <svg viewBox="-100 -100 310 310" xmlns="http://www.w3.org/2000/svg" width="200" height="200" >
+<defs>
+<style>#circ:hover { stroke: black; fill: blue; }
+</style>
+</defs>
+<circle cx="100" cy="100" r="100" stroke="darkorange" fill="transparent" stroke-width="15" id="circ"/>
+</svg>
+
+<br>
+<svg viewBox="-100 -100 310 310" xmlns="http://www.w3.org/2000/svg" width="200" height="200" >
+<defs>
+<style>
+#amarillo1:hover { stroke:#ffffAA ; }
+#amarillo2:hover { stroke:#ffff66 ; }
+#amarillo3:hover { stroke:#FFFF00 ; }
+#amarillo4:hover { stroke:orange ; }
+#amarillo5:hover { stroke:#AA5500;}
+</style>
+</defs>
+<circle cx="100" cy="100" r="100" stroke="darkorange" fill="transparent" stroke-width="15" id="amarillo5"/>
+<circle cx="100" cy="100" r="80" stroke="orange" fill="transparent" stroke-width="12" id="amarillo1"/>
+<circle cx="100" cy="100" r="60" stroke="#EEEE00" fill="transparent" stroke-width="9" id="amarillo3"/>
+<circle cx="100" cy="100" r="40" stroke="#ffff00" fill="transparent" stroke-width="6" id="amarillo2" />
+<circle cx="100" cy="100" r="20" stroke="#ffff77" fill="transparent" stroke-width="3" id="amarillo1"/>
+</svg>
+
+<br>
+<svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+text{ dominant-baseline: hanging; font: 28px Verdana, Helvetica, Arial, sans-serif; }
+</style></defs>
+<text> This is bold and red </text>
+</svg>
+
+<br>
+<svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+#texto {
+dominant-baseline: hanging;
+font: 28px Verdana, Helvetica, Arial, sans-serif;
+stroke: red
+}
+#texto:hover {
+stroke: green;
+fill: yellow
+}
+</style>
+</defs>
+<text id="texto"> This is bold and red </text>
+</svg>
+
+<br>
+<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+<path d="M20,20 L180,20 M20,50 L180,50 M20,80 L180,80" stroke="grey" />
+<text dominant-baseline="auto" x="30" y="20">Auto</text>
+<text dominant-baseline="middle" x="30" y="50">Middle</text>
+<text dominant-baseline="hanging" x="30" y="80">Hanging</text>
+</svg>
+
+<br>
+<svg width="350" height="60" xmlns="http://www.w3.org/2000/svg">
+<text> This is <tspan font-weight="bold" fill="red"> bold and red</tspan> </text>
+<style>
+text{ dominant-baseline: hanging; font: 28px Verdana, Helvetica, Arial, sans-serif; }
+</style>
+</svg>
+
+<br>
+<svg width="200" height="100" xmlns="http://www.w3.org/2000/svg">
+
+<path id="my_path" d="M 20,20 C 80,60 100,40 120,20" fill="transparent" />
+<text>
+<textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path">
+Viva el Barcelona
+</textPath>
+</text>
+<style>
+text{ dominant-baseline: hanging; font: 28px Verdana, Helvetica, Arial, sans-serif; }
+</style>
+</svg>
+
+<br>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200">
+<path id="my_path3" d="M 20,20 C 80,60 100,40 300,20 " fill="transparent" stroke-width="2"
+fill="url('#radialGradient2')" />
+<text>
+<textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path3"
+stroke="url('#linearGradient2')" fill="url('#linearGradient2')" >
+Viva Torremolinos
+</textPath>
+</text>
+</svg>
+
+<br>
+<svg width="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15">
+<path id="my_path3" d="M 20,20 C 80,60 100,40 300,20 " fill="transparent" stroke-width="2" />
+<text>
+<textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#my_path3" fill="red"
+style="font-size: 0.5px">
+Me gustas cuando callas porque estás como ausente,
+y me oyes desde lejos, y mi voz no te toca.
+</textPath>
+</text>
+</svg>
+
+<br>
+<svg
+viewBox="0 0 10 30"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient id="linearGradient1" gradientTransform="rotate(90)">
+<stop offset="5%" stop-color="gold" />
+<stop offset="95%" stop-color="red" />
+</linearGradient>
+<radialGradient id="radialGradient1">
+<stop offset="10%" stop-color="gold" />
+<stop offset="95%" stop-color="red" />
+</radialGradient>
+</defs>
+<circle cx="5" cy="5" r="4" fill="url('#linearGradient1')" />
+<circle cx="10" cy="5" r="4" fill="url('#radialGradient1')" />
+</svg>
+
+<br>
+<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs>
+<linearGradient id="myGradient" gradientTransform="rotate(90)">
+<stop offset="5%" stop-color="gold" />
+<stop offset="95%" stop-color="red" />
+</linearGradient>
+</defs>
+<circle cx="5" cy="5" r="4" fill="url('#myGradient')" />
+</svg>
+
+<br>
+<svg viewBox="0 0 200 200" width="400" xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient id="myGradient" gradientTransform="rotate(90)">
+<stop offset="5%" stop-color="gold" />
+<stop offset="95%" stop-color="red" />
+</linearGradient>
+</defs>
+<!-- using my linear gradient -->
+<circle cx="100" cy="100" r="75" fill="url('#myGradient')" />
+<circle cx="100" cy="100" r="50" fill="url('#myGradient')" />
+</svg>
+
+    <p><b>Ejercicio 2</b></p>
+    <svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+        <style>
+            /* CSS: Cuando pasas el ratón (:hover) sobre cualquier figura (.forma),
+            el relleno (fill) cambia a verde */
+            .forma:hover {
+            fill: green;
+            cursor: pointer; /* Cambia el cursor a una manita */
+            }
+        </style>
+        
+        <rect x="20" y="50" width="35" height="35" fill="#7B9EBF" class="forma"/>
+        <circle cx="80" cy="100" r="20" fill="red" class="forma"/>
+        <polygon points="110,40 85,85 135,85" fill="orange" class="forma"/>
+    </svg>
+
+    <p><b>Ejercicio 3</b></p>
+    <svg width="150" height="150" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+        <style>
+            /* CSS específico para cada figura */
+            .cuadrado:hover { fill: #A0C3E5; } /* Azul más claro */
+            .circulo:hover { fill: #FF6666; }  /* Rojo más claro */
+            .triangulo:hover { fill: #FFB366; } /* Naranja más claro */
+            
+            /* Estilo común para el cursor */
+            rect, circle, polygon { cursor: pointer; }
+        </style>
+        
+        <rect x="20" y="50" width="35" height="35" fill="#7B9EBF" class="cuadrado"/>
+        <circle cx="80" cy="100" r="20" fill="red" class="circulo"/>
+        <polygon points="110,40 85,85 135,85" fill="orange" class="triangulo"/>
+    </svg>
+
+    <p><b>Ejercicio 4</b></p>
+    <svg width="200" height="50" xmlns="http://www.w3.org/2000/svg">
+        <text x="10" y="30" font-family="Georgia" font-size="25" fill="black">IESPLAYAMAR</text>
+    </svg>
+
+    <p><b>Ejercicio 5</b></p>
+    <svg viewBox="0 0 200 200" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <radialGradient id="g1" cx="50%" cy="50%" r="50%">
+            <stop offset="10%" stop-color="#FFD700" /> <stop offset="100%" stop-color="#CC0000" /> </radialGradient>
+            
+            <radialGradient id="g2" cx="50%" cy="50%" r="50%">
+            <stop offset="10%" stop-color="#CC0000" /> <stop offset="100%" stop-color="#FFD700" /> </radialGradient>
+        </defs>
+
+        <circle cx="100" cy="100" r="90" fill="url(#g1)" />
+        <circle cx="100" cy="100" r="65" fill="url(#g2)" />
+        <circle cx="100" cy="100" r="40" fill="url(#g1)" /> 
+        <circle cx="100" cy="100" r="20" fill="url(#g2)" />
+    </svg>
+
+    <p><b>Ejercicio 6</b></p>
+    <svg width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+        <text x="10" y="35" font-family="Georgia" font-size="25">
+            <tspan fill="#DC2432">FR</tspan>
+            <tspan fill="grey">AN</tspan>
+            <tspan fill="#0f2493">CIA</tspan>
+        </text>
+    </svg>
+
+    <p><b>Ejercicio 7</b></p>
+    <svg width="180" height="60" xmlns="http://www.w3.org/2000/svg">
+        <style>
+            text { font-family: Georgia; font-size: 25px; cursor: default; }
+            /* Al pasar el ratón sobre un tspan, aumenta su tamaño de fuente */
+            tspan:hover {
+            font-size: 40px;
+            fill: #DC2432; /* Opcional: cambia de color a rojo */
+            }
+        </style>
+        
+        <text x="10" y="40" dominant-baseline="middle">
+            <tspan>E</tspan><tspan>S</tspan><tspan>P</tspan><tspan>A</tspan><tspan>Ñ</tspan><tspan>A</tspan>
+        </text>
+    </svg>
+
+    <p><b>Ejercicio 8</b></p>
+    <svg width="300" height="100" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <path id="rutaCurva" d="M 20,80 Q 150,10 280,80" />
+        </defs>
+        
+        <text font-family="Georgia" font-size="25" fill="black">
+            <textPath href="#rutaCurva" startOffset="50%" text-anchor="middle">
+            IES PLAYAMAR
+            </textPath>
+        </text>
+    </svg>
+
+    <p><b>Ejercicio 9</b></p>
+    <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="arcoiris" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="red"/>
+            <stop offset="20%" stop-color="yellow"/>
+            <stop offset="40%" stop-color="green"/>
+            <stop offset="60%" stop-color="cyan"/>
+            <stop offset="80%" stop-color="blue"/>
+            <stop offset="100%" stop-color="magenta"/>
+            </linearGradient>
+        </defs>
+        
+        <circle cx="75" cy="75" r="70" fill="url(#arcoiris)"/>
+    </svg>
+    <svg width="150" height="150" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <radialGradient id="anillos" cx="50%" cy="50%" r="10%" spreadMethod="repeat">
+            <stop offset="0%" stop-color="blue"/>
+            <stop offset="100%" stop-color="green"/>
+            </radialGradient>
+        </defs>
+        
+        <circle cx="75" cy="75" r="70" fill="url(#anillos)"/>
+    </svg>
+
+    <p><b>Ejercicio 10</b></p>
+    <svg width="350" height="120" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <path id="rutaOla" d="M 10,100 Q 80,20 175,60 T 340,100" />
+            
+            <linearGradient id="textoArcoiris">
+            <stop offset="0%" stop-color="red"/><stop offset="20%" stop-color="yellow"/>
+            <stop offset="40%" stop-color="green"/><stop offset="60%" stop-color="cyan"/>
+            <stop offset="80%" stop-color="blue"/><stop offset="100%" stop-color="magenta"/>
+            </linearGradient>
+        </defs>
+        
+        <text font-family="Arial" font-weight="bold" font-size="30" fill="url(#textoArcoiris)">
+            <textPath href="#rutaOla" startOffset="50%" text-anchor="middle">
+            Viva Torremolinos
+            </textPath>
+        </text>
+    </svg>
+</body>
+</html>
