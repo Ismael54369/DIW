@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9: Panel de Control</title>
+    <style>
+        body { font-family: sans-serif; display: flex; gap: 20px; padding: 20px;}
+        .controles { background: #98FB98; padding: 20px; width: 250px; border-radius: 10px;}
+        .lienzo { flex-grow: 1; display: flex; justify-content: center; align-items: center; background: #eee;}
+        label { display: block; margin-top: 10px; font-weight: bold; font-size: 0.9em;}
+        input { width: 100%; }
+        h4 { margin: 10px 0 5px 0; border-bottom: 1px solid #555;}
+    </style>
+</head>
+<body>
+
+    <div class="controles">
+        <h3>Todos</h3>
+        
+        <h4>Translate (Mover)</h4>
+        <label>X: <input id="tx" type="range" min="0" max="200" value="0"></label>
+        <label>Y: <input id="ty" type="range" min="0" max="200" value="0"></label>
+
+        <h4>Rotate (Rotar)</h4>
+        <label>Ángulo: <input id="rot" type="range" min="0" max="360" value="0"></label>
+
+        <h4>Scale (Escalar)</h4>
+        <label>Tamaño: <input id="esc" type="range" min="0.5" max="2" step="0.1" value="1"></label>
+
+        <h4>Skew (Deformar)</h4>
+        <label>Skew X: <input id="skx" type="range" min="0" max="50" value="0"></label>
+        <label>Skew Y: <input id="sky" type="range" min="0" max="50" value="0"></label>
+    </div>
+
+    <div class="lienzo">
+        <svg width="400" height="400" style="background: grey;">
+            <rect id="caja" x="150" y="150" width="100" height="100" fill="indigo" />
+        </svg>
+    </div>
+
+    <script>
+        // Función única para actualizar todo
+        function actualizar() {
+            const tx = document.getElementById('tx').value;
+            const ty = document.getElementById('ty').value;
+            const rot = document.getElementById('rot').value;
+            const esc = document.getElementById('esc').value;
+            const skx = document.getElementById('skx').value;
+            const sky = document.getElementById('sky').value;
+            
+            // Obtenemos el objeto
+            const caja = document.getElementById('caja');
+
+            // Creamos la cadena de transformación.
+            // Nota: Para rotar correctamente desde el centro, a veces se requiere lógica extra,
+            // pero para mantenerlo "sencillo" como pide el ejercicio, aplicamos rotate directo.
+            // El orden importa: Primero movemos, luego rotamos, escalamos y deformamos.
+            
+            const transformacion = `translate(${tx} ${ty}) rotate(${rot} 200 200) scale(${esc}) skewX(${skx}) skewY(${sky})`;
+            
+            caja.setAttribute('transform', transformacion);
+        }
+
+        // Añadir el evento a todos los inputs
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', actualizar);
+        });
+    </script>
+
+</body>
+</html>

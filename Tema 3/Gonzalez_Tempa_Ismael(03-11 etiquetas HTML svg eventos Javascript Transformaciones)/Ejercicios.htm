@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios 03-11</title>
+</head>
+<body>
+    <p><b>Ejercicio 2</b></p>
+    <svg width="300" height="300" viewBox="0 0 300 300" style="border: 1px solid #ccc;">
+        <ellipse cx="150" cy="150" rx="50" ry="100" fill="orange">
+            <animate attributeName="rx" values="50;100;50" dur="1s" begin="click" fill="freeze" />
+            <animate attributeName="ry" values="100;50;100" dur="1s" begin="click" fill="freeze" />
+        </ellipse>
+    </svg>
+
+    <p><b>Ejercicio 2bis</b></p>
+    <svg width="300" height="300" viewBox="0 0 300 300">
+        <g transform="translate(150, 150)">
+            <ellipse cx="0" cy="0" rx="10" ry="5" fill="#440">
+                <animate attributeName="rx" to="60" dur="1s" begin="click" fill="freeze"/>
+            </ellipse>
+            <ellipse cx="0" cy="0" rx="15" ry="8" fill="#660">
+                <animate attributeName="rx" to="80" dur="1s" begin="click" fill="freeze"/>
+            </ellipse>
+            <ellipse cx="0" cy="0" rx="20" ry="11" fill="#880">
+                <animate attributeName="rx" to="100" dur="1s" begin="click" fill="freeze"/>
+            </ellipse>
+             <ellipse cx="0" cy="0" rx="25" ry="14" fill="#AA0">
+                <animate attributeName="rx" to="120" dur="1s" begin="click" fill="freeze"/>
+            </ellipse>
+             <ellipse cx="0" cy="0" rx="30" ry="17" fill="#CC0">
+                <animate attributeName="rx" to="140" dur="1s" begin="click" fill="freeze"/>
+            </ellipse>
+        </g>
+    </svg>
+
+    <p><b>Ejercicio 3</b></p>
+    <svg width="300" height="300" viewBox="0 0 300 300">
+        <rect x="100" y="100" width="100" height="100" fill="steelblue">
+            <animateTransform 
+                attributeName="transform" 
+                type="translate" 
+                to="-50 0" 
+                dur="0.5s" 
+                begin="mouseover" 
+                fill="freeze" />
+        </rect>
+    </svg>
+
+    <p><b>Ejercicio 4</b></p>
+    <svg width="300" height="300" viewBox="0 0 300 300">
+        <rect x="100" y="100" width="100" height="100" fill="purple">
+            <animateTransform 
+                attributeName="transform" 
+                type="rotate" 
+                from="0 150 150" 
+                to="360 150 150" 
+                dur="1s" 
+                begin="click" />
+        </rect>
+    </svg>
+
+    <p><b>Ejercicio 5</b></p>
+    <svg width="500" height="200" viewBox="0 0 500 200"> 
+        <circle cx="50" cy="50" r="20" fill="red">
+            <animate attributeName="cx" from="50" to="450" dur="2s" begin="0s" />
+            <set attributeName="visibility" to="hidden" begin="2s" />
+        </circle>
+
+        <circle cx="50" cy="80" r="20" fill="green" visibility="hidden">
+            <set attributeName="visibility" to="visible" begin="2s" />
+            <animate attributeName="cx" from="50" to="450" dur="2s" begin="2s" />
+            <set attributeName="visibility" to="hidden" begin="4s" />
+        </circle>
+
+        <circle cx="50" cy="110" r="20" fill="blue" visibility="hidden">
+            <set attributeName="visibility" to="visible" begin="4s" />
+            <animate attributeName="cx" from="50" to="450" dur="2s" begin="4s" />
+            <set attributeName="visibility" to="hidden" begin="6s" />
+        </circle>
+
+        <circle cx="50" cy="140" r="20" fill="orange" visibility="hidden">
+            <set attributeName="visibility" to="visible" begin="6s" />
+            <animate attributeName="cx" from="50" to="450" dur="2s" begin="6s" />
+            <set attributeName="visibility" to="hidden" begin="8s" />
+        </circle>
+    </svg>
+
+    <p><b>Ejercicio 6</b></p>
+    <svg width="300" height="300">
+        <rect id="miRectangulo" x="50" y="50" width="200" height="200" fill="crimson" cursor="pointer"/>
+    </svg>
+
+    <script>
+        // Seleccionamos el rectángulo por su ID
+        const rect = document.getElementById('miRectangulo');
+        
+        // Añadimos el evento clic
+        rect.addEventListener('click', function() {
+            // Cambiar opacidad
+            rect.style.opacity = "0.5";
+            // Mostrar alerta
+            alert("¡Rectángulo pulsado!");
+        });
+    </script>
+
+    <p><b>Ejercicio 7</b></p>
+    <svg width="400" height="300">
+        <rect x="50" y="50" width="50" height="200" fill="green" />
+        
+        <rect x="300" y="50" width="50" height="200" fill="purple" />
+        
+        <text x="200" y="150" text-anchor="middle" font-size="30" font-weight="bold" cursor="pointer">
+            Málaga!
+            <animateTransform 
+                attributeName="transform" 
+                type="rotate" 
+                from="0 200 150" 
+                to="360 200 150" 
+                dur="1s" 
+                begin="click" 
+                additive="sum" />
+             <animateTransform 
+                attributeName="transform" 
+                type="translate" 
+                to="0 50" 
+                dur="1s" 
+                begin="click" 
+                additive="sum" />
+        </text>
+    </svg>
+
+    <p><b>Ejercicio 8</b></p>
+    <svg width="400" height="300" style="border:1px solid #ddd">
+        <path id="ruta" d="M 50 150 Q 150 50 200 150 T 350 150" fill="none" stroke="#ccc" />
+
+        <circle r="15" fill="red">
+            <animateMotion 
+                dur="3s" 
+                repeatCount="indefinite"
+                begin="click" 
+                end="dblclick">
+                <mpath href="#ruta" />
+            </animateMotion>
+        </circle>
+    </svg>
+</body>
+</html>

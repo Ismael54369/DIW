@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1: Todos los Ejemplos del PDF</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
+        .ejemplo {
+            background: white;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        h2 { border-bottom: 2px solid #333; padding-bottom: 10px; margin-top: 0; }
+        h3 { color: #555; }
+        svg { background-color: #eee; border: 1px dashed #999; }
+        .btn { cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio 1: Recopilación de Ejemplos Teóricos</h1>
+
+    <div class="ejemplo">
+        <h2>Ejemplo 1: Enlace y AnimateMotion</h2>
+        <p>Un círculo rojo que sigue un camino. Si haces clic, te lleva a Wikipedia [cite: 56-70].</p>
+        <svg width="200" height="200" viewBox="0 0 200 200">
+            <path fill="none" stroke="lightgrey" d="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+            
+            <a href="https://es.wikipedia.org/wiki/Wikipedia:Portada" target="_blank">
+                <circle r="5" fill="red">
+                    <animateMotion dur="10s" repeatCount="indefinite" path="M20,50 C20,-50 180,150 180,50 C180-50 20,150 20,50 z" />
+                </circle>
+            </a>
+        </svg>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo 2: Animaciones Encadenadas (Begin)</h2>
+        <p>El primer rectángulo inicia al segundo, y el segundo al tercero [cite: 95-116].</p>
+        <svg width="120" height="120" viewBox="0 0 120 120">
+            <rect x="10" y="10" height="15" width="0" fill="crimson">
+                <animate attributeName="width" id="rect1" to="100" dur="2s" fill="freeze" begin="0s"/>
+            </rect>
+            
+            <rect x="10" y="35" height="15" width="0" fill="orange">
+                <animate attributeName="width" id="rect2" to="75" dur="2s" fill="freeze" begin="rect1.end"/>
+            </rect>
+            
+            <rect x="10" y="60" height="15" width="0" fill="gold">
+                <animate attributeName="width" to="50" dur="2s" fill="freeze" begin="rect2.end"/>
+            </rect>
+        </svg>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo 3: Iniciar con Botón (Eventos)</h2>
+        <p>Haz clic en el botón gris "Click me" para iniciar la barra [cite: 138-153].</p>
+        <svg width="200" height="120">
+            <rect x="10" y="10" height="15" width="0" fill="green">
+                <animate attributeName="width" from="0" to="100" dur="2s" begin="btnStart.click" fill="freeze"/>
+            </rect>
+            
+            <g id="btnStart" class="btn">
+                <rect x="10" y="40" width="80" height="30" fill="#ddd" stroke="black" rx="5" />
+                <text x="50" y="60" text-anchor="middle" pointer-events="none">Click me</text>
+            </g>
+        </svg>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplo 4: Bucle de Animación</h2>
+        <p>4 rectángulos que se mueven uno tras otro en bucle infinito [cite: 154-178].</p>
+        <svg width="270" height="290">
+            <rect x="10" y="10" width="40" height="40" fill="yellow" stroke="navy">
+                <animate id="r1" attributeName="x" values="10;170;10" dur="2s" begin="0s; r4.end"/>
+            </rect>
+            
+            <rect x="10" y="60" width="40" height="40" fill="red" stroke="navy">
+                <animate id="r2" attributeName="x" values="10;170;10" dur="2s" begin="r1.end"/>
+            </rect>
+            
+            <rect x="10" y="110" width="40" height="40" fill="green" stroke="navy">
+                <animate id="r3" attributeName="x" values="10;170;10" dur="2s" begin="r2.end"/>
+            </rect>
+            
+            <rect x="10" y="160" width="40" height="40" fill="blue" stroke="navy">
+                <animate id="r4" attributeName="x" values="10;170;10" dur="2s" begin="r3.end"/>
+            </rect>
+        </svg>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplos 5, 6 y 7: Interacción con JavaScript</h2>
+        <p>Prueba las interacciones [cite: 248-294]:</p>
+        <ul>
+            <li><strong>Círculo Rojo:</strong> Haz clic para lanzar un `alert`.</li>
+            <li><strong>Cuadrado Azul:</strong> Haz clic para cambiar su opacidad.</li>
+            <li><strong>Círculo Tomate:</strong> Haz clic para volverlo Dorado.</li>
+            <li><strong>Rectángulo Acero:</strong> Pasa el ratón para moverlo a la derecha.</li>
+        </ul>
+
+        <svg width="400" height="200">
+            <circle cx="50" cy="50" r="30" fill="red" onclick="alert('Has hecho clic en el círculo rojo.')" class="btn"/>
+            
+            <rect id="rectOpacidad" x="100" y="20" width="60" height="60" fill="blue" class="btn" />
+            
+            <circle id="c1" cx="250" cy="50" r="30" fill="tomato" class="btn" />
+            <rect id="r1" x="300" y="20" width="60" height="60" fill="steelblue" />
+        </svg>
+
+        <script>
+            // Lógica Ejemplo 6
+            document.getElementById('rectOpacidad').addEventListener('click', function(e) {
+                e.target.style.opacity = (e.target.style.opacity == 0.3) ? 1 : 0.3;
+            });
+
+            // Lógica Ejemplo 7
+            const c1 = document.getElementById('c1');
+            const r1 = document.getElementById('r1');
+            
+            c1.addEventListener('click', () => c1.setAttribute("fill", "gold"));
+            
+            r1.addEventListener('mouseover', () => {
+                let currentX = parseInt(r1.getAttribute("x"));
+                r1.setAttribute("x", currentX + 10);
+            });
+        </script>
+    </div>
+
+    <div class="ejemplo">
+        <h2>Ejemplos 8-11: Transformaciones</h2>
+        <p>Demostración estática de las funciones transform [cite: 314-392].</p>
+        <svg width="500" height="120">
+            <rect x="10" y="10" width="40" height="40" fill="#ddd" stroke="#999"/>
+            <rect x="110" y="10" width="40" height="40" fill="#ddd" stroke="#999"/>
+            <rect x="210" y="10" width="40" height="40" fill="#ddd" stroke="#999"/>
+            <rect x="310" y="10" width="40" height="40" fill="#ddd" stroke="#999"/>
+
+            <rect x="10" y="10" width="40" height="40" fill="indigo" transform="translate(20 20)">
+                <title>Translate(20 20)</title>
+            </rect>
+            <text x="30" y="90" font-size="12">Translate</text>
+
+            <rect x="110" y="10" width="40" height="40" fill="indigo" transform="rotate(45 130 30)">
+                <title>Rotate(45)</title>
+            </rect>
+            <text x="130" y="90" font-size="12">Rotate</text>
+
+            <g transform="translate(210, 10)">
+                <rect x="0" y="0" width="40" height="40" fill="indigo" transform="scale(0.8)"/>
+            </g>
+            <text x="230" y="90" font-size="12">Scale</text>
+
+            <g transform="translate(310, 10)">
+                <rect x="0" y="0" width="40" height="40" fill="indigo" transform="skewX(20)"/>
+            </g>
+            <text x="330" y="90" font-size="12">Skew</text>
+        </svg>
+    </div>
+
+</body>
+</html>
