@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { background-color: #111; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        
+        /* Estilos del texto */
+        .texto-animado {
+            fill: none; /* Sin relleno, solo borde */
+            stroke: white; 
+            stroke-width: 2px;
+            stroke-dasharray: 10 40; /* Guiones y espacios */
+            stroke-linejoin: round;
+            stroke-linecap: round;
+            animation: dibujar 4s infinite linear;
+        }
+
+        /* Animación escalonada para cada copia */
+        .texto-animado:nth-child(1) { stroke: #3498db; animation-delay: -0s; }
+        .texto-animado:nth-child(2) { stroke: #f1c40f; animation-delay: -1s; }
+        .texto-animado:nth-child(3) { stroke: #e74c3c; animation-delay: -2s; }
+        .texto-animado:nth-child(4) { stroke: #9b59b6; animation-delay: -3s; }
+
+        @keyframes dibujar {
+            100% {
+                stroke-dashoffset: -400; /* Mueve el trazo */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<svg width="600" height="200" viewBox="0 0 600 200">
+    <symbol id="s-texto">
+        <text x="50%" y="50%" text-anchor="middle" dy=".35em" font-size="90" font-family="sans-serif" font-weight="bold">
+            ANIMADO
+        </text>
+    </symbol>
+
+    <use href="#s-texto" class="texto-animado"></use>
+    <use href="#s-texto" class="texto-animado"></use>
+    <use href="#s-texto" class="texto-animado"></use>
+    <use href="#s-texto" class="texto-animado"></use>
+</svg>
+
+</body>
+</html>

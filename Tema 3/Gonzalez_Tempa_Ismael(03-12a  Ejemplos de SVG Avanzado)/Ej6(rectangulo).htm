@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6: Lupa Rectangular</title>
+    <style>
+        body { 
+            background-color: #111; color: #fff;
+            font-family: sans-serif;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; 
+            height: 100vh; margin: 0; 
+        }
+
+        .contenedor {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        .imagen-oculta {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Vinculamos al clipPath */
+            clip-path: url(#recorteRect);
+        }
+
+        /* Al pasar el ratón, cambiamos el tamaño del rectángulo */
+        .contenedor:hover .mi-rectangulo {
+            width: 600px;  /* Ancho total */
+            height: 400px; /* Alto total */
+            x: 0;          /* Posición X inicial */
+            y: 0;          /* Posición Y inicial */
+        }
+        
+        /* Transición suave */
+        .mi-rectangulo {
+            transition: all 0.8s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pasa el ratón para descubrir la ciudad</h1>
+
+    <div class="contenedor">
+        <img src="https://picsum.photos/id/122/600/400" class="imagen-oculta" alt="Ciudad">
+        
+        <svg width="0" height="0">
+            <defs>
+                <clipPath id="recorteRect">
+                    <rect class="mi-rectangulo" x="250" y="150" width="100" height="100" rx="10" />
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+
+</body>
+</html>

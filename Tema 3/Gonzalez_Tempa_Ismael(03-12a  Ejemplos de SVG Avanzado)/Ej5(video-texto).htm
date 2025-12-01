@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5: Video en Texto Ismael</title>
+    <style>
+        body { margin: 0; height: 100vh; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;}
+        
+        video {
+            width: 80%;
+            /* Aplicamos la máscara */
+            -webkit-mask-image: url(#maskIsmael);
+            mask-image: url(#maskIsmael);
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+    </style>
+</head>
+<body>
+
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <mask id="maskIsmael" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                <rect width="1" height="1" fill="black" />
+                <text x="0.5" y="0.6" text-anchor="middle" fill="white" font-family="Georgia, serif" font-weight="bold" font-size="0.25">
+                    ISMAEL
+                </text>
+            </mask>
+        </defs>
+    </svg>
+
+    <video autoplay muted loop>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/friday.mp4" type="video/mp4">
+    </video>
+
+</body>
+</html>

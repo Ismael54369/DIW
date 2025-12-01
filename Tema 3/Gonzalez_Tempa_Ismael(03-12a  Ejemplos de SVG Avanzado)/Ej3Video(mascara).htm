@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { margin: 0; height: 100vh; overflow: hidden; background: #000; display: flex; justify-content: center; align-items: center;}
+        
+        video {
+            width: 80%;
+            max-width: 800px;
+            /* Aplicamos la máscara SVG al video */
+            -webkit-mask-image: url(#mascaraTexto);
+            mask-image: url(#mascaraTexto);
+            /* Aseguramos que la máscara cubra el video */
+            -webkit-mask-size: contain;
+            mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+        }
+        
+        /* SVG oculto visualmente, solo sirve de definición */
+        .svg-defs { position: absolute; width: 0; height: 0; }
+    </style>
+</head>
+<body>
+
+    <svg class="svg-defs">
+        <defs>
+            <mask id="mascaraTexto" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+                <rect width="1" height="1" fill="black" />
+                <text x="0.5" y="0.6" text-anchor="middle" fill="white" font-family="Impact, sans-serif" font-size="0.35">
+                    OCEANO
+                </text>
+            </mask>
+        </defs>
+    </svg>
+
+    <video autoplay muted loop>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+    </video>
+
+</body>
+</html>

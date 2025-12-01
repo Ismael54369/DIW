@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3: Ismael Animado</title>
+    <style>
+        body { background-color: #222; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        
+        .texto-neon {
+            fill: none;
+            stroke: white; 
+            stroke-width: 3px;
+            stroke-dasharray: 20 50; /* Patrón de guiones */
+            font-family: monospace;
+            font-size: 120px;
+            font-weight: bold;
+            /* Modificamos la duración a 2s para cambiar la frecuencia */
+            animation: moverTrazo 2s infinite linear; 
+        }
+
+        /* Colores para cada capa */
+        .texto-neon:nth-child(1) { stroke: #ff0055; animation-delay: 0s; }
+        .texto-neon:nth-child(2) { stroke: #00eaff; animation-delay: -0.5s; }
+        .texto-neon:nth-child(3) { stroke: #ffff00; animation-delay: -1s; }
+
+        @keyframes moverTrazo {
+            100% { stroke-dashoffset: -350; }
+        }
+    </style>
+</head>
+<body>
+
+<svg width="800" height="300" viewBox="0 0 800 300">
+    <symbol id="txt-ismael">
+        <text x="50%" y="50%" text-anchor="middle" dy=".35em">
+            ISMAEL
+        </text>
+    </symbol>
+
+    <use href="#txt-ismael" class="texto-neon"></use>
+    <use href="#txt-ismael" class="texto-neon"></use>
+    <use href="#txt-ismael" class="texto-neon"></use>
+</svg>
+
+</body>
+</html>

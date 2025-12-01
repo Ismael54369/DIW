@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4: Triángulo de Recorte</title>
+    <style>
+        body { 
+            margin: 0; height: 100vh; display: flex; justify-content: center; align-items: center; background: #eee; 
+        }
+        
+        .imagen-recortada {
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            /* Aplicamos el clipPath definido en el SVG */
+            clip-path: url(#recorteTriangular); 
+        }
+    </style>
+</head>
+<body>
+
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <clipPath id="recorteTriangular" clipPathUnits="objectBoundingBox">
+                <polygon points="0.5,0 1,1 0,1" />
+            </clipPath>
+        </defs>
+    </svg>
+
+    <img src="https://picsum.photos/id/1036/500/500" class="imagen-recortada" alt="Paisaje">
+
+</body>
+</html>
