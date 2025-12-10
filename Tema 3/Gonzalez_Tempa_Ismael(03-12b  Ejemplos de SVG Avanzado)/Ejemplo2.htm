@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 2: Loaders</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Comfortaa:400,700,300);
+*,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e74c3c;
+  text-align: center;
+  font-family: "Comfortaa", cursive;
+}
+
+svg {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display: inline-block;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  margin: 0 0 100px;
+  font-size: 34px;
+  font-weight: 100;
+  text-transform: uppercase;
+  background-color: #e43725;
+  padding: 20px 0;
+}
+h1 b {
+  font-weight: 700;
+}
+
+.made-with-love {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 10px;
+  font-family: arial;
+  color: #fff;
+}
+.made-with-love i {
+  font-style: normal;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+  top: 2px;
+}
+.made-with-love a {
+  color: #fff;
+  text-decoration: none;
+}
+.made-with-love a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=ej2.css.map */
+    </style>
+</head>
+<body>
+    <h1>SVG <b>Loaders</b></h1>
+    
+    <svg viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke="#3498db" stroke-width="4" fill="none" stroke-dasharray="250" stroke-dashoffset="0">
+            <animate attributeName="stroke-dashoffset" from="0" to="250" dur="3s" repeatCount="indefinite" />
+        </circle>
+    </svg>
+
+    <svg viewBox="0 0 100 100">
+        <rect x="25" y="25" width="50" height="50" fill="#e74c3c">
+            <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="1.5s" repeatCount="indefinite"/>
+        </rect>
+    </svg>
+
+    <div class="made-with-love">
+        Made with <i>♥</i> by <a href="#">Ismael</a>
+    </div>
+</body>
+</html>

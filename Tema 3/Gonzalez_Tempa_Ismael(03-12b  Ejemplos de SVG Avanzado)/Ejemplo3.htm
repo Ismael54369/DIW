@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejemplo 5: Photo Sketch</title>
+    <style>
+        .kz-photo {
+  width: 227px;
+  height: 227px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+img {
+  position: absolute;
+  top: 3px;
+  left: 5px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  width: 211px;
+  height: 212px;
+  z-index: 3;
+  opacity: 1;
+  animation: photo-ani 4s forwards;
+}
+
+.kz-photo-line {
+  z-index: 2;
+  position: relative;
+}
+
+.line {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: line-ani 5.5s forwards;
+}
+
+.circle {
+  stroke-width: 3px;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: line-ani 3s forwards;
+}
+
+/* Keyframes */
+@keyframes line-ani {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes photo-ani {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Style Demo */
+body {
+  background: #2c3e50;
+}
+
+/*# sourceMappingURL=ej5.css.map */
+    </style>
+</head>
+<body>
+    <div class="kz-photo">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=211&h=212" alt="Foto de perfil">
+        
+        <div class="kz-photo-line">
+            <svg width="227" height="227" viewBox="0 0 227 227">
+                <circle class="circle" cx="113.5" cy="113.5" r="105" fill="none" stroke="#f1c40f" />
+                <path class="line" d="M 113.5 10 L 113.5 217" />
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
