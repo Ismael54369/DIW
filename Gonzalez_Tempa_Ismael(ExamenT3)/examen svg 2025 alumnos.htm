@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen T3 Ismael</title>
+    <!--Ejercicio 4-->
+    <link rel="icon" href="/ExamenT3/ej2-numeros-examen/3.jpg" type="image/jpg">
+</head>
+
+<body>
+
+<h1> Examen svg e Imagenes </h1>
+<h2>Nombre: Ismael González Tempa</h2>
+<br>
+<h2> Valoracion de notas</h2>
+<img src="exnotas.jpg"    >
+
+<br><h1> Ejercicio1 </h1>
+Pon las imagenes cambiada y original
+<ol>
+    <li>• Cambia su tamaño a 500px ancho, alto proporcional y 300 dpi .
+    </li>
+    <li> • Intercambiale los valores Azules a Rojos RGB BGR
+    </li>
+    <li>• Añádele un marco roto verde tamaño 30px
+    </li>
+    <li>• Sube le la saturación a 100
+    </li>
+    <li>• Cambiale los dos ojos por cuardrados rojos con borde
+    </li>
+    <li>• Elimina la marca de agua freepik
+    </li>
+    <li>• Añádele "numero 2" en rojo abajo fuente 36
+    </li>
+    <li>• Por ultimo añádele tu nombre en azul fuente 36
+    </li>
+    <li>• Hazle los efectos de rain drop y rock - valor 5
+    </li>
+</ol>
+<br>
+ <img src="ej1.jpg">
+<table > <tr> <td>
+   
+<h1>Original  </h1>
+<img src="ej1-numero2.jpg">
+     </td> <td> 
+<h1>Modificado  </h1>
+<img src="ej1-numero2.png">
+     </td>  </tr></table>
+
+
+<h1> Ejercicio2 </h1>
+<br> A Todas las fotos del directorio numero-examen. Cambiale el tamaño (ancho 200) y el nombre por 
+<br> image01-57.50 KB-200-221.png ... con el siguiente formato 
+<br> <b> imagenNumero-tamaño-ancho-alto.png </b>
+ <br> hazles a todos un vertical flip y una desaturacion del -220  
+<br> Guardalas como png con "compresión level" 8  en una subcarpeta del original llamada "peq"
+<br> Debes entregar las imágenes cambiadas y una impresión de la pantalla de configuración
+
+<h2 style="color: red;"><b>NOTA: LAS CAPTURAS Y LOS RESULTADOS DEL BATCH ESTAN DENTRO DE ej2-numeros-examen EN 2 SUBCARPETAS DISTINTAS</b></h2>
+
+<h1>ejercicio 3 </h1>
+<img src="ej3coordenadas.jpg" width="600" > <br>
+
+<svg width="600" height="150" viewBox="0 0 240 100">
+    <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+    <rect x="15" y="15" width="40" height="60" fill="red"></rect>
+    <ellipse cx="70" cy="45" rx="30" ry="20" fill="green"/>
+    <rect x="85" y="15" width="40" height="60" fill="yellow"/>
+    <ellipse cx="140" cy="45" rx="30" ry="20" fill="blue"/>
+    <rect x="155" y="15" width="40" height="60" fill="magenta"/>
+</svg>
+
+
+<h1>Ejercicio 4 icono </h1>
+El icono debe estar configurado para que se vea en la web
+
+<h1>Ejercicio 5 texto </h1>
+Crea el siguiente texto imbuido en una elipse.  debes usar una palabra clave especial para que cada sección tenga un color diferente. Añádele un estilo para que cambie de color la elipse al pasar sobre ella 
+<img src="ej5.jpg" width="600"><br>
+<style>
+    #elipseEj5:hover {
+        fill: orange;     /* Cambia de color */
+        cursor: pointer;  /* Manita del ratón */
+    }
+</style>
+
+<svg width="600" viewBox="0 0 210 50">
+    <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+    <ellipse id="elipseEj5" cx="105" cy="25" rx="95" ry="22" fill="cyan"/>
+
+    <text x="105" y="15"
+          text-anchor="middle" 
+          font-family="Verdana" 
+          font-size="10" 
+          font-weight="bold" 
+          textLength="140" 
+          lengthAdjust="spacingAndGlyphs"
+          pointer-events="none">
+        
+        <tspan fill="blue">Desarrollo</tspan>
+        <tspan fill="green"> SVG</tspan>
+        <tspan fill="red"> 2025</tspan>
+    </text>
+</svg><br>
+
+ <h1>Ejercicio 6 Animación círculos y cuadrados </h1>
+ 
+ Modifica el ejercicio 3 para que los círculos crezcan y disminuyan sus rx según su tamaño <br>
+  (puedes ver la animación adjunta ) deben empezar al hacer click sobre cada uno de ellos<br>
+<svg width="600" height="150" viewBox="0 0 240 100">
+    <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+    <rect x="15" y="15" width="40" height="60" fill="red">
+        <animate attributeName="width" values="0;40;0" dur="1s" begin="click" repeatCount="indefinite"/>
+        <animate attributeName="x" values="15;0;15" dur="1s" begin="click" repeatCount="indefinite"/>
+    </rect>
+
+    <ellipse cx="70" cy="45" rx="30" ry="20" fill="green">
+        <animate attributeName="rx" values="0;30;0" dur="1s" begin="click" repeatCount="indefinite"/>
+    </ellipse>
+
+    <rect x="85" y="15" width="40" height="60" fill="yellow">
+        <animate attributeName="width" values="0;40;0" dur="1s" begin="click" repeatCount="indefinite"/>
+        <animate attributeName="x" values="85;70;85" dur="1s" begin="click" repeatCount="indefinite"/>
+    </rect>
+
+    <ellipse cx="140" cy="45" rx="30" ry="20" fill="blue">
+        <animate attributeName="rx" values="0;30;0" dur="1s" begin="click" repeatCount="indefinite"/>
+    </ellipse>
+
+    <rect x="155" y="15" width="40" height="60" fill="magenta">
+        <animate attributeName="width" values="0;40;0" dur="1s" begin="click" repeatCount="indefinite"/>
+        <animate attributeName="x" values="155;140;155" dur="1s" begin="click" repeatCount="indefinite"/>
+    </rect>
+</svg>
+
+  <h1> Ejercicio7 Texto Animado  </h1>
+
+  <p> Ejercicio 7 Debes Crear un texto que se anime en tres animaciones diferentes </p>
+  <ol> 
+  <li> 1º  Rotando cada uno de los caracteres con animate y el atributo rotate de text de 0 a 90 y a 0
+</li> <li> 2º  Escalando todo el texto con animatetransform de 1 al 80% y después otra vez a 1
+</li> <li>3º  Cambiado el color de todo el texto con animatetransform de 0000FF a ff0000 y después otra vez a   0000FF
+</li> 
+</ol>
+<p>Deben tener una duración de 5 segundos todo el proceso y debe ejecutarse hacerse al pasar el ratón por encima</p>
+
+<br> 
+<svg width="700" height="100" viewBox="-50 -50 700 100">
+    <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+    <defs>
+        <style>
+            text {
+                dominant-baseline: hanging;
+                font: 28px Verdana, Helvetica, Arial, sans-serif;
+            }
+        </style>
+    </defs>
+    <text x="0" y="0"> 1. Rotando   
+        <animate attributeName="rotate" values="0;90;0" dur="5s" begin="mouseover" repeatCount="indefinite"/>     
+    </text>
+</svg>
+<br> 
+
+
+<svg width="700" height="100" viewBox="-50 -50 700 100">
+    <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+    <defs>
+        <style>
+            text {
+                dominant-baseline: hanging;
+                font: 28px Verdana, Helvetica, Arial, sans-serif;
+            }
+        </style>
+    </defs>
+    <text>  2. Rotando y escalando 
+        <animate attributeName="rotate" values="0;90;0" dur="5s" begin="mouseover" repeatCount="indefinite"/> 
+        <animateTransform attributeName="transform" type="scale" values="1;0.8;1" dur="5s" begin="mouseover" repeatCount="indefinite"/>      
+    </text>
+</svg>
+<br> 
+
+<svg width="700" height="100" viewBox="-50 -50 700 100">
+    <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+    <defs>
+        <style>
+            text {
+                dominant-baseline: hanging;
+                font: 28px Verdana, Helvetica, Arial, sans-serif;
+            }
+        </style>
+    </defs>
+    <text>  3. Rotando, escalando y color
+        <animate attributeName="rotate" values="0;90;0" dur="5s" begin="mouseover" repeatCount="indefinite"/> 
+        <animateTransform attributeName="transform" type="scale" values="1;0.8;1" dur="5s" begin="mouseover" repeatCount="indefinite"/>
+        <animate attributeName="fill" values="#0000FF;#FF0000;#0000FF" dur="5s" begin="mouseover" repeatCount="indefinite"/>
+    </text>
+</svg>
+<br> 
+
+<h1> Ejercicio8 circulos degradados   </h1>
+<img src="ej8circulos2.jpg" width="400"/> 
+<svg width="400" height="200" viewBox="0 0 20 10" xmlns="http://www.w3.org/2000/svg">
+    <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+    <defs>
+        <linearGradient id="gradArcoiris" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="yellow" />
+            <stop offset="20%" stop-color="green" />
+            <stop offset="40%" stop-color="red" />
+            <stop offset="60%" stop-color="orange" />
+            <stop offset="80%" stop-color="magenta" />
+            <stop offset="100%" stop-color="blue" />
+        </linearGradient>
+
+        <radialGradient id="gradDiana" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" stop-color="orange" />
+            <stop offset="15%" stop-color="orange" />
+            
+            <stop offset="15%" stop-color="red" />
+            <stop offset="40%" stop-color="red" />
+            
+            <stop offset="40%" stop-color="orange" />
+            <stop offset="65%" stop-color="orange" />
+            
+            <stop offset="65%" stop-color="red" />
+            <stop offset="100%" stop-color="red" />
+        </radialGradient>
+    </defs>
+
+    <circle cx="5" cy="5" r="4" fill="url(#gradArcoiris)" />
+    
+    <circle cx="15" cy="5" r="4" fill="url(#gradDiana)" /> 
+</svg>
+
+<h1> Ejercicio 9 texto en path    </h1>
+
+<br>Dado este path 
+<br>M 0 0 C 80 30 60 84 160 40 C 250 0 204 -63 7 -45
+<br>Crea este diseño de manera que  cuando se pase sobre él se cambie de color del azul al verde y le salga un borde. 
+<br> Para que se vea correctamente con ese path la fuente debe ser font: 24px Verdana;
+<br>
+<svg viewBox="-20 -80 350 200" width="600" height="400">
+    <rect x="-20" y="-80" width="100%" height="100%" fill="#EEEEEE"></rect>
+
+    <defs>
+        <path id="rutaCurva" d="M 0 0 C 80 30 60 84 160 40 C 250 0 204 -63 7 -45"/>
+        
+        <style>
+            .textoPath {
+                font: 24px Verdana;
+                fill: blue; 
+                cursor: pointer;
+                transition: all 0.3s;
+            }
+            
+            /* Efecto al pasar el ratón */
+            .textoPath:hover {
+                fill: green;       /* Cambia a verde */
+                stroke: black;     /* Añade borde */
+                stroke-width: 1px;
+            }
+        </style>
+    </defs>
+
+    <use href="#rutaCurva" fill="none" stroke="red" stroke-width="1"/>
+
+    <text class="textoPath">
+        <textPath href="#rutaCurva">
+            DAW IES Playamar Diseño Web
+        </textPath>
+    </text>
+</svg>
+
+ <img src="ej9path.jpg"  height="250">
+
+ <h1> Ejercicio 10  </h1>
+<br>
+Se os proporciona el código preparado para que se acuerde con las magnitudes del las elementos<br><br>
+<strong> Diseño estático</strong>
+<br> • Fondo es un rectángulo que cubre el 100% del svg con la imagen fondo.jpg
+<br>  • Pez es un rectángulo de tamaño 75x75 px  con la imagen pescado.png (pon tu la posicion aproximadamente)
+<br>   • barca es un rectángulo de tamaño 100x100px  con la imagen barca.png (pon tu la posicion aprox)
+<br>   • Sol se proporciona un código svg que se tendrá que escalar y posicionar en la posición correcta. (aprox)
+<br><br>  <strong>      
+Animaciones</strong>
+<br>   • Barca: al hacer click se debe mover en el eje x 600px y volver a la posicion origen
+<br>    • Pez : al pasar el ratón encima se debe recorrer una vez el path siguiente 
+<br>          M 0 0 C -42 -159 -343 -230 -464 -1 C -384 -272 -128 -558 -1 -3
+<br>      
+<br>   • Sol : al hacer click  debe recorrer una vez el path siguiente 
+<br>     M 0 0 C -42 -100 -343 -100 -664 -1 C -384 -100 -128 -50 -1 -3
+<br>    
+<br>   • Sol : al hacer click  debe recorrer varios colores sobre el atributo fill del amarillo naranja rojo naranja amarillo 
+<br><br>   <strong>      
+Programacion </strong>
+<br>Al realizar alguna de las animaciones anteriores se debe ejecutar 
+el script que actualice el contador que hay debajo de la animación
+ (el script se proporciona pues no es parte de este modulo pero debeis instalarlo en los elementos adecuados)
+<br><br>
+
+
+
+    <div>
+    <svg viewBox="0 0 800 450" width="800" height="450">
+        <image href="ej10fondo.jpg" x="0" y="0" width="800" height="450" preserveAspectRatio="none" />
+        
+        <g id="sol" transform="translate(600, 50)">
+            <rect x="0" y="0" width="100%" height="100%" fill="#EEEEEE"> </rect>
+
+ <g transform="translate(10,10) scale(0.05,0.05)" fill="grey" >
+<path d="M4671 12787 c-13 -6 -34 -25 -45 -40 l-21 -28 -8 -1457 c-9 -1611
+-13 -1503 54 -1538 19 -9 45 -14 63 -11 17 3 181 88 364 190 l332 184 382 7
+c275 5 391 11 413 20 39 17 65 56 65 99 0 26 -158 304 -726 1278 -446 764
+-739 1257 -760 1277 -36 34 -72 41 -113 19z"/>
+<path d="M9603 12133 c-32 -19 -2044 -2008 -2075 -2053 -27 -39 -23 -94 10
+-130 24 -28 62 -40 397 -136 l370 -106 280 -269 c283 -272 313 -295 367 -282
+30 8 64 39 77 71 10 27 38 129 361 1362 89 338 206 785 261 994 120 455 122
+462 103 497 -33 64 -92 84 -151 52z"/>
+<path d="M713 9750 c-62 -38 -78 -88 -45 -147 18 -32 2007 -2044 2052 -2075
+39 -27 94 -23 130 10 27 24 41 63 137 398 l106 372 269 278 c271 282 294 312
+281 366 -8 30 -39 64 -71 77 -15 6 -189 53 -387 105 -1934 508 -2375 623
+-2411 629 -20 4 -41 0 -61 -13z"/>
+<path d="M6074 9589 c-1027 -99 -1976 -729 -2483 -1645 -183 -330 -311 -723
+-366 -1124 -22 -160 -31 -532 -16 -699 63 -715 360 -1378 853 -1907 534 -574
+1220 -915 2008 -999 157 -17 488 -19 643 -5 1039 99 1986 723 2496 1646 183
+330 311 723 366 1124 22 160 31 532 16 699 -64 721 -364 1386 -865 1921 -528
+562 -1215 901 -1996 985 -144 16 -515 18 -656 4z"/>
+<path d="M9764 8192 c-37 -23 -59 -71 -51 -111 3 -15 89 -177 190 -359 l184
+-332 7 -382 c5 -275 11 -391 20 -413 17 -39 56 -65 99 -65 26 0 304 158 1278
+726 796 464 1256 738 1278 761 29 31 33 40 28 75 -6 47 -37 84 -81 97 -18 5
+-618 12 -1476 15 -1412 7 -1446 6 -1476 -12z"/>
+<path d="M1309 5544 c-796 -464 -1256 -738 -1278 -761 -29 -31 -33 -40 -28
+-75 6 -47 37 -84 81 -97 18 -5 618 -12 1473 -16 1303 -6 1444 -5 1472 10 39
+20 65 68 58 109 -3 17 -88 181 -190 364 l-184 332 -7 382 c-5 275 -11 391 -20
+413 -17 39 -56 65 -99 65 -26 0 -304 -158 -1278 -726z"/>
+<path d="M9950 5263 c-27 -25 -40 -63 -136 -399 l-106 -370 -269 -280 c-272
+-282 -295 -312 -282 -366 8 -30 39 -64 71 -77 27 -10 129 -38 1362 -361 338
+-89 785 -206 994 -261 455 -120 462 -122 497 -103 64 33 84 92 52 151 -19 32
+-2008 2044 -2053 2075 -39 27 -94 23 -130 -9z"/>
+<path d="M3845 3643 c-27 -7 -61 -39 -74 -71 -10 -27 -38 -129 -361 -1362 -89
+-338 -206 -785 -261 -994 -120 -455 -122 -462 -103 -497 33 -64 92 -84 151
+-51 32 18 2044 2007 2075 2052 27 39 23 94 -9 130 -25 27 -63 40 -399 136
+l-371 106 -269 260 c-148 143 -278 266 -289 273 -25 16 -64 24 -90 18z"/>
+<path d="M8040 3072 c-19 -10 -174 -95 -345 -189 l-310 -171 -380 -7 c-273 -5
+-388 -10 -410 -19 -39 -17 -65 -56 -65 -99 0 -26 158 -304 726 -1278 465 -797
+738 -1256 761 -1278 31 -29 40 -33 75 -28 47 6 84 37 97 81 5 18 12 618 16
+1473 7 1591 11 1484 -55 1518 -38 20 -68 19 -110 -3z"/>
+</g>
+            
+            <animateMotion path="M 0 0 C -42 -100 -343 -100 -664 -1 C -384 -100 -128 -50 -1 -3" 
+                           begin="click" dur="4s" fill="freeze" onbegin="atardeceresf()"/>
+                           
+            <animate attributeName="fill" values="yellow;orange;red;orange;yellow" 
+                     begin="click" dur="4s" fill="freeze" />
+        </g>
+
+        <image href="ej10barca.png" x="50" y="250" width="100" height="100">
+            <animateTransform attributeName="transform" type="translate" 
+                              values="0,0; 600,0; 0,0" dur="5s" begin="click" 
+                              onbegin="viajesf()"/>
+        </image>
+
+        <image href="ej10pescado.png" x="600" y="300" width="75" height="75">
+            <animateMotion path="M 0 0 C -42 -159 -343 -230 -464 -1 C -384 -272 -128 -558 -1 -3" 
+                           begin="click" dur="3s" onbegin="pescadof()"/>
+        </image>
+
+    </svg>
+
+    <script>
+        var viajec = 0;
+        var pescadoc = 0;
+        var atardeceresc = 0;
+        function viajesf() { document.getElementById("viajess").innerHTML = ++viajec }
+        function pescadof() { document.getElementById("pescadoss").innerHTML = ++pescadoc }
+        function atardeceresf() { document.getElementById("atardeceress").innerHTML = ++atardeceresc }
+    </script>
+    
+    <div style="margin: auto;">
+        <h1> Viajes de Pesca: <span id="viajess">0</span></h1>
+        <h1> Saltos de Pescado: <span id="pescadoss">0</span></h1>
+        <h1> Atardeceres: <span id="atardeceress">0</span></h1>
+
+        <br> <br> <br>
+        <h3> Ejercicio resuelto </h3>
+        <img src="ej10ejercicio.jpg" width="620">
+        </div>
+</div>
+
+</body>
+
+</html>
