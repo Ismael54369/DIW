@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios CSS - Parte 2</title>
+    <style>
+        /* EJERCICIO 1: Selector universal para fuente Georgia */
+        * {
+            font-family: Georgia, serif;
+        }
+
+        /* Estilos base para visualización */
+        body { margin: 20px; line-height: 1.4; }
+        section { border-bottom: 1px solid #ccc; padding-bottom: 20px; margin-bottom: 20px; }
+
+        /* EJERCICIO 2: Unidades de medida */
+        .ejercicio2a { font-size: 10em; }
+        .ejercicio2b { font-size: 10%; }
+        .ejercicio2c { font-size: 10px; }
+        .ejercicio2d { font-size: 10mm; }
+
+        /* EJERCICIO 3: Font-weight (Espesor) */
+        .ejercicio3normal { font-weight: normal; }
+        .ejercicio3bold { font-weight: bold; }
+        .ejercicio3bolder { font-weight: bolder; }
+        .ejercicio3lighter { font-weight: lighter; }
+        .ejercicio3100 { font-weight: 100; }
+        .ejercicio3200 { font-weight: 200; }
+        .ejercicio3300 { font-weight: 300; }
+        .ejercicio3400 { font-weight: 400; }
+        .ejercicio3500 { font-weight: 500; }
+        .ejercicio3600 { font-weight: 600; }
+        .ejercicio3700 { font-weight: 700; }
+        .ejercicio3800 { font-weight: 800; }
+        .ejercicio3900 { font-weight: 900; }
+
+        /* EJERCICIO 4: Font-style */
+        .ejercicio4italic { font-style: italic; }
+        .ejercicio4oblique { font-style: oblique; }
+
+        /* EJERCICIO 5: Font-variant */
+        .ejercicio5normal { font-variant: normal; }
+        .ejercicio5caps { font-variant: small-caps; }
+
+        /* EJERCICIO 6: Text-transform */
+        .ejercicio7none { text-transform: none; }
+        .ejercicio7capitalize { text-transform: capitalize; }
+        .ejercicio7uppercase { text-transform: uppercase; }
+        .ejercicio7lowercase { text-transform: lowercase; }
+
+        /* EJERCICIO 7: Text-decoration y Line-height */
+        .ejercicio6none { text-decoration: none; }
+        .ejercicio6underline { text-decoration: underline; }
+        .ejercicio6overline { text-decoration: overline; }
+        .ejercicio6linethrough { text-decoration: line-through; }
+        .ejercicio6blink { text-decoration: blink; } /* Nota: blink es obsoleto pero está en el PDF */
+        .ejercicio6inherit { text-decoration: inherit; }
+
+        .ejercicio8triple { line-height: 3; }
+        .ejercicio810pt { line-height: 10pt; }
+        .ejercicio8150percent { line-height: 150%; }
+
+        /* EJERCICIO 8: Text-indent (Sangría) */
+        .ejercicio9pos10px { text-indent: 10px; }
+        .ejercicio9neg20px { text-indent: -20px; margin-left: 20px; }
+        .ejercicio9pos20percent { text-indent: 20%; }
+
+        /* EJERCICIO 9: Letter-spacing (Espaciado caracteres) */
+        .ejercicio10sep5px { letter-spacing: 5px; }
+        .ejercicio10sep10px { letter-spacing: 10px; }
+        .ejercicio10con1px { letter-spacing: -1px; }
+        .ejercicio10con05px { letter-spacing: -0.5px; }
+
+        /* EJERCICIO 10: White-space */
+        .ejercicio11-1 { white-space: normal; }
+        .ejercicio11-2 { white-space: pre; }
+        .ejercicio11-3 { white-space: nowrap; }
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <h2>Ejercicio 1</h2>
+        <p>Ejercicio 1. Crea una regla CSS para que todos los elementos textuales tengan fuente Georgia (selector * ) en general.</p>
+        <p>Este texto ya aparece en Georgia gracias al selector universal.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 2</h2>
+        <p>Ejercicio 2. Crea reglas CSS para tamaños de fuente con diferentes unidades.</p>
+        <p class="ejercicio2a">Tamaño 10em</p>
+        <p class="ejercicio2b">Tamaño 10% (muy pequeño)</p>
+        <p class="ejercicio2c">Tamaño 10px</p>
+        <p class="ejercicio2d">Tamaño 10mm</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 3</h2>
+        <p>Ejercicio 3. Crea 13 reglas CSS con la clave font-weight para el espesor.</p>
+        <p class="ejercicio3normal">Espesor: normal</p>
+        <p class="ejercicio3bold">Espesor: bold</p>
+        <p class="ejercicio3bolder">Espesor: bolder</p>
+        <p class="ejercicio3lighter">Espesor: lighter</p>
+        <p class="ejercicio3100">Espesor: 100</p>
+        <p class="ejercicio3500">Espesor: 500</p>
+        <p class="ejercicio3900">Espesor: 900</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 4</h2>
+        <p>Ejercicio 4. Crea reglas CSS con la clave font-style.</p>
+        <p class="ejercicio4italic">Estilo: italic (itálica)</p>
+        <p class="ejercicio4oblique">Estilo: oblique (oblicua)</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 5</h2>
+        <p>Ejercicio 5. Crea reglas CSS con la clave font-variant.</p>
+        <p class="ejercicio5normal">Variante: normal</p>
+        <p class="ejercicio5caps">Variante: small-caps (versalitas)</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 6</h2>
+        <p>Ejercicio 6. Crea reglas CSS con la clave text-transform.</p>
+        <p class="ejercicio7none">Transform: none (Texto Normal)</p>
+        <p class="ejercicio7capitalize">Transform: capitalize (cada palabra empieza en mayúscula)</p>
+        <p class="ejercicio7uppercase">Transform: uppercase (TODO MAYÚSCULAS)</p>
+        <p class="ejercicio7lowercase">Transform: lowercase (todo minúsculas)</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 7</h2>
+        <p>Ejercicio 7. Crea reglas CSS con text-decoration y line-height.</p>
+        <p class="ejercicio6underline">Decoración: subrayado</p>
+        <p class="ejercicio6overline">Decoración: línea superior</p>
+        <p class="ejercicio6linethrough">Decoración: tachado</p>
+        <p class="ejercicio8triple">Line-height: Triple del tamaño de fuente (3). <br> Segunda línea del párrafo.</p>
+        <p class="ejercicio8150percent">Line-height: 150%. <br> Segunda línea del párrafo.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 8</h2>
+        <p>Ejercicio 8. Crea reglas CSS con la clave text-indent para sangrar la primera línea.</p>
+        <p class="ejercicio9pos10px">Sangrado positivo de 10px. Este es un ejemplo de cómo se desplaza únicamente la primera línea del párrafo.</p>
+        <p class="ejercicio9neg20px">Sangrado negativo de 20px. En este caso la primera línea se desplaza hacia la izquierda.</p>
+        <p class="ejercicio9pos20percent">Sangrado del 20% del padre. La primera línea comienza mucho más a la derecha.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 9</h2>
+        <p>Ejercicio 9. Crea reglas CSS con la clave letter-spacing para el espacio entre caracteres.</p>
+        <p class="ejercicio10sep5px">Separación de 5px</p>
+        <p class="ejercicio10sep10px">Separación de 10px</p>
+        <p class="ejercicio10con1px">Contracción de 1px</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 10</h2>
+        <p>Ejercicio 10. Crea reglas CSS con la clave white-space para el comportamiento de espacios.</p>
+        <p class="ejercicio11-1">Normal:    Respeta    un solo espacio    y ajusta líneas.</p>
+        <p class="ejercicio11-2">Pre:    Respeta    todos los espacios
+        y saltos de línea.</p>
+        <p class="ejercicio11-3">Nowrap: Este texto no saltará de línea aunque el contenedor sea pequeño, se mantendrá en una sola línea infinita hasta el final.</p>
+    </section>
+
+</body>
+</html>
