@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Tipos de CSS</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+        /* Importamos otra hoja (también externa) */
+        @import url("colores.css");
+
+        /* Estilo incrustado para el h2 */
+        h2 {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="color: red;">Este H1 es rojo (En línea)</h1>
+
+    <h2>Este H2 es verde (Incrustado)</h2>
+
+    <p>Este párrafo es azul (Desde archivo externo)</p>
+
+</body>
+</html>

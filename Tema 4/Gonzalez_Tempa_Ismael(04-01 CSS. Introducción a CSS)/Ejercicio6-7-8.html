@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6 - Los 10 Bordes de la Imagen</title>
+    <style>
+        /* Estilo base para las cajas */
+        div {
+            width: 300px;
+            margin: 15px;
+            padding: 10px;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+
+        /* --- EJERCICIO 7: MODIFICACIÓN DE MÁRGENES --- */
+
+        /* Borde 1: Alineado al centro */
+        .borde1 { 
+            border: 2px solid black; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Borde 2: Alineado a la derecha */
+        .borde2 { 
+            border: 2px solid red; 
+            margin-left: auto; 
+            margin-right: 0;
+        }
+
+        /* Borde 3: Alineado a la izquierda */
+        .borde3 { 
+            border: 2px dashed red; 
+            margin-left: 0; 
+            margin-right: auto;
+        }
+
+        /* Borde 4: A 100px de la izquierda */
+        .borde4 { 
+            border: 5px ridge skyblue; 
+            margin-left: 100px;
+        }
+
+        /* --- EJERCICIO 8: PADDINGS MODIFICADOS --- */
+
+        /* Borde 6: Relleno de 20px en todos los lados */
+        .borde6 { 
+            border: 3px dotted red; 
+            padding: 20px; 
+        }
+
+        /* Borde 7: Vertical 40px, Horizontal 100px */
+        .borde7 { 
+            border: 2px dashed black; 
+            padding: 40px 100px; 
+        }
+
+        /* Borde 8: Arriba 10, Derecha 20, Abajo 30, Izquierda 40 */
+        .borde8 {
+            border-style: outset;
+            border-width: 5px;
+            border-color: yellow red yellow red;
+            padding: 10px 20px 30px 40px; 
+        }
+
+        /* 9. 7px inset: Arriba amarillo, Derecha rosa, Abajo celeste, Izquierda verde */
+        div.nueve {
+            border-width: 7px;
+            border-style: inset;
+            border-color: yellow pink skyblue green;
+        }
+
+        /* 10. 10px groove: Arriba rojo, Derecha azul, Abajo verde, Izquierda celeste */
+        .borde10 {
+            border-width: 10px;
+            border-style: groove;
+            border-color: red blue green skyblue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio 6: Galería de 10 Bordes Personalizados</h1>
+
+    <div class="borde1">Borde 1</div>
+    <div class="borde2">Borde 2</div>
+    <div class="borde3">Borde 3</div>
+    <div class="borde4">Borde 4</div>
+    <div class="borde6">Borde 6</div>
+    <div class="borde7">Borde 7</div>
+    <div class="borde8">Borde 8</div>
+    <div class="nueve">Borde 9</div>
+    <div class="borde10">Borde 10</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Modelo de Cajas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e0e0e0;
+        }
+        .verdadero {
+            color: green;
+            font-weight: bold;
+        }
+        .falso {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Ejercicio 3: Verdadero o Falso</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Afirmación</th>
+                <th>Verdadero / Falso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>El content va fuera del padding</td>
+                <td class="falso">Falso</td>
+            </tr>
+            <tr>
+                <td>El padding va dentro del margin</td>
+                <td class="verdadero">Verdadero</td>
+            </tr>
+            <tr>
+                <td>El border va entre el margin y el padding</td>
+                <td class="verdadero">Verdadero</td>
+            </tr>
+            <tr>
+                <td>el margin va entre el padding y el content</td>
+                <td class="falso">Falso</td>
+            </tr>
+            <tr>
+                <td>El border va fuera del padding</td>
+                <td class="verdadero">Verdadero</td>
+            </tr>
+            <tr>
+                <td>width total = width + paddings left right + borders r l</td>
+                <td class="verdadero">Verdadero</td>
+            </tr>
+            <tr>
+                <td>height total = height + paddings + borders + margins</td>
+                <td class="verdadero">Verdadero</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

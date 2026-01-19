@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4 - Prioridades CSS</title>
+
+    <style>
+        /* 2. HOJA EXTERNA IMPORTADA */
+        @import url("estilos.css");
+
+        /* 3. ESPECIFICIDAD (div h1 vs h1) */
+        /* Aunque h1 sea naranja, "div h1" es más específico y ganará */
+        h1 { color: orange; }
+        div h1 { color: purple; }
+
+        /* 4. ORDEN DE LAS REGLAS (h3 h3 h3) */
+        /* Al tener el mismo peso, el navegador aplica la ÚLTIMA que lee */
+        h3 { color: red; }
+        h3 { color: green; }
+        h3 { color: black; } /* Este es el color que se verá */
+
+        /* 5. !IMPORTANT */
+        /* Esta regla rompe la jerarquía y gana a todo, incluso al estilo en línea */
+        .color-especial {
+            color: pink !important;
+        }
+
+        /* 6. HERENCIA */
+        /* Los hijos dentro de este div heredarán el tipo de letra */
+        .contenedor-padre {
+            font-family: "Courier New", Courier, monospace;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-padre">
+        
+        <div>
+            <h1>Título H1 (Púrpura por Especificidad)</h1>
+        </div>
+
+        <h3>Título H3 (Negro por Orden de reglas)</h3>
+
+        <p class="color-especial" style="color: grey;">
+            Este párrafo debería ser gris por estilo en línea, pero es <b>Rosa</b> por el !important.
+        </p>
+
+        <p>Este párrafo es azul por Estilo en línea.</p>
+
+    </div>
+
+</body>
+</html>
