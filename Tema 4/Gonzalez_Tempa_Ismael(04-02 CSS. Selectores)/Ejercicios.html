@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicios CSS - Selectores y Pseudoclases</title>
+    <style>
+        /* Estilos generales para que la página sea legible */
+        body { font-family: sans-serif; margin: 20px; line-height: 1.6; }
+        section { border-bottom: 2px solid #ccc; padding-bottom: 20px; margin-bottom: 30px; }
+        h2 { color: #2c3e50; }
+        table { border-collapse: collapse; margin: 10px 0; }
+
+        /* EJERCICIO 2: Selector universal (Gris) */
+        /* Lo comentamos para que no afecte a la visibilidad de los demás ejercicios, 
+           pero la regla es: * { color: gray; } */
+
+        /* EJERCICIO 3: Descendientes de p (Verde, Georgia) */
+        p.ej3 * { color: green; font-family: Georgia, serif; }
+
+        /* EJERCICIO 4: Descendientes de tabla (Bordes rojos y amarillos) */
+        /* Orden: Arriba/Abajo rojo, Derecha/Izquierda amarillo */
+        table.ej4 * { border: 3px solid; border-color: red yellow; }
+
+        /* EJERCICIO 5: Hijo directo de p (Azul, Arial) */
+        p.ej5 > * { color: blue; font-family: Arial, sans-serif; }
+
+        /* EJERCICIO 6: strong dentro de li */
+        li strong { color: blue; }
+
+        /* EJERCICIO 7: Enlaces magenta (div * a) */
+        .ej7 * a { color: magenta; }
+
+        /* EJERCICIO 8: Primer enlace hijo de div (Sin subrayado) */
+        .ej8 > a:first-child { text-decoration: none; }
+
+        /* EJERCICIO 9: strong hijo de h1 (Subrayado) */
+        h1.ej9 > strong { text-decoration: underline; }
+
+        /* EJERCICIO 10: p adyacente a h3 */
+        h3.ej10 + p { color: red; }
+
+        /* EJERCICIO 11: Identificador */
+        #ejercicio10 { color: red; }
+
+        /* EJERCICIO 12: Clase */
+        .ejercicio11 { color: blue; }
+
+        /* EJERCICIO 13: Clase con excepciones */
+        .ejercicio12 { color: blue; }
+        h2.ejercicio12 { color: green; }
+        h3.ejercicio12 { color: yellow; }
+
+        /* EJERCICIO 14: Pseudoclases LVHA */
+        a.ejercicio13:link { color: green; }
+        a.ejercicio13:visited { color: olive; }
+        a.ejercicio13:hover { color: red; }
+        a.ejercicio13:active { color: blue; }
+
+        /* EJERCICIO 15: !important vs especificidad */
+        .ejercicio14 { color: blue !important; }
+        p.ejercicio14 { color: green; }
+
+        /* EJERCICIO 16: !important vs estilo en línea */
+        p.ejercicio15 { color: blue !important; }
+
+        /* EJERCICIO 17: Pseudoelementos */
+        .ejercicio16:first-line { color: blue; }
+        .ejercicio16:first-letter { color: red; font-size: 15px; }
+        .ej17-hola:before { content: "hola "; color: green; font-weight: bold; }
+        .ej17-adios:after { content: " adios"; color: yellow; font-weight: bold; }
+
+        /* EJERCICIO 18: Focus */
+        input:focus { background-color: yellow; border: 2px solid orange; }
+
+        /* EJERCICIO 19: First-child */
+        ul.ej19 li:first-child { font-weight: bold; color: darkred; }
+
+        /* EJERCICIO 20: Lang */
+        p:lang(en) { color: red; }
+        p:lang(es) { color: blue; }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h2>Ejercicio 1</h2>
+        <p>Ejercicio 1. Rellena esta tabla y créala en el documento html.</p>
+        <table border="1" cellpadding="10">
+            <tr>
+                <td><b>Regla avanzada CSS:</b></td>
+                <td><code>selector #id .clase :pseudo-clase ( parámetros )</code></td>
+            </tr>
+            <tr>
+                <td><b>Bloque:</b></td>
+                <td><code>{ propiedad : valor !important ; regla2: valor; ... }</code></td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Ejercicio 2</h2>
+        <p>Ejercicio 2. Crea una regla CSS para que todos los elementos sean de color gris (selector *).</p>
+        <code>* { color: gray; }</code>
+    </section>
+
+    <section>
+        <h2>Ejercicio 3</h2>
+        <p>Ejercicio 3. Elementos dentro de p verdes y Georgia.</p>
+        <p class="ej3">Este es un texto con <b>un descendiente verde</b>.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 4</h2>
+        <p>Ejercicio 4. Elementos dentro de tabla con bordes rojos y amarillos.</p>
+        <table class="ej4" cellpadding="5">
+            <tr><td>Celda 1</td><td>Celda 2</td></tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Ejercicio 5</h2>
+        <p>Ejercicio 5. Elementos inmediatamente dentro de p azules y Arial.</p>
+        <p class="ej5"><span>Soy hijo directo azul</span>. <em><span>Soy nieto (no azul)</span></em></p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 6</h2>
+        <p>Ejercicio 6. Strong azul solo si es descendiente de li.</p>
+        <ul>
+            <li><strong>Soy azul</strong></li>
+        </ul>
+        <strong>No soy azul</strong>
+    </section>
+
+    <section>
+        <h2>Ejercicio 7</h2>
+        <p>Ejercicio 7. Enlaces dentro de un div y otra etiqueta color magenta.</p>
+        <div class="ej7"><div>hola</div></div>
+        <div class="ej7"><p><a href="#">Soy magenta</a></p></div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 8</h2>
+        <p>Ejercicio 8. Enlaces empezando un div sin subrayado.</p>
+        <div class="ej8">
+            <a href="#">Sin subrayado</a><br>
+            <p>Texto</p>
+            <a href="#">Con subrayado</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 9</h2>
+        <p>Ejercicio 9. Strong justo dentro de h1 con subrayado.</p>
+        <h1 class="ej9"><strong>Subrayado</strong></h1>
+        <h1 class="ej9"><span><strong>No subrayado</strong></span></h1>
+    </section>
+
+    <section>
+        <h2>Ejercicio 10</h2>
+        <p>Ejercicio 10. p junto a h3 son rojos.</p>
+        <h3 class="ej10">Título h3</h3>
+        <p>Soy un párrafo rojo.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 11</h2>
+        <p>Ejercicio 11. Identificador ejercicio10 rojo.</p>
+        <div id="ejercicio10">Texto rojo por ID</div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 12</h2>
+        <p>Ejercicio 12. Clase ejercicio11 azul.</p>
+        <div class="ejercicio11">Texto azul por clase</div>
+    </section>
+
+    <section>
+        <h2>Ejercicio 13</h2>
+        <p>Ejercicio 13. Clase ejercicio12 azul, h2 verde, h3 amarillo.</p>
+        <p class="ejercicio12">Párrafo azul</p>
+        <h2 class="ejercicio12">H2 verde</h2>
+        <h3 class="ejercicio12">H3 amarillo</h3>
+    </section>
+
+    <section>
+        <h2>Ejercicio 14</h2>
+        <p>Ejercicio 14. Pseudoclases ejercicio13 LVHA.</p>
+        <a href="#" class="ejercicio13">Enlace de prueba</a>
+        <p><i>Mnemotécnico: <b>L</b>o<b>V</b>e <b>H</b>ate <b>A</b>lways.</i></p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 15</h2>
+        <p>Ejercicio 15. !important en clase ejercicio14.</p>
+        <p class="ejercicio14">Me veo azul aunque la regla de etiqueta diga verde.</p>
+        <p>Se ve azul porque <b>!important</b> anula la especificidad normal.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 16</h2>
+        <p>Ejercicio 16. !important externo vs línea.</p>
+        <p class="ejercicio15" style="color: black;">Me veo azul.</p>
+        <p>Gana el azul porque el <b>!important</b> externo es más fuerte que el estilo en línea.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 17</h2>
+        <p>Ejercicio 17. Pseudoelementos en p clase ejercicio16.</p>
+        <p class="ejercicio16 ej17-hola">Esta es la primera línea azul.<br>Segunda línea normal.</p>
+        <p class="ejercicio16 ej17-adios">Esta caja termina con texto.</p>
+    </section>
+
+    <section>
+        <h2>Ejercicio 18</h2>
+        <p>Ejercicio 18. Pseudoclase :focus en formulario.</p>
+        <form>
+            1: <input type="text"><br>
+            2: <input type="text"><br>
+            3: <input type="text"><br>
+            4: <input type="text"><br>
+            5: <input type="text">
+        </form>
+    </section>
+
+    <section>
+        <h2>Ejercicio 19</h2>
+        <p>Ejercicio 19. :first-child en lista de 5 elementos.</p>
+        <ul class="ej19">
+            <li>Primero (Negrita)</li>
+            <li>Segundo</li>
+            <li>Tercero</li>
+            <li>Cuarto</li>
+            <li>Quinto</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Ejercicio 20</h2>
+        <p>Ejercicio 20. :lang(idioma) inglés (rojo) y español (azul).</p>
+        <p lang="en">This text is in English (Red).</p>
+        <p lang="es">Este texto es en Español (Azul).</p>
+    </section>
+
+</body>
+</html>
