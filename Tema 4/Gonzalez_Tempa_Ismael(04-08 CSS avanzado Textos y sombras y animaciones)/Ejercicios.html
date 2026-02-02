@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ejercicios de Sombras CSS</title>
+<style type="text/css">
+    body {
+        font-family: sans-serif;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+    
+    h2 { border-bottom: 2px solid #333; margin-top: 40px; }
+
+    /* --- EJERCICIO 1 y 2: TEXT SHADOWS --- */
+    h1 { 
+        font-family: Georgia, serif; 
+        font-size: 50px; 
+        text-align: center; 
+        text-decoration: none; 
+        margin: 10px;
+    }
+
+    /* Clase original */
+    .text1 {
+        text-align: center;
+        text-shadow: 10px 5px 1px #ccc; 
+        line-height: 1.5em;
+        color: black;
+    }
+
+    /* EJERCICIO 2: Modificación (Sombra Negativa/Roja) */
+    .text1negativo {
+        text-align: center;
+        /* Valores negativos en X e Y para cambiar la dirección */
+        text-shadow: -5px -5px 2px #ff0000; 
+        line-height: 2em;
+        color: #333;
+    }
+
+
+    /* --- EJERCICIO 3: INTERCAMBIO DE SOMBRAS --- */
+    
+    /* Estado inicial: Rojo izq/arriba, Azul der/abajo */
+    .text5 {
+        text-align: center;
+        /* Sombra Roja arriba-izq, Sombra Azul abajo-der */
+        text-shadow: -10px -10px 5px #f00, 10px 10px 5px #00f; 
+        transition: all 0.3s ease; /* Suavizado */
+        cursor: pointer;
+    }
+
+    /* Clase para intercambiar: Azul izq/arriba, Rojo der/abajo */
+    .text6 {
+        text-align: center;
+        text-shadow: -10px -10px 5px #00f, 10px 10px 5px #f00;
+        transition: all 0.3s ease;
+        color: #444;
+    }
+
+
+    /* --- EJERCICIO 4: RELIEVE VERDE --- */
+    .text-relieve-verde {
+        color: #4da64d; /* Verde base */
+        background-color: #333; /* Fondo oscuro para resaltar el relieve */
+        padding: 10px;
+        /* Luz arriba-izq (verde claro), Sombra abajo-der (verde oscuro) */
+        text-shadow: -2px -2px 1px #88ff88, 2px 2px 1px #003300;
+    }
+
+
+    /* --- EJERCICIO 5 y 6: CAJAS CON SOMBRAS MODIFICADAS --- */
+    
+    .contenedor-cajas {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    /* Caja 1: Sombra exterior difusa */
+    .cajasombra { 
+        /* Modificado: Color morado, más blur (10px) */
+        box-shadow: 5px 5px 10px 5px purple; 
+        border: solid 1px #666;
+        background-color: #fff;
+        width: 150px; height: 100px;
+        margin: 20px;
+        display: flex; align-items: center; justify-content: center;
+        transition: box-shadow 0.5s; /* Para el ejercicio 6 */
+    }
+    
+    /* Ejercicio 6: Cambio al pasar el ratón */
+    .cajasombra:hover {
+        box-shadow: 10px 10px 20px 5px red; 
+        cursor: pointer;
+    }
+
+    /* Caja 2: Sombra dura (sin spread) */
+    .cajasombra2 { 
+        /* Modificado: Color verde azulado, blur medio */
+        box-shadow: 8px 8px 5px 0px teal; 
+        border: solid 1px #666;
+        background-color: #fff;
+        width: 150px; height: 100px;
+        margin: 20px;
+        display: flex; align-items: center; justify-content: center;
+        transition: box-shadow 0.5s;
+    }
+
+    .cajasombra2:hover {
+        box-shadow: -8px -8px 5px 0px orange; 
+        cursor: pointer;
+    }
+
+    /* Caja 3: Sombra Interior (Inset) */
+    .cajasombrainterior { 
+        /* Modificado: Inset rojo suave */
+        box-shadow: inset 0px 0px 15px 5px rgba(255, 0, 0, 0.5); 
+        border: solid 1px #666;
+        background-color: #fff;
+        width: 150px; height: 100px;
+        margin: 20px;
+        display: flex; align-items: center; justify-content: center;
+        transition: box-shadow 0.5s;
+    }
+
+    .cajasombrainterior:hover {
+        /* Cambio a Inset azul fuerte */
+        box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 255, 0.5); 
+        cursor: pointer;
+    }
+
+
+    /* --- EJERCICIO 7: DISEÑOS EXTERNOS --- */
+    
+    /* 1. Fondo animado (Bashooka style inspiration) */
+    .fondo-animado {
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+        background-size: 400% 400%;
+        animation: gradient 5s ease infinite;
+        color: white;
+        display: flex; justify-content: center; align-items: center;
+        font-weight: bold; font-size: 20px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        border-radius: 10px;
+    }
+
+    @keyframes gradient {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* 2. Sombra compleja (CSSMatic style) */
+    .cssmatic-box {
+        margin-top: 20px;
+        width: 200px;
+        height: 100px;
+        background-color: #fff;
+        display: flex; justify-content: center; align-items: center;
+        /* Sombra suave y elegante */
+        -webkit-box-shadow: 10px 10px 26px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 26px -9px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 26px -9px rgba(0,0,0,0.75);
+        border: 1px solid #ddd;
+    }
+
+</style>
+</head>
+<body>
+
+    <h2>Ejercicios 1 y 2: Sombra básica y Negativa</h2>
+    <h1 class="text1">!!! Sombra Básica ¡¡¡ </h1>
+    <h1 class="text1negativo" id="negativo">!!! Sombra negativa (Ej 2) ¡¡¡ </h1>
+
+    <h2>Ejercicio 3: Intercambio con JS (Pasa el ratón)</h2>
+    <h1 onmouseenter="cambioclase('text6')" 
+        onmouseleave="cambioclase('text5')"
+        class="text5" 
+        id="cambio">
+        !!! Azul y rojo con hover ¡¡¡ 
+    </h1>
+
+    <h2>Ejercicio 4: Relieve Verde</h2>
+    <h1 class="text-relieve-verde">!!! Relieve Verde ¡¡¡</h1>
+
+    <h2>Ejercicios 5 y 6: Cajas, Modificaciones y Hover</h2>
+    <p>Pasa el ratón por encima de las cajas para ver el cambio de clase/color.</p>
+    <div class="contenedor-cajas">
+        <div class="cajasombra"> Externa (Blur) </div>
+        <div class="cajasombra2"> Dura (Solid) </div>
+        <div class="cajasombrainterior"> Interior (Inset) </div>
+    </div>
+
+    <h2>Ejercicio 7: Diseños Externos</h2>
+    
+    <div class="fondo-animado">
+        Gradiente Animado CSS
+    </div>
+
+    <div class="cssmatic-box">
+        Sombra CSSMatic
+    </div>
+
+
+    <script>
+        // Esta función sirve tanto para 'cambioclase' como para 'cambiorojo'
+        // Simplemente asigna la clase que le pasemos por parámetro al elemento
+        function cambioclase(nuevaClase) {
+            var elemento = document.getElementById("cambio");
+            elemento.className = nuevaClase;
+        }
+
+        // Definimos cambiorojo también por si se quisiera usar específicamente
+        // aunque con la anterior es suficiente.
+        function cambiorojo(nuevaClase) {
+            cambioclase(nuevaClase);
+        }
+    </script>
+
+</body>
+</html>
