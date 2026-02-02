@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* 1. UNIDADES ABSOLUTAS: Definimos un tamaño base fijo */
+        html {
+            font-size: 16px; /* El estándar: 16px */
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            /* 2. UNIDADES VIEWPORT DINÁMICAS: El contenedor ocupa todo el alto real */
+            min-height: 100dvh; 
+            background-color: #f0f0f0;
+        }
+
+        /* 3. UNIDADES VIEWPORT (vw): El encabezado ocupa el 80% del ancho de pantalla */
+        header {
+            width: 80vw;
+            margin: 0 auto;
+            background: indigo;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 4. UNIDADES RELATIVAS (rem): Tipografía que escala con la raíz */
+        h1 {
+            font-size: 2.5rem; /* 16px * 2.5 = 40px */
+        }
+
+        .card {
+            /* 5. UNIDADES ABSOLUTAS (px): Para bordes que no deben variar */
+            border: 2px solid #333;
+            background: white;
+            width: 300px;
+            margin: 20px auto;
+            /* 6. UNIDADES RELATIVAS (em): Padding proporcional al tamaño de fuente local */
+            padding: 1.5em; 
+            font-size: 1.2rem;
+        }
+
+        /* 7. UNIDADES RELATIVAS (%): El botón ocupa el 100% del ancho de su padre (.card) */
+        button {
+            width: 100%;
+            background: #ff4757;
+            color: white;
+            border: none;
+            /* Usamos em para que el botón sea "rechoncho" proporcional a su texto */
+            padding: 0.8em 0; 
+            cursor: pointer;
+        }
+
+        /* 8. UNIDADES VIEWPORT (vmin/vmax): Un cuadrado que nunca se sale de pantalla */
+        .cuadrado-responsive {
+            width: 20vmin;
+            height: 20vmin;
+            background: coral;
+            margin: 10px auto;
+        }
+
+        /* Ejemplo de impresión (Unidades absolutas físicas) */
+        @media print {
+            .card {
+                width: 15cm; /* Centímetros para papel */
+                font-size: 12pt; /* Puntos para lectura impresa */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mi Sitio Web (Unidades CSS)</h1>
+    </header>
+
+    <main>
+        <div class="card">
+            <h2>Unidad rem y em</h2>
+            <p>Este texto usa <strong>rem</strong> para el tamaño y la caja usa <strong>em</strong> para el espacio interno.</p>
+            <button>¡Haz click!</button>
+        </div>
+
+        <div class="cuadrado-responsive"></div>
+        <p style="text-align: center;">Este cuadrado es 20vmin (basado en el lado más corto).</p>
+    </main>
+
+</body>
+</html>
