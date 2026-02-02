@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Ejercicios CSS: Tablas y Cajas</title>
+<style type="text/css">
+/* --- ESTILOS DEL EJERCICIO 1 --- */
+table { border: 1px solid #03476F; border-collapse: collapse; font: normal 11px verdana, arial, helvetica, sans-serif;color: #363636; background:
+#92C428;}
+caption { text-align: center; font: bold 14px arial, helvetica, sans-serif; background: transparent; padding: 6px 4px 8px 0px;
+color: #03476F; text-transform: uppercase; }
+td, th { border: 1px dotted #03476F; padding: .4em; color: #363636; }
+thead th { font: bold 11px verdana, arial, helvetica, sans-serif; border: 1px solid #03476F; text-align: left; background: #4591AD;
+color: #FFFFFF;padding-top:3px; }
+tfoot td { border: 1px solid #03476F; text-align:center; background: #4591AD; color: #FFFFFF; padding-top:3px; }
+tbody td { vertical-align: top; text-align: left; }
+tr.fimpar { background: #AEE239; }
+tbody tr:hover { background: #FFD800; border: 1px solid #03476F; color: #FFF; }
+tbody td a:link, tbody td a:visited { background: transparent; text-decoration: none; color: #363636; }
+tbody td a:hover, tbody td a:active { background: #C2F64D; color: #363636; }
+
+/* --- ESTILOS PARA EJERCICIO 2 (Sobrescritura para bordes redondos) --- */
+/* Nota: Para que border-radius funcione en tablas, border-collapse debe ser separate */
+table.modificada {
+    margin: 20px auto; /* Margin modificado (centrado) */
+    border-collapse: separate; /* Necesario para bordes redondos */
+    background: #92C428;
+    border-spacing: 0; /* Para que parezca collapse */
+}
+table.modificada caption {
+    caption-side: bottom; /* Caption abajo */
+}
+
+/* Tabla 2a: Redondeadillos pero poco */
+table.poco-redonda {
+    border-radius: 10px;
+    border: 2px solid #03476F;
+}
+
+/* Tabla 2b: Completamente redondos */
+table.muy-redonda {
+    border-radius: 30px; /* Valor alto para que se vea muy redondo */
+    border: 2px solid #03476F;
+    padding: 5px; /* Un poco de padding para que no corte el texto */
+}
+
+/* --- ESTILOS DEL EJERCICIO 3 --- */
+#contenido { width: 800px; margin: auto; height: 600px; border: solid 1px black; background-color: #CCCCCC; }
+
+/* Clases con las formas geométricas */
+.cajaredonda { 
+    width: 100px; height: 100px; background-color:#FF0000; margin: 10px; float:right; text-align: center; vertical-align: middle;
+    border-radius: 50px; /* Completamente redonda (50px es la mitad de 100px) */
+    line-height: 20px; /* Ajuste para texto */
+}
+
+.cajaporesquinas { 
+    text-align: center; vertical-align: middle; width: 130px; height: 130px; background-color:#00FF00; margin: 10px; float:right;
+    border-radius: 0 0 40px 40px; /* Esquinas de abajo 40px */
+}
+
+.cajaporlados { 
+    text-align: center; vertical-align: middle; width: 160px; height: 160px; background-color:#0000FF; margin: 10px; float:right; 
+    border-radius: 30px 0 30px 0; /* Esquinas arriba-izq y abajo-der 30px */
+    color: white;
+}
+
+/* Estilo simple para separar ejercicios visualmente */
+hr { margin: 50px 0; border: 1px solid #999; }
+h2 { font-family: sans-serif; color: #333; }
+</style> 
+</head>
+<body> 
+
+<h2>Ejercicio 1</h2>
+<table>
+<caption>Distancias planetarias</caption>
+<thead> <tr> <th>Planeta</th> <th>Distancia desde la Tierra</th> <th>Web</th> </tr> </thead>
+<tfoot> <tr> <td colspan="3">Astronom&iacute;a Gobierno de Espa&ntilde;a</td> </tr> </tfoot>
+<tbody>
+<tr class="fimpar"> <td>Venus</td> <td>108 Millones de Kil&oacute;metros</td> <td><a
+href="http://es.wikipedia.org/wiki/Venus_(planeta)">Web Venus</a></td> </tr>
+<tr> <td>Saturno</td> <td>1.281 Millones de Kil&oacute;metros</td> <td><a href="http://es.wikipedia.org/wiki/Saturno_(planeta)">Web
+Saturno</a></td> </tr>
+<tr class="fimpar"> <td>Urano</td> <td>2.720 Millones de Kil&oacute;metros</td> <td><a
+href="http://es.wikipedia.org/wiki/Urano_(planeta)">Web Urano</a></td> </tr>
+<tr> <td>Neptuno</td> <td>4.504 Millones de Kil&oacute;metros</td> <td><a href="http://es.wikipedia.org/wiki/Neptuno_(planeta)">Web
+Neptuno</a></td></tr>
+</tbody> </table> 
+
+<hr>
+
+<h2>Ejercicio 2a: Bordes redondeadillos (poco)</h2>
+<table class="modificada poco-redonda">
+<caption>Distancias planetarias</caption>
+<thead> <tr> <th>Planeta</th> <th>Distancia desde la Tierra</th> <th>Web</th> </tr> </thead>
+<tbody>
+<tr class="fimpar"> <td>Venus</td> <td>108 Millones de Kil&oacute;metros</td> <td>Link</td> </tr>
+<tr> <td>Saturno</td> <td>1.281 Millones de Kil&oacute;metros</td> <td>Link</td> </tr>
+</tbody> </table> 
+
+<h2>Ejercicio 2b: Bordes completamente redondos</h2>
+<table class="modificada muy-redonda">
+<caption>Distancias planetarias</caption>
+<thead> <tr> <th>Planeta</th> <th>Distancia desde la Tierra</th> <th>Web</th> </tr> </thead>
+<tbody>
+<tr class="fimpar"> <td>Urano</td> <td>2.720 Millones de Kil&oacute;metros</td> <td>Link</td> </tr>
+<tr> <td>Neptuno</td> <td>4.504 Millones de Kil&oacute;metros</td> <td>Link</td> </tr>
+</tbody> </table> 
+
+<hr>
+
+<h2>Ejercicio 3 y 4</h2>
+<div id="contenido">
+<h1> Ejercicio 3</h1>
+<div id="c1" onclick="cambio(this)" class="cajaredonda"> <br>Caja <br> redonda<br> 50 px <br> </div>
+<div id="c2" onclick="cambio(this)" class="cajaporlados" > <br>Caja azul <br> esquinas <br> 30px </div>
+<div id="c3" onclick="cambio(this)" class="cajaporesquinas"> <br> Caja verde <br> abajo <br> 40px</div>
+</div>
+
+<script>
+function cambio(elemento) {
+    // Obtenemos la clase actual
+    var clase = elemento.className;
+    
+    // Logica de rotacion: Roja (redonda) -> Azul (lados) -> Verde (esquinas) -> Roja...
+    if (clase == "cajaredonda") {
+        elemento.className = "cajaporlados";
+        elemento.innerHTML = "<br>Caja azul <br> esquinas <br> 30px";
+    } 
+    else if (clase == "cajaporlados") {
+        elemento.className = "cajaporesquinas";
+        elemento.innerHTML = "<br> Caja verde <br> abajo <br> 40px";
+    } 
+    else if (clase == "cajaporesquinas") {
+        elemento.className = "cajaredonda";
+        elemento.innerHTML = "<br>Caja <br> redonda<br> 50 px";
+    }
+}
+</script>
+
+</body> </html>
