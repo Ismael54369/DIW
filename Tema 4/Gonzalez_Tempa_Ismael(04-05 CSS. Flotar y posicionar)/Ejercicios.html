@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            padding: 20px; 
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 { border-bottom: 2px solid #333; margin-top: 50px; color: #444; }
+        
+        .contenedor-demo {
+            width: 80%; margin: auto; border: solid 1px black; background-color: #CCCCCC; padding: 10px; overflow: hidden; 
+        }
+
+        /* --- ESTILOS EJERCICIOS 1, 2, 3, 4 (Estándar) --- */
+        .img-box { width: 100px; height: 100px; border: 1px solid black; background: #ddd; display: flex; align-items: center; justify-content: center; }
+        
+        #ex3_contenido { width: 700px; margin: auto; border: solid 1px black; background-color: #CCCCCC; padding: 10px; overflow: hidden; }
+        #ex3_caja1 { width: 100px; height: 100px; background-color:#FF0000; border: solid 1px black; margin: 10px; float: left; clear: left; color: white; }
+        #ex3_caja2 { width: 130px; height: 130px; background-color:#00FF00; border: solid 1px black; margin: 10px; float: left; clear: left; color: white;}
+        #ex3_caja3 { width: 160px; height: 160px; background-color:#0000FF; border: solid 1px black; margin: 10px; float: left; clear: left; color: white;}
+
+        #ex4_contenido { width: 700px; margin: auto; border: solid 1px black; background-color: #CCCCCC; }
+        #ex4_caja1 { width: 130px; height: 130px; background-color:#FFFF00; border: solid 1px black; margin: 10px; float: left; }
+        #ex4_caja2 { width: 130px; height: 130px; background-color:#00FF00; border: solid 1px black; margin: 10px; float: left; }
+        #ex4_caja3 { width: 160px; height: 160px; background-color:#0000FF; border: solid 1px black; margin: 10px; float: left; color: white; }
+        .clearboth { clear: both; }
+
+       /* --- EJERCICIO 5 --- */
+
+        #ex5_contenido_final {
+            width: 700px;
+            margin: auto;
+            border: solid 1px black;
+            background-color: #CCCCCC;
+            padding: 15px; /* Un poco de espacio interno */
+            overflow: hidden; /* Asegura que encierra a los flotantes */
+        }
+
+        /* Estilo base para todas las cajas del ej 5 */
+        .c5-base {
+            border: 1px solid black;
+            margin-bottom: 10px; /* Separación vertical entre cajas */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* Definición de tamaños y colores */
+        .c5-roja { width: 100px; height: 100px; background-color: #FF0000; color: white; }
+        .c5-verde { width: 130px; height: 130px; background-color: #00FF00; color: black; }
+        .c5-azul { width: 160px; height: 160px; background-color: #0000FF; color: white; }
+
+        /* --- LA CLAVE DEL ESPEJO --- */
+
+        /* Las de la izquierda: Flotan izquierda y hacen 'clear' izquierda para ponerse debajo de la anterior */
+        .c5-izq {
+            float: left;
+            clear: left;
+        }
+
+        /* Las de la derecha: Flotan derecha y hacen 'clear' derecha para ponerse debajo de la anterior, pegadas al borde derecho */
+        .c5-der {
+            float: right;
+            clear: right;
+        }
+
+        /* --- ESTILOS EJERCICIO 6 --- */
+        .ex6-box { display: block; float: right; background: salmon; width: 50%; }
+
+
+        /* --- EJERCICIO 7 (DIAGONAL PERFECTA SIN MARGEN) --- */
+        #ex7_contenido { 
+            width: 700px; margin: auto; border: solid 1px black; background-color: #CCCCCC; 
+            height: 600px; 
+            position: relative; 
+        }
+        
+        /* Lógica de la diagonal perfecta con position: relative 
+           - Eliminamos margin.
+           - Como son divs (display: block), se colocan uno DEBAJO del otro naturalmente.
+           - Solo tenemos que empujarlos a la derecha (left) la cantidad exacta del ancho de los anteriores.
+        */
+
+        #caja71 { 
+            width: 100px; height: 100px; background-color:#FFFF00; border: solid 1px black; 
+            margin: 0; /* SIN MARGEN */
+            position: relative; 
+            left: 0; top: 0; 
+            cursor: pointer; 
+        }
+
+        #caja72 { 
+            width: 130px; height: 130px; background-color:#00FFFF; border: solid 1px black; 
+            margin: 0; /* SIN MARGEN */
+            position: relative; 
+            /* Se mueve a la derecha el ancho de la caja 71 (100px) + los bordes (2px) si queremos precisión milimétrica, 
+               pero para el ejercicio escolar 100px suele ser lo esperado */
+            left: 102px; 
+            top: 0; 
+            cursor: pointer;
+        }
+
+        #caja73 { 
+            width: 160px; height: 160px; background-color:#FF00FF; border: solid 1px black; 
+            margin: 0; /* SIN MARGEN */
+            position: relative; 
+            /* Se mueve a la derecha el ancho de 71 (100) + 72 (130) = 230px + compensación de bordes (4px) */
+            left: 234px; 
+            top: 0; 
+        }
+
+        /* --- ESTILOS EJERCICIO 9 y 10 --- */
+        #ex9_contenido { width: 700px; margin: auto; border: solid 1px black; background-color: #CCCCCC; height: 400px; padding: 20px;}
+        #caja91 { width: 100px; height: 100px; background-color:#FFAAAA; border: solid 1px black; position: relative; left: 60px; top: 0; z-index: 3; cursor: pointer; }
+        #caja92 { width: 130px; height: 130px; background-color:#AAAAFF; border: solid 1px black; position: relative; left: 40px; top: -50px; z-index: 2; cursor: pointer;}
+        #caja93 { width: 160px; height: 160px; background-color:#AAFFAA; border: solid 1px black; position: relative; left: 20px; top: -100px; z-index: 1; cursor: pointer;}
+
+        /* --- ESTILOS EJERCICIO 11 --- */
+        #ex11_contenido { width: 700px; margin: auto; height: 400px; border: solid 1px black; background-color: #CCCCCC; position: relative; }
+        #ex11_caja1 { width: 100px; height: 100px; background-color:#FF0000; border: solid 1px black; margin: 10px; float: left; position:relative; z-index: 2; color: white;}
+        #ex11_caja2 { width: 130px; height: 130px; background-color:#00FF00; border: solid 1px black; margin: 10px; float: right; clear: both; }
+        #ex11_caja3 { width: 160px; height: 160px; background-color:#0000FF; border: solid 1px black; margin: 10px; float: right; clear: right; color: white;}
+        #ex11_caja4 { width: 170px; height: 160px; background-color:orange; border: solid 1px black; margin: 10px; display: block; position: absolute; left: 300px; top: 100px; z-index: 1; }
+        .contadores-box { width: 700px; margin: 20px auto; border: 1px solid #333; padding: 10px; background: white;}
+
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicio 1: Float</h1>
+    <div class="contenedor-demo">
+        <div class="img-box" style="float: none;">None</div>
+        <div style="clear:both; margin: 10px 0;"></div>
+        <div class="img-box" style="float: left; margin-right: 10px;">Left</div>
+        <div style="clear:both; margin: 10px 0;"></div>
+        <div class="img-box" style="float: right; margin-left: 10px;">Right</div>
+        <div style="clear:both"></div>
+    </div>
+
+    <h1>Ejercicio 2: Clear</h1>
+    <div class="contenedor-demo">
+        <div class="img-box" style="float: left;">Img Left</div>
+        <p style="clear: none;">Clear None</p>
+        <p style="clear: left;">Clear Left</p>
+        <p style="clear: both;">Clear Both</p>
+        <div style="clear:both"></div>
+    </div>
+
+    <h1>Ejercicio 3: Escalera Izquierda</h1>
+    <div id="ex3_contenido">
+        <div id="ex3_caja1"> Caja 1 </div>
+        <div id="ex3_caja2"> Caja 2 </div>
+        <div id="ex3_caja3"> Caja 3 </div>
+    </div>
+
+    <h1>Ejercicio 4: Clear Both</h1>
+    <div id="ex4_contenido">
+        <div id="ex4_caja1"> Caja 1 </div>
+        <div id="ex4_caja2"> Caja 2 </div>
+        <div id="ex4_caja3"> Caja 3 </div>
+        <div class="clearboth"></div>
+    </div>
+
+    <h1>Ejercicio 5: Diseño Simétrico (Espejo)</h1>
+    <div id="ex5_contenido_final">
+        <div class="c5-base c5-roja c5-izq">Roja Izq</div>
+        <div class="c5-base c5-verde c5-izq">Verde Izq</div>
+        <div class="c5-base c5-azul c5-izq">Azul Izq</div>
+
+        <div class="c5-base c5-roja c5-der">Roja Der</div>
+        <div class="c5-base c5-verde c5-der">Verde Der</div>
+        <div class="c5-base c5-azul c5-der">Azul Der</div>
+        
+        <div style="clear: both;"></div>
+    </div>
+
+    <h1>Ejercicio 6: Display</h1>
+    <div class="contenedor-demo">
+        <div style="display:none"> Div oculto </div> 
+        <span>Texto visible.</span>
+        <hr>
+        <p class="ex6-box"> Bloque derecha </p> 
+        <span>Texto normal.</span>
+        <div style="clear:both"></div>
+    </div>
+
+    <h1>Ejercicio 7 y 8: Diagonal Perfecta</h1>
+    <p>Haz clic en <b>Caja 71</b> para subir o en <b>Caja 72</b> para bajar.</p>
+    <div id="ex7_contenido">
+        <div id="caja71" onclick="moverarriba();"> 71 </div>
+        <div id="caja72" onclick="moverabajo();"> 72 </div>
+        <div id="caja73"> 73 </div>
+    </div>
+
+    <h1>Ejercicio 9 y 10: Z-Index</h1>
+    <div id="ex9_contenido">
+        <div id="caja91" onclick="moverz();"> 91 </div>
+        <div id="caja92" onclick="moverz();"> 92 </div>
+        <div id="caja93" onclick="moverz();"> 93 </div>
+    </div>
+
+    <h1>Ejercicio 11: Contadores</h1>
+    <div id="ex11_contenido">
+        <div id="ex11_caja1"> 1 </div>
+        <div id="ex11_caja2"> 2 </div>
+        <div id="ex11_caja3"> 3 </div>
+        <div id="ex11_caja4"> 4 </div>
+    </div>
+    <div class="contadores-box">
+        contador1: <span id="c1">0</span> <br>
+        contador2: <span id="c2">0</span><br>
+        contador3: <span id="c3">0</span><br>
+        contador4: <span id="c4">0</span><br>
+    </div>
+
+    <script>
+        // --- EJERCICIO 7 y 8 ---
+        var valortop = 0; // Empezamos en 0
+
+        function moverabajo() {
+            valortop += 20;
+            aplicarMovimiento();
+        }
+
+        function moverarriba() {
+            valortop -= 20;
+            aplicarMovimiento();
+        }
+
+        function aplicarMovimiento() {
+            document.getElementById("caja71").style.top = valortop + "px";
+            document.getElementById("caja72").style.top = valortop + "px";
+            document.getElementById("caja73").style.top = valortop + "px";
+        }
+
+        // --- EJERCICIO 9 y 10 ---
+        var estado = 0;
+        function moverz() {
+            if(estado == 0) {
+                document.getElementById("caja91").style.zIndex = 3; 
+                document.getElementById("caja92").style.zIndex = 2;
+                document.getElementById("caja93").style.zIndex = 1;
+            } else {
+                document.getElementById("caja91").style.zIndex = 1; 
+                document.getElementById("caja92").style.zIndex = 2;
+                document.getElementById("caja93").style.zIndex = 3; 
+            }
+            estado = (estado + 1) % 2; 
+        }
+
+        // --- EJERCICIO 11 ---
+        let contadores = [0,0,0,0];
+        document.getElementById("ex11_caja1").addEventListener("mouseover",()=>{
+            contadores[0]++; document.getElementById("c1").innerHTML=contadores[0];
+        });
+        document.getElementById("ex11_caja2").addEventListener("mouseover",()=>{
+            contadores[1]++; document.getElementById("c2").innerHTML=contadores[1];
+        });
+        document.getElementById("ex11_caja3").addEventListener("mouseover",()=>{
+            contadores[2]++; document.getElementById("c3").innerHTML=contadores[2];
+        });
+        document.getElementById("ex11_caja4").addEventListener("mouseover",()=>{
+            contadores[3]++; document.getElementById("c4").innerHTML=contadores[3];
+        });
+    </script>
+</body>
+</html>
