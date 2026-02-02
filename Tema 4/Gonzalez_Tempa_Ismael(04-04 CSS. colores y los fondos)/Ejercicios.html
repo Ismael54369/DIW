@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CSS y JS Completos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin-bottom: 400px; /* Para poder ver el efecto fixed del Ejercicio 5 */
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            background-color: #ddd;
+            padding: 10px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin: 5px;
+            border: 1px solid #999;
+            color: white;
+            text-shadow: 1px 1px 2px black;
+            font-size: 10px;
+            text-align: center;
+            line-height: 100px;
+            vertical-align: top;
+        }
+
+        /* Estilos Ejercicio 6 */
+        .bg-pos-container {
+            width: 300px;
+            height: 150px;
+            border: 2px dashed red;
+            background-image: url('https://cdn-icons-png.flaticon.com/512/25/25231.png'); /* Icono GitHub pequeño */
+            background-size: 50px 50px; /* Forzamos tamaño pequeño para ver la posición */
+            background-repeat: no-repeat;
+            background-color: #fff;
+            margin-bottom: 10px;
+            display: inline-block;
+            position: relative;
+        }
+        .bg-pos-container span {
+            position: absolute;
+            top: 0; left: 0;
+            background: rgba(255,255,255,0.8);
+            padding: 2px;
+            font-size: 12px;
+        }
+
+        /* Estilos Ejercicio 7 (Adaptado para que se vea bien en el flujo) */
+        #saludo, #frase, #despedida {
+            border: 1px solid black;
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+        
+        /* Estilos Ejercicio 9 */
+        .imagen-hover {
+            width: 200px;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+        .imagen-hover:hover {
+            opacity: 0.5;
+        }
+
+        /* Clase genérica para cajas de colores del ej 2 */
+        .color-demo {
+            width: 120px; 
+            height: 60px; 
+            display: inline-block; 
+            margin: 5px; 
+            color: white; 
+            font-weight: bold; 
+            text-align: center; 
+            padding-top: 20px;
+            box-sizing: border-box;
+            text-shadow: 0 0 3px black;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Recopilación de Ejercicios CSS y JS</h1>
+
+    <h2>Ejercicio 1</h2>
+    <p>Javascript para generar todos los colores con arrays.</p>
+    <div id="colores-container"></div>
+
+    <h2>Ejercicio 2</h2>
+    <p>Reglas CSS con diferentes formatos de color.</p>
+    <div>
+        <div class="color-demo" style="background-color: gray;">gray</div>
+        <div class="color-demo" style="background-color: #0000FF;">#0000FF</div>
+        <div class="color-demo" style="background-color: #00F;">#00F</div>
+        <div class="color-demo" style="background-color: rgb(255, 0, 0);">rgb(255,0,0)</div>
+        <div class="color-demo" style="background-color: rgba(0, 128, 0, 0.5);">rgba(0,128,0,0.5)</div>
+        <div class="color-demo" style="background-color: hsl(240, 100%, 50%);">hsl</div>
+        <div class="color-demo" style="background-color: lch(50% 100 0);">lch</div> 
+        <div class="color-demo" style="background-color: lab(50% 40 30);">lab</div>
+        <div class="color-demo" style="background-color: oklab(60% 0.1 0.1);">oklab</div>
+        <div class="color-demo" style="background-color: hwb(190 10% 10%);">hwb</div>
+    </div>
+
+    <h2>Ejercicio 3</h2>
+    <p>Documento con imagen de fondo gif animado.</p>
+    <div style="width: 100%; height: 300px; border: 2px solid #333; background-image: url('https://media.giphy.com/media/26tOZ42Mg6pbTUPHW/giphy.gif'); background-size: cover;">
+        <h3 style="color: white; text-align: center; padding-top: 100px;">Fondo GIF Animado</h3>
+    </div>
+
+    <h2>Ejercicio 4</h2>
+    <p>Imagen PNG con transparencia y background-color repetida hacia la izquierda (X).</p>
+    <div style="width: 100%; height: 200px; background-color: darkorange; background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/120px-HTML5_logo_and_wordmark.svg.png'); background-repeat: repeat-x;">
+    </div>
+
+    <h2>Ejercicio 5</h2>
+    <p>Imagen JPG fija que no se repite (Haz scroll en la página para notar el efecto "fixed").</p>
+    <div style="width: 100%; height: 400px; border: 5px solid navy; background-image: url('https://picsum.photos/id/10/800/600'); background-repeat: no-repeat; background-attachment: fixed; background-position: center;">
+        <p style="background: white; display: inline-block; padding: 10px;">La imagen de fondo se queda quieta al hacer scroll.</p>
+    </div>
+
+    <h2>Ejercicio 6</h2>
+    <p>Configuraciones background-position (El cuadro rojo es el contenedor, el icono es el fondo).</p>
+    
+    <div class="bg-pos-container" style="background-position: left bottom;"><span>a) left bottom</span></div>
+    <div class="bg-pos-container" style="background-position: left top;"><span>b) left top</span></div>
+    <div class="bg-pos-container" style="background-position: right center;"><span>c) right center</span></div>
+    <div class="bg-pos-container" style="background-position: right bottom;"><span>d) right bottom</span></div>
+    <div class="bg-pos-container" style="background-position: bottom center;"><span>e) bottom center</span></div>
+    <div class="bg-pos-container" style="background-position: 25% 10%;"><span>f) 25% 10%</span></div>
+    <div class="bg-pos-container" style="background-position: 100px 50px;"><span>g) 100px 50px (aprox)</span></div>
+
+    <h2>Ejercicio 7</h2>
+    <p>Prueba del código de ejemplo (Opacidades).</p>
+    <div style="background: #00f; color: black; padding: 20px;">
+        <div id="saludo" style="background: white; width: 200px; height: 100px; filter: alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5;">
+            <h1>¡Hola!</h1>
+        </div>
+        <div id="frase" style="background: white; width: 200px; height: 100px; filter: alpha(opacity=100); -moz-opacity: 1; opacity: 1;">
+            Este es un ejemplo de opacidad 1 (100%)
+        </div>
+        <div id="despedida" style="background: white; width: 200px; height: 100px; filter: alpha(opacity=0); -moz-opacity: 0; opacity: 0;">
+            <h2>¡Adiós!</h2>
+        </div>
+    </div>
+
+    <h2>Ejercicio 8</h2>
+    <p>Insertar imagen con opacidades específicas.</p>
+    
+    <h3>a) Opacidad 0.5 (50%)</h3>
+    <img src="https://picsum.photos/id/237/200/150" style="filter: alpha(opacity=50); -moz-opacity: 0.5; opacity: 0.5;">
+
+    <h3>b) Opacidad 0.25 (25%)</h3>
+    <img src="https://picsum.photos/id/237/200/150" style="filter: alpha(opacity=25); -moz-opacity: 0.25; opacity: 0.25;">
+
+    <h3>c) Opacidad 0.75 (75%)</h3>
+    <img src="https://picsum.photos/id/237/200/150" style="filter: alpha(opacity=75); -moz-opacity: 0.75; opacity: 0.75;">
+
+    <h2>Ejercicio 9</h2>
+    <p>Imagen que se hace transparente al 50% al pasar el ratón (:hover).</p>
+    <img src="https://picsum.photos/id/1025/300/200" class="imagen-hover" alt="Perro">
+    <p><em>Pasa el ratón por encima de la imagen.</em></p>
+
+
+    <script>
+        // Arrays proporcionados en el enunciado
+        // CORRECCIÓN: "new array" da error en JS, se debe usar "new Array" (Mayúscula) o corchetes [].
+        // He corregido esto para que el código funcione.
+        var coloresCss1 = new Array("aqua", "black", "blue", "fuchsia", "gray", "green", "lime", "maroon", "navy", "olive", "purple", "red", "silver", "teal", "white", "yellow");
+        
+        var coloresCss2 = new Array("orange", "aliceblue", "antiquewhite", "aquamarine", "azure", "beige", "bisque", "blanchedalmond", "blueviolet", "brown", "burlywood", "cadetblue", "chartreuse", "chocolate", "coral", "cornflowerblue", "cornsilk", "crimson", "darkblue", "darkcyan", "darkgoldenrod", "darkgray", "darkgreen", "darkgrey", "darkkhaki", "darkmagenta", "darkolivegreen", "darkorange", "darkorchid", "darkred", "darksalmon", "darkseagreen", "darkslateblue", "darkslategray", "darkslategrey", "darkturquoise", "darkviolet", "deeppink", "deepskyblue", "dimgray", "dimgrey", "dodgerblue", "firebrick", "floralwhite", "forestgreen", "gainsboro", "ghostwhite", "gold", "goldenrod", "greenyellow", "grey", "honeydew", "hotpink", "indianred", "indigo", "ivory", "khaki", "lavender", "lavenderblush", "lawngreen", "lemonchiffon", "lightblue", "lightcoral", "lightcyan", "lightgoldenrodyellow");
+        
+        var coloresCss3 = new Array("lightgray", "lightgreen", "lightgrey", "lightpink", "lightsalmon", "lightseagreen", "lightskyblue", "lightslategray", "lightslategrey", "lightsteelblue", "lightyellow", "limegreen", "linen", "mediumaquamarine", "mediumblue", "mediumorchid", "mediumpurple", "mediumseagreen", "mediumslateblue", "mediumspringgreen", "mediumturquoise", "mediumvioletred", "midnightblue", "mintcream", "mistyrose", "moccasin", "navajowhite", "oldlace", "olivedrab", "orangered", "orchid", "palegoldenrod", "palegreen", "paleturquoise", "palevioletred", "papayawhip", "peachpuff", "peru", "pink", "plum", "powderblue", "rosybrown", "royalblue", "saddlebrown", "salmon", "sandybrown", "seagreen", "seashell", "sienna", "skyblue", "slateblue", "slategray", "slategrey", "snow", "springgreen", "steelblue", "tan", "thistle", "tomato", "turquoise", "violet", "wheat", "whitesmoke", "yellowgreen");
+
+        // Concatenamos todos los arrays en uno solo
+        var todosLosColores = coloresCss1.concat(coloresCss2, coloresCss3);
+
+        // Referencia al contenedor
+        var container = document.getElementById('colores-container');
+
+        // Bucle para generar los divs
+        for (var i = 0; i < todosLosColores.length; i++) {
+            var colorDiv = document.createElement('div');
+            colorDiv.className = 'box';
+            colorDiv.style.backgroundColor = todosLosColores[i];
+            
+            // Añadimos el nombre del color si cabe, o un title para hover
+            colorDiv.title = todosLosColores[i]; 
+            // Truco: Para que el texto sea legible, si es muy oscuro ponemos letra blanca, si es claro negra (lógica simple)
+            // Aquí lo dejamos en blanco con sombra como estilo genérico.
+            colorDiv.innerText = i + 1; 
+
+            container.appendChild(colorDiv);
+        }
+    </script>
+</body>
+</html>
