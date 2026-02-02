@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Animaciones CSS</title>
+    <style>
+        /* Estilos generales para que se vean bien las cajas */
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .contenedor-ejercicio {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h3 { margin-top: 0; }
+        
+        /* Caja base para todos los ejercicios */
+        .caja {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* ----------------------------------------------------
+           EJERCICIO 1: Desplazamiento Horizontal
+           ---------------------------------------------------- */
+        @keyframes moverDerecha {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(300px);
+            }
+        }
+
+        .ejercicio-1 {
+            /* Nombre | Duración */
+            animation: moverDerecha 2s; 
+            /* Para que no vuelva al inicio al terminar (opcional, pero queda mejor) */
+            animation-fill-mode: forwards; 
+        }
+
+        /* ----------------------------------------------------
+           EJERCICIO 2: Cambio de color progresivo
+           ---------------------------------------------------- */
+        @keyframes colores {
+            0% {
+                background-color: blue;
+            }
+            50% {
+                background-color: green;
+            }
+            100% {
+                background-color: red;
+            }
+        }
+
+        .ejercicio-2 {
+            /* Nombre | Duración | Iteración */
+            animation: colores 3s infinite;
+        }
+
+        /* ----------------------------------------------------
+           EJERCICIO 3: Aparición suave (Fade In)
+           ---------------------------------------------------- */
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .ejercicio-3 {
+            /* Inicialmente invisible para que no parpadee antes de animar */
+            opacity: 0; 
+            /* Nombre | Duración | Fill-mode (se queda visible al final) */
+            animation: aparecer 2s forwards;
+        }
+
+        /* ----------------------------------------------------
+           EJERCICIO 4: Rotación Continua
+           ---------------------------------------------------- */
+        @keyframes girar {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ejercicio-4 {
+            /* Nombre | Duración | Timing (linear para giro constante) | Iteración */
+            animation: girar 2s linear infinite;
+        }
+
+        /* ----------------------------------------------------
+           EJERCICIO 5: Escalado con Rebote
+           ---------------------------------------------------- */
+        @keyframes rebote {
+            0% {
+                transform: scale(0); /* Empieza invisible/diminuto */
+            }
+            60% {
+                transform: scale(1.2); /* Se agranda más de la cuenta (rebote) */
+            }
+            100% {
+                transform: scale(1); /* Vuelve a su tamaño normal */
+            }
+        }
+
+        .ejercicio-5 {
+            /* Nombre | Duración | Función de tiempo (ease-out suaviza el final) */
+            animation: rebote 1s ease-out;
+            /* Asegura que se quede en tamaño 1 al acabar */
+            animation-fill-mode: forwards;
+        }
+
+        /* ----------------------------------------------------
+           EJERCICIO 6: Retraso y Dirección Inversa
+           ---------------------------------------------------- */
+        @keyframes moverYRotar {
+            0% {
+                transform: translateX(0) rotate(0deg);
+                background-color: #3498db;
+            }
+            100% {
+                transform: translateX(300px) rotate(180deg);
+                background-color: purple;
+            }
+        }
+
+        .ejercicio-6 {
+            /* Duration: 2s
+               Timing: ease-in-out
+               Delay: 1s (espera un segundo antes de empezar)
+               Iteration: 1
+               Direction: reverse (Empieza en el 100% y va hacia el 0%)
+               Fill-mode: both (aplica estilos iniciales y finales)
+            */
+            animation: moverYRotar 2s ease-in-out 1s 1 reverse both;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicios de CSS Keyframes</h1>
+    <p>Refresca la página (F5) para reiniciar las animaciones que no son infinitas.</p>
+
+    <div class="contenedor-ejercicio">
+        <h3>Ejercicio 1: Desplazamiento (300px en 2s)</h3>
+        <div class="caja ejercicio-1">1</div>
+    </div>
+
+    <div class="contenedor-ejercicio">
+        <h3>Ejercicio 2: Colores (Azul -> Verde -> Rojo, Infinito)</h3>
+        <div class="caja ejercicio-2">2</div>
+    </div>
+
+    <div class="contenedor-ejercicio">
+        <h3>Ejercicio 3: Fade In (Aparición suave)</h3>
+        <div class="caja ejercicio-3">3</div>
+    </div>
+
+    <div class="contenedor-ejercicio">
+        <h3>Ejercicio 4: Rotación (Infinita y lineall)</h3>
+        <div class="caja ejercicio-4">↻</div>
+    </div>
+
+    <div class="contenedor-ejercicio">
+        <h3>Ejercicio 5: Rebote (Scale 0 -> 1.2 -> 1)</h3>
+        <div class="caja ejercicio-5">5</div>
+    </div>
+
+    <div class="contenedor-ejercicio">
+        <h3>Ejercicio 6: Reverse + Delay (Espera 1s y va del final al inicio)</h3>
+        <div class="caja ejercicio-6">6</div>
+    </div>
+
+</body>
+</html>
