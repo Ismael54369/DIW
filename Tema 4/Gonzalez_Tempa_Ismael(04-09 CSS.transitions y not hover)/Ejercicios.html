@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Transiciones CSS</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+            margin-top: 40px;
+        }
+        p {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        /* --- EJEMPLO 1: Transición básica de anchura --- */
+        .ejemplo1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* Transición solo en el ancho, durando 2 segundos */
+            transition: width 2s;
+        }
+        .ejemplo1:hover {
+            width: 300px;
+        }
+
+        /* --- EJEMPLO 2: Múltiples propiedades --- */
+        .ejemplo2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* Ancho (2s), Alto (4s), Color de fondo (3s) */
+            transition: width 2s, height 4s, background-color 3s;
+        }
+        .ejemplo2:hover {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+        }
+
+        /* --- EJEMPLO 3: Curvas de velocidad (Speed Curves) --- */
+        .caja-curva {
+            width: 100px;
+            height: 50px;
+            background: red;
+            margin-bottom: 5px;
+            color: white;
+            line-height: 50px;
+            text-align: center;
+            font-size: 12px;
+            /* Aplicamos transición a todas las cajas */
+            transition: width 2s;
+        }
+        /* Definimos las curvas específicas para cada ID */
+        #div1 { transition-timing-function: linear; }
+        #div2 { transition-timing-function: ease; }
+        #div3 { transition-timing-function: ease-in; }
+        #div4 { transition-timing-function: ease-out; }
+        #div5 { transition-timing-function: ease-in-out; }
+
+        /* Al pasar el ratón por encima de CADA caja individual */
+        .caja-curva:hover {
+            width: 300px;
+        }
+
+        /* --- EJEMPLO 4: Transición + Transformación --- */
+        .ejemplo4 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* Incluimos 'transform' en la lista de transiciones */
+            transition: width 2s, height 2s, background-color 2s, transform 2s;
+        }
+        .ejemplo4:hover {
+            width: 300px;
+            height: 300px;
+            background-color: orange;
+            /* Rotamos el elemento 180 grados */
+            transform: rotate(180deg);
+        }
+
+        /* --- EJEMPLO 5: Shorthand con Delay (Retraso) --- */
+        .ejemplo5 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            /* Propiedad | Duración | Curva | Retraso */
+            transition: width 2s linear 1s;
+        }
+        .ejemplo5:hover {
+            width: 300px;
+        }
+
+        /* --- EJEMPLO FINAL: Efecto 'Not Hover' (Spotlight) --- */
+        .contenedor-nothover {
+            display: grid;
+            width: 90%;
+            grid-template-columns: 25% 25% 25% 25%;
+            gap: 10px;
+        }
+        .item {
+            border: 1px solid #333;
+            height: 200px;
+            background-color: red; /* Color "activo" */
+            
+            /* Transición suave para volver al estado normal */
+            transition: filter 1s ease, opacity 1s ease, background-color 1s ease;
+        }
+
+        /* Lógica: Cuando pasamos el ratón sobre el CONTENEDOR padre,
+           seleccionamos los items que NO (:not) están siendo hovereados (:hover).
+           
+           Es decir: Los que NO tocas se ponen borrosos y naranjas.
+           El que SÍ tocas se queda con el estilo base (.item) rojo y nítido.
+        */
+        .contenedor-nothover:hover .item:not(:hover) {
+            background-color: orange;
+            opacity: 0.5;
+            filter: blur(3px);
+            transition: filter 1s ease, opacity 1s ease, background-color 1s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ejercicios de CSS Transitions</h1>
+    <p>Pasa el ratón sobre los elementos rojos para ver los efectos.</p>
+
+    <h2>Ejemplo 1: Transición Básica</h2>
+    <p>Cambia el ancho en 2 segundos.</p>
+    <div class="ejemplo1"></div>
+
+    <h2>Ejemplo 2: Múltiples Propiedades</h2>
+    <p>Cambia ancho (2s), alto (4s) y color (3s).</p>
+    <div class="ejemplo2"></div>
+
+    <h2>Ejemplo 3: Curvas de Velocidad (Speed Curves)</h2>
+    <p>Pasa el ratón sobre cada barra para ver cómo aceleran/frenan distinto.</p>
+    <div id="div1" class="caja-curva">linear</div>
+    <div id="div2" class="caja-curva">ease</div>
+    <div id="div3" class="caja-curva">ease-in</div>
+    <div id="div4" class="caja-curva">ease-out</div>
+    <div id="div5" class="caja-curva">ease-in-out</div>
+
+    <h2>Ejemplo 4: Transition + Transform</h2>
+    <p>Crece, cambia de color y rota 180 grados.</p>
+    <div class="ejemplo4"></div>
+
+    <h2>Ejemplo 5: Transición con Retraso (Delay)</h2>
+    <p>Mantén el ratón encima. Esperará 1 segundo antes de empezar a moverse.</p>
+    <div class="ejemplo5"></div>
+
+    <h2>Ejemplo Especial: Efecto "Not Hover"</h2>
+    <p>Pasa el ratón sobre uno de los cuadros. Los demás se desenfocarán.</p>
+    <div class="contenedor-nothover">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+</body>
+</html>
