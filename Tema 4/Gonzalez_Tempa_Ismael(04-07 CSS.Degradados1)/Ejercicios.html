@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recopilatorio de Ejercicios CSS Gradients</title>
+<style type="text/css">
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1, h2 {
+        text-align: center;
+        color: #333;
+    }
+
+    hr {
+        margin: 40px 0;
+        border: 0;
+        border-top: 2px dashed #ccc;
+    }
+
+    /* --- ESTILOS COMUNES PARA CAJAS (Ejercicios 1 y 2) --- */
+    .section_item { 
+        height: auto; 
+        max-width: 800px; 
+        margin: 15px auto; 
+        padding: 50px 20px; 
+        position: relative; 
+        text-align: center; 
+        border: 1px solid #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border-radius: 8px;
+    }
+    
+    .flex-container {
+        display: flex; 
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+    }
+    
+    .flex-text { 
+        font-size: 2rem; 
+        color: #000; 
+        font-weight: bold; 
+        text-shadow: 0px 1px 3px rgba(255,255,255,0.6);
+        margin: 0; 
+    }
+
+    /* --- EJERCICIO 2: REPLICAR IMAGEN (DEFINICIÓN DE GRADIENTES) --- */
+
+    /* 1. Verde: Degradado lineal vertical suave */
+    .grad-verde { 
+        background: linear-gradient(to bottom, #ccffcc 0%, #33ff33 100%); 
+    }
+
+    /* 2. Piña: Degradado lineal horizontal grisáceo a dorado */
+    .grad-pina { 
+        background: linear-gradient(to right, #708c85, #facc70); 
+    }
+
+    /* 3. Atardecer: Degradado vertical amarillo a naranja */
+    .grad-atardecer { 
+        background: linear-gradient(to bottom, #ffcc00, #ff8800); 
+    }
+
+    /* 4. Anillo Azul: Banderas con cortes duros (Hard Stops) */
+    .grad-anillo { 
+        background: linear-gradient(to right, 
+            red 0% 20%, 
+            orange 20% 40%, 
+            yellow 40% 60%, 
+            green 60% 80%, 
+            blue 80% 100%); 
+    }
+
+    /* 5. EllipseAzul: Degradado radial elíptico */
+    .grad-ellipse { 
+        background: radial-gradient(ellipse at center, #00ffff 0%, #0044bb 100%); 
+        color: white; /* Texto blanco para mejor contraste aquí */
+    }
+    .grad-ellipse .flex-text { color: black; text-shadow: none; }
+
+    /* 6. Conico: Degradado cónico centrado */
+    .grad-conico { 
+        background: conic-gradient(from 180deg at 50% 50%, #ffcc00, #ffaa00, #ffcc00); 
+    }
+
+
+    /* --- EJERCICIO 3: DISEÑO EXTERNO (Midnight City) --- */
+    .midnight-city {
+        height: 150px;
+        width: 100%;
+        max-width: 800px;
+        margin: auto;
+        border-radius: 8px;
+        /* Código generado por herramientas tipo CSSMatic */
+        background: rgb(14,14,14);
+        background: linear-gradient(to bottom, rgba(14,14,14,1) 0%, rgba(125,185,232,1) 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    /* --- EJERCICIO 4: MODELO HSL --- */
+    .hsl-rainbow {
+        height: 100px;
+        max-width: 800px;
+        margin: auto;
+        border-radius: 8px;
+        /* Recorrido completo del Hue de 0 a 360 */
+        background: linear-gradient(to right, 
+            hsl(0, 100%, 50%), 
+            hsl(60, 100%, 50%), 
+            hsl(120, 100%, 50%), 
+            hsl(180, 100%, 50%), 
+            hsl(240, 100%, 50%), 
+            hsl(300, 100%, 50%), 
+            hsl(360, 100%, 50%)
+        );
+    }
+
+    /* --- EJERCICIO 5: CONTROLES JS --- */
+    #box-interactiva {
+        border: solid 2px #333;
+        height: 200px;
+        width: 80%;
+        max-width: 500px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-weight: bold;
+        transition: background 0.3s ease;
+        border-radius: 10px;
+        background-color: white;
+    }
+    
+    .controls-container {
+        text-align: center;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 500px;
+        margin: auto;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    input[type="color"] {
+        cursor: pointer;
+        height: 40px;
+        width: 60px;
+        border: none;
+        padding: 0;
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    button:hover { background-color: #555; }
+
+</style>
+
+<script type="text/javascript">
+    function updateGradient() {
+        // 1. Obtener valores de los inputs
+        let c1 = document.getElementById("colorInput1").value;
+        let c2 = document.getElementById("colorInput2").value;
+        
+        console.log("Color 1:", c1, "Color 2:", c2);
+        
+        // 2. Crear string del gradiente
+        let gradientValue = "linear-gradient(to right, " + c1 + ", " + c2 + ")";
+        
+        // 3. Aplicar al elemento
+        let caja = document.getElementById("box-interactiva");
+        caja.style.background = gradientValue;
+        caja.style.color = "white"; // Asegurar contraste si es oscuro
+        caja.innerText = gradientValue;
+    }
+
+    function resetStyle() {
+        let caja = document.getElementById("box-interactiva");
+        caja.style.background = 'white';
+        caja.style.color = 'black';
+        caja.innerText = "Haz clic o cambia los inputs para ver el resultado.";
+        
+        // Resetear inputs a valores por defecto
+        document.getElementById("colorInput1").value = "#ffffff";
+        document.getElementById("colorInput2").value = "#000000";
+    }
+</script>
+
+</head>
+<body>
+
+    <h1>Ejercicios de CSS Gradients</h1>
+
+    <h2 id="ej2">Ejercicios 1 y 2: Replicar Diseños</h2>
+    
+    <section class="section_item flex-container grad-verde"> 
+        <h1 class="flex-text">!!! Verde ¡¡¡</h1> 
+    </section>
+
+    <section class="section_item flex-container grad-pina"> 
+        <h1 class="flex-text">!! Piña ¡¡¡</h1> 
+    </section>
+
+    <section class="section_item flex-container grad-atardecer"> 
+        <h1 class="flex-text">Atardecer</h1> 
+    </section>
+
+    <section class="section_item flex-container grad-anillo"> 
+        <h1 class="flex-text">Anillo Azul</h1> 
+    </section>
+
+    <section class="section_item flex-container grad-ellipse"> 
+        <h1 class="flex-text">EllipseAzul</h1> 
+    </section>
+
+    <section class="section_item flex-container grad-conico"> 
+        <h1 class="flex-text">conico</h1> 
+    </section>
+
+    <hr>
+
+    <h2 id="ej3">Ejercicio 3: Diseño Externo (Midnight City)</h2>
+    <div class="midnight-city">
+        <h2>Midnight City Gradient</h2>
+    </div>
+
+    <hr>
+
+    <h2 id="ej4">Ejercicio 4: Modelo HSL (Arcoíris)</h2>
+    <div class="hsl-rainbow"></div>
+    <p style="text-align: center;">Degradado usando sintaxis <code>hsl(hue, 100%, 50%)</code></p>
+
+    <hr>
+
+    <h2 id="ej5">Ejercicio 5: Script JS + Color Pickers</h2>
+    
+    <div class="controls-container">
+        <label>Color Izquierda: 
+            <input type="color" id="colorInput1" value="#ff0000" oninput="updateGradient()">
+        </label>
+        <span style="margin: 0 10px;">|</span>
+        <label>Color Derecha: 
+            <input type="color" id="colorInput2" value="#0000ff" oninput="updateGradient()">
+        </label>
+        <br>
+        <button onclick="resetStyle()">Resetear Fondo</button>
+    </div>
+
+    <div id="box-interactiva" onclick="updateGradient()">
+        Haz clic aquí o cambia los colores arriba.
+    </div>
+
+</body>
+</html>
