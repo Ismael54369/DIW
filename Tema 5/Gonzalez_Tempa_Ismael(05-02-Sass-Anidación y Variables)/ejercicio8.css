@@ -1,0 +1,14 @@
+div > .clase1, .clase2, .clase3 {
+  border-width: 10px;
+  border-color: #fea;
+}
+
+div > .clase4, .clase5 {
+  border-width: 10px;
+  border-color: #aef;
+}
+
+body > .clase6, .clase7, .clase8 {
+  border-width: 10px;
+  border-color: #efa;
+}/*# sourceMappingURL=ejercicio8.css.map */

@@ -1,0 +1,13 @@
+.clase21 {
+  border-width: 5px;
+  border-color: blue;
+
+  &:hover {
+    border-width: 10px;
+    border-color: black;
+
+    .clase211 {
+      color: red;
+    }
+  }
+}

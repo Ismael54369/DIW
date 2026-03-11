@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios CSS Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1, h2 { border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+        .section { margin-bottom: 50px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        
+        /* --- ESTILOS BASE PARA CELDAS --- */
+        .celda {
+            background-color: #e0f7fa; /* Color cyan clarito */
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+        }
+
+        /* ==========================================
+           EJERCICIO 0: MODIFICACIONES DEL ORIGINAL
+           ========================================== */
+        
+        .ej0-base { display: grid; width: 100%; height: 150px; background-color: azure; margin-bottom: 20px;}
+        .ej0-base > div { background-color: cyan; text-align: center; border: 1px solid #999; display: flex; align-items: center; justify-content: center;}
+
+        /* a) Primera columna 2 veces mayor */
+        .ej0-a { grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 10px; }
+        
+        /* b) Grid 4x4 */
+        .ej0-b { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 1fr); gap: 10px; height: 200px;}
+        
+        /* c) Última fila 3 veces mayor (en un 3x3) */
+        .ej0-c { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 3fr; gap: 10px; height: 200px;}
+        
+        /* d) Gap de 40px */
+        .ej0-d { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 40px; }
+        
+        /* e) Colores pares (rojo) e impares (verde) */
+        .ej0-e { grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; gap: 10px; }
+        .ej0-e > div:nth-child(even) { background-color: red; color: white; }
+        .ej0-e > div:nth-child(odd) { background-color: green; color: white; }
+
+        /* ==========================================
+           EJERCICIOS 2 a 10: TABLAS Y LAYOUTS
+           ========================================== */
+           
+        /* Clase común para crear el borde de 1px usando el gap */
+        .grid-board {
+            display: grid;
+            background-color: #333; /* Color de la línea de separación */
+            gap: 1px;
+            margin-bottom: 10px;
+        }
+
+        /* Ejercicio 2a: Tabla normal 3x3 */
+        .ej2a { grid-template-columns: repeat(3, 1fr); }
+
+        /* Ejercicio 2b: Tabla con cabecera */
+        .ej2b { grid-template-columns: repeat(3, 1fr); }
+        .ej2b .cabecera { grid-column: 1 / -1; background-color: #b2ebf2; }
+
+        /* Ejercicio 3: Celdas combinadas (Sidebar Izq + Cabecera) */
+        .ej3 { grid-template-columns: 100px 150px 150px; }
+        .ej3 .cabecera { grid-column: 1 / -1; background-color: #b2ebf2; }
+        .ej3 .sidebar { grid-column: 1 / 2; grid-row: 2 / 4; background-color: #80deea; display: flex; align-items: center; justify-content: center;}
+
+        /* Ejercicio 4: Usando Áreas */
+        .ej4 {
+            grid-template-columns: 100px 200px 200px;
+            grid-template-areas:
+                "head head head"
+                "side main1 main2"
+                "side main3 main4";
+        }
+        .ej4 .cabecera { grid-area: head; background-color: #b2ebf2;}
+        .ej4 .sidebar { grid-area: side; background-color: #80deea; display: flex; align-items: center; justify-content: center;}
+        .ej4 .c3 { grid-area: main1; } .ej4 .c4 { grid-area: main2; }
+        .ej4 .c5 { grid-area: main3; } .ej4 .c6 { grid-area: main4; }
+
+        /* Ejercicio 5: Sidebar Derecho */
+        .ej5 { grid-template-columns: 1fr 1fr 100px; }
+        .ej5 .cabecera { grid-column: 1 / -1; background-color: #b2ebf2; }
+        .ej5 .sidebar-der { grid-column: 3 / 4; grid-row: 2 / 4; background-color: #80deea; display: flex; align-items: center; justify-content: center;}
+
+        /* Ejercicio 6: Celdas interiores combinadas (ej: centro 2x2) */
+        .ej6 { grid-template-columns: repeat(4, 1fr); }
+        .ej6 .centro-combinado { 
+            grid-column: 2 / 4; 
+            grid-row: 2 / 4; 
+            background-color: #ffcc80; 
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        /* Ejercicio 7: Celdas vacías (Sin el primer div) */
+        .ej7 { grid-template-columns: repeat(3, 1fr); }
+        /* Hacemos que la primera celda HTML empiece en la columna 2, dejando el hueco 1 vacío */
+        .ej7 .empezar-col2 { grid-column-start: 2; }
+
+        /* Ejercicio 8: Controlando el orden */
+        .ej8 { grid-template-columns: repeat(3, 1fr); }
+        /* Todos tienen order 0 por defecto. Al poner order 1, se va al final */
+        .ej8 .ir-al-final { order: 1; background-color: #ffab91; }
+
+        /* Ejercicio 9: Reparto por columnas */
+        .ej9 { 
+            grid-template-rows: repeat(2, 1fr); 
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-flow: column; /* Rellena de arriba a abajo, luego salta de columna */
+        }
+
+        /* Ejercicio 10: Grids anidados */
+        .ej10 { grid-template-columns: 1fr 2fr; }
+        /* La celda 4 es un grid en sí misma */
+        .ej10-anidado {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background-color: #333; /* Para el borde interno de 1px */
+            padding: 0; /* Quitamos el padding para que el sub-grid ocupe todo */
+        }
+        .ej10-anidado .cabecera-interna { grid-column: 1 / -1; background-color: #fff59d;}
+        .ej10-anidado .celda { background-color: #ffe082; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Resolución Ejercicios CSS Grid</h1>
+
+    <div class="section">
+        <h2>Ejercicio 0</h2>
+        <p>a) Primera columna 2 veces mayor (2fr 1fr 1fr)</p>
+        <div class="ej0-base ej0-a">
+            <div>1</div><div>2</div><div>3</div>
+            <div>4</div><div>5</div><div>6</div>
+            <div>7</div><div>8</div><div>9</div>
+        </div>
+
+        <p>b) Grid 4x4 (16 divs)</p>
+        <div class="ej0-base ej0-b">
+            <div>1</div><div>2</div><div>3</div><div>4</div>
+            <div>5</div><div>6</div><div>7</div><div>8</div>
+            <div>9</div><div>10</div><div>11</div><div>12</div>
+            <div>13</div><div>14</div><div>15</div><div>16</div>
+        </div>
+
+        <p>c) Última fila 3 veces mayor</p>
+        <div class="ej0-base ej0-c">
+            <div>1</div><div>2</div><div>3</div>
+            <div>4</div><div>5</div><div>6</div>
+            <div>7</div><div>8</div><div>9</div>
+        </div>
+
+        <p>d) Gap de 40px</p>
+        <div class="ej0-base ej0-d" style="height: auto; padding-bottom: 40px;">
+            <div>1</div><div>2</div><div>3</div>
+            <div>4</div><div>5</div><div>6</div>
+            <div>7</div><div>8</div><div>9</div>
+        </div>
+
+        <p>e) Colores pares (rojo) e impares (verde)</p>
+        <div class="ej0-base ej0-e">
+            <div>1</div><div>2</div><div>3</div>
+            <div>4</div><div>5</div><div>6</div>
+            <div>7</div><div>8</div><div>9</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 2a: Tabla con grid</h2>
+        <div class="grid-board ej2a">
+            <div class="celda">Celda 1</div><div class="celda">Celda 2</div><div class="celda">Celda 3</div>
+            <div class="celda">Celda 4</div><div class="celda">Celda 5</div><div class="celda">Celda 6</div>
+            <div class="celda">Celda 7</div><div class="celda">Celda 8</div><div class="celda">Celda 9</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 2b: Tabla con cabecera</h2>
+        <div class="grid-board ej2b">
+            <div class="celda cabecera">Celda 1 (Cabecera)</div>
+            <div class="celda">Celda 2</div><div class="celda">Celda 3</div><div class="celda">Celda 4</div>
+            <div class="celda">Celda 5</div><div class="celda">Celda 6</div><div class="celda">Celda 7</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 3: Celdas combinadas (Sidebar Izq)</h2>
+        <div class="grid-board ej3" style="width: 400px;"> <div class="celda cabecera">Celda 1</div>
+            <div class="celda sidebar">Celda 2 (Sidebar)</div>
+            <div class="celda">Celda 3</div><div class="celda">Celda 4</div>
+            <div class="celda">Celda 5</div><div class="celda">Celda 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 4: Usando las áreas</h2>
+        <div class="grid-board ej4" style="width: 500px;">
+            <div class="celda cabecera">Celda 1</div>
+            <div class="celda sidebar">Celda 2</div>
+            <div class="celda c3">Celda 3</div>
+            <div class="celda c4">Celda 4</div>
+            <div class="celda c5">Celda 5</div>
+            <div class="celda c6">Celda 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 5: Sidebar Derecho</h2>
+        <div class="grid-board ej5">
+            <div class="celda cabecera">Celda 1</div>
+            <div class="celda">Celda 3</div><div class="celda">Celda 4</div>
+            <div class="celda sidebar-der">Celda 2 (Der)</div>
+            <div class="celda">Celda 5</div><div class="celda">Celda 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 6: Celdas interiores combinadas</h2>
+        <div class="grid-board ej6">
+            <div class="celda">C1</div><div class="celda">C2</div><div class="celda">C3</div><div class="celda">C4</div>
+            <div class="celda">C5</div>
+            <div class="celda centro-combinado">Celda Interior Combinada</div>
+            <div class="celda">C6</div>
+            <div class="celda">C7</div><div class="celda">C8</div>
+            <div class="celda">C9</div><div class="celda">C10</div><div class="celda">C11</div><div class="celda">C12</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 7: Celdas del grid vacías</h2>
+        <p><em>La celda 1 empieza en la columna 2 dejando un hueco intencionadamente.</em></p>
+        <div class="grid-board ej7">
+            <div class="celda empezar-col2">Celda 1</div><div class="celda">Celda 2</div>
+            <div class="celda">Celda 3</div><div class="celda">Celda 4</div><div class="celda">Celda 5</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 8: Controlando el orden</h2>
+        <p><em>La "Celda 1" está primera en el HTML, pero con CSS la mandamos al final.</em></p>
+        <div class="grid-board ej8">
+            <div class="celda ir-al-final">Celda 1 (Orden alterado)</div>
+            <div class="celda">Celda 2</div>
+            <div class="celda">Celda 3</div>
+            <div class="celda">Celda 4</div>
+            <div class="celda">Celda 5</div>
+            <div class="celda">Celda 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 9: Reparto por columnas</h2>
+        <div class="grid-board ej9">
+            <div class="celda">Celda 1</div>
+            <div class="celda">Celda 2</div>
+            <div class="celda">Celda 3</div>
+            <div class="celda">Celda 4</div>
+            <div class="celda">Celda 5</div>
+            <div class="celda">Celda 6</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Ejercicio 10: Grids anidados</h2>
+        <div class="grid-board ej10">
+            <div class="celda">Celda 1</div>
+            <div class="celda">Celda 2</div>
+            <div class="celda">Celda 3</div>
+            <div class="ej10-anidado">
+                <div class="celda cabecera-interna">Celda 4 (Cabecera anidada)</div>
+                <div class="celda">Celda 4.1</div>
+                <div class="celda">Celda 4.2</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

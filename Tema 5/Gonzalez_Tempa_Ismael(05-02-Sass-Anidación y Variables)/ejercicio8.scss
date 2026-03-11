@@ -1,0 +1,19 @@
+$g-border-width: 10px; // Variable global (fuera de cualquier bloque)
+
+div > .clase1, .clase2, .clase3 {
+  $l-border-color: #fea; // Variable local
+  border-width: $g-border-width;
+  border-color: $l-border-color;
+}
+
+div > .clase4, .clase5 {
+  $l-border-color: #aef; // Variable local
+  border-width: $g-border-width;
+  border-color: $l-border-color;
+}
+
+body > .clase6, .clase7, .clase8 {
+  $l-border-color: #efa; // Variable local
+  border-width: $g-border-width;
+  border-color: $l-border-color;
+}

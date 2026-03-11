@@ -1,0 +1,11 @@
+.clase21 {
+  border-width: 5px;
+  border-color: blue;
+}
+.clase21:hover {
+  border-width: 10px;
+  border-color: black;
+}
+.clase21:hover .clase211 {
+  color: red;
+}/*# sourceMappingURL=ejercicio5.css.map */
